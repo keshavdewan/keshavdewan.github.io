@@ -1,5 +1,5 @@
 title: Keshav Dewan # your name (or website title) here
-logo: "/images/KDimage.jpeg?raw=true" # your photo (or logo) here
+#logo: "/images/KDimage.jpeg?raw=true" # your photo (or logo) here
 description: |
   <div style="text-align: center;">
     <img src="/images/KDimage.jpeg?raw=true" alt="Keshav Dewan" style="border-radius: 50%; width: 150px; height: 150px;"/>
@@ -9,7 +9,9 @@ description: |
 
   <br>Hello,
 
-  I am a Data & Business Analyst with a background in Research, Consulting, and Business Development.
+  I am a Data & Business Analyst with a background in Research, Consulting and Business Development.
+
+My transition into Analytics stemmed from a desire to focus on generating insights that drive impactful business decisions. I am constantly refining my skills and am always open to feedback. You can explore my latest work on GitHub.
 
   <b>Key Skills: SQL | Power BI | Python | Tableau | Google Data Studio | Advanced Microsoft Office </b>
 
