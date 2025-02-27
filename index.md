@@ -38,9 +38,9 @@ This project dives deeply into the nuanced world of global commodity prices name
 
 ### Other Projects
 Some smaller Projects that I did:
-- [Indian Real Estate](https://github.com/keshavdewan/Indian-Real-Estate-Data) | ![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-- [Netflix Data Viz](https://github.com/keshavdewan/Netflix-Data-Viz) | ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-- [Advanced Analytics - World Happiness Index](https://github.com/keshavdewan/Advanced-Analytics---World-Happiness-Index) | ![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)  ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
+- [Indian Real Estate](https://github.com/keshavdewan/Indian-Real-Estate-Data) | ![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat-square&logo=tableau&logoColor=white)
+- [Netflix Data Viz](https://github.com/keshavdewan/Netflix-Data-Viz) | ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat-square&logo=tableau&logoColor=white)
+- [Advanced Analytics - World Happiness Index](https://github.com/keshavdewan/Advanced-Analytics---World-Happiness-Index) | ![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)  ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat-square&logo=tableau&logoColor=white)
 - [Life Expectancy at Birth](https://github.com/keshavdewan/Life-Expectancy-at-Birth) | ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) 
 
 
