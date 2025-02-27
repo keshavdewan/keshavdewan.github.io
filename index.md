@@ -61,11 +61,6 @@ Some smaller Projects that I did:
   </a>
 </p>
 
---
-## Download My CV
-
-
-
 
 
 
