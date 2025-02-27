@@ -40,6 +40,7 @@ Some smaller Projects that I did:
   <a href="mailto:keshavdewan1990@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail">
   </a>
+  <a href="https://medium.com/@kdrokz"> <img src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white" alt="Medium"> </a>
   <a href="assets/Keshav_Dewan_CV.pdf" download>
     <img src="https://img.shields.io/badge/Download_CV-blue?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Download CV">
   </a>
