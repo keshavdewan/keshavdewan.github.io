@@ -1,18 +1,20 @@
 title: Keshav Dewan # your name (or website title) here
 description: |
   <div style="text-align: center;">
+    <!-- Logo with circular shape -->
     <img src="/images/KDimage.jpeg?raw=true" alt="Keshav Dewan" style="border-radius: 50%; width: 150px; height: 150px;"/>
+
+    <!-- Name and subheading below the logo -->
+    <h1>Keshav Dewan</h1>
+    <h3>Transforming Data into Insights</h3>
+
+    <!-- Introduction and Key Skills Section -->
+    <p>
+      Hello, I am a Data & Business Analyst with a background in Research, Consulting, and Business Development.
+      <br><br>
+      <strong>Key Skills:</strong> SQL | Power BI | Python | Tableau | Google Data Studio | Advanced Microsoft Office
+    </p>
   </div>
-
-  <strong><br> Transforming data into insights <br></strong>
-
-  <br>Hello,
-
-  I am a Data & Business Analyst with a background in Research, Consulting, and Business Development.
-
-  <b>Key Skills: SQL | Power BI | Python | Tableau | Google Data Studio | Advanced Microsoft Office </b>
-
-  <br>
 
 remote_theme: "pages-themes/minimal@v0.2.0"
 
