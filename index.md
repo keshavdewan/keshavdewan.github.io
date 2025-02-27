@@ -9,7 +9,7 @@ This 8-week SQL challenge uses various case studies to enhance my SQL skills. Ea
 <img src = "https://github.com/user-attachments/assets/2776ba14-3402-4657-8ad1-b157cca03021" width="500" height="400" />
 
 ---
-### [Energy Consumption](https://github.com/keshavdewan/Energy-Consumption)
+### [Energy Consumption](https://github.com/keshavdewan/Energy-Consumption) <span style="float: right;">![Power Bi](https://img.shields.io/badge/power_bi-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)</span>
 This dashboard uses Power BI to create an energy consumption dashboard. It addresses a company's challenge of monitoring energy consumption across buildings in various US cities from the year 2016 to 2019. Our approach involves utilizing Power BI to create dedicated pages for each energy type.
 
 ![Power Bi](https://img.shields.io/badge/power_bi-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
