@@ -1,16 +1,18 @@
 title: Keshav Dewan # your name (or website title) here
 description: |
   <div style="text-align: center;">
-    <!-- Logo with circular shape -->
+    <!-- Logo with circular shape (Image on top) -->
     <img src="/images/KDimage.jpeg?raw=true" alt="Keshav Dewan" style="border-radius: 50%; width: 150px; height: 150px;"/>
 
     <!-- Name below the logo -->
-    <h1>Keshav Dewan</h1>
-    <h3>Transforming Data into Insights</h3>
+    <h1 style="margin-top: 10px;">Keshav Dewan</h1>
+
+    <!-- Subheading below the name in blue -->
+    <h3 style="color: blue; margin-top: 5px;">Transforming Data into Insights</h3>
   </div>
 
   <!-- Introduction and Key Skills Section -->
-  <p style="text-align: center;">
+  <p style="text-align: center; margin-top: 20px;">
     Hello, I am a Data Analyst with a background in Research, Consulting, and Business Development.
     My transition into Analytics stemmed from a desire to focus on generating insights that drive impactful business decisions.
     I am constantly refining my skills and am always open to feedback. You can explore my latest work on GitHub.
@@ -32,4 +34,10 @@ remote_theme: "pages-themes/minimal@v0.2.0"
 plugins:
   - jekyll-remote-theme
 
-
+# Add custom CSS to hide "Hosted on GitHub Pages" in footer
+head:
+  - <style>
+      footer {
+        display: none;
+      }
+    </style>
