@@ -5,9 +5,6 @@ description: |
     <!-- Logo with circular shape (Image on top) -->
     <img src="/images/KDimage.jpeg?raw=true" style="border-radius: 50%; width: 150px; height: 150px;"/>
 
-    <!-- Title below the image -->
-    <h1 style="color: #333333; margin-top: 20px;">Keshav Dewan</h1> <!-- Title -->
-
     <!-- Subheading below the title -->
     <h3 style="color: #333333; margin-top: 5px;">Transforming Data into Insights</h3> <!-- Subheading -->
 
@@ -29,7 +26,6 @@ remote_theme: "pages-themes/minimal@v0.2.0"
 plugins:
   - jekyll-remote-theme
 
-google_analytics: "UA-000000-0" # your Google Analytics tracking ID here
 
 # Add custom CSS to hide "Hosted on GitHub Pages" in footer
 head:
