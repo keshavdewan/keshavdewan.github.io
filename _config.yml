@@ -1,9 +1,9 @@
-title: Keshav Dewan # your name (or website title) here
+
 description: |
   <div style="text-align: center;">
     <!-- Logo with circular shape (Image on top) -->
     <img src="/images/KDimage.jpeg?raw=true" alt="Keshav Dewan" style="border-radius: 50%; width: 150px; height: 150px;"/>
-
+title: Keshav Dewan # your name (or website title) here
     <!-- Title below the image -->
     <h1 style="color: #333333; margin-top: 20px;">Keshav Dewan</h1> <!-- Title -->
 
