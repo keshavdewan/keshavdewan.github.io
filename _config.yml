@@ -1,14 +1,16 @@
 title: Keshav Dewan # your name (or website title) here
 logo: "/images/KDimage.jpeg?raw=true" # your photo (or logo) here
 description: |
+  <div style="text-align: center;">
+    <img src="/images/KDimage.jpeg?raw=true" alt="Keshav Dewan" style="border-radius: 50%; width: 150px; height: 150px;"/>
+  </div>
+
   <strong><br> Transforming data into insights <br></strong>
 
   <br>Hello,
 
   I am a Data & Business Analyst with a background in Research, Consulting, and Business Development.
 
-  
-  
   <b>Key Skills: SQL | Power BI | Python | Tableau | Google Data Studio | Advanced Microsoft Office </b>
 
   <br>
@@ -18,5 +20,4 @@ remote_theme: "pages-themes/minimal@v0.2.0"
 plugins:
   - jekyll-remote-theme
 
-
-
+google_analytics: "UA-000000-0" # your Google Analytics tracking ID here
