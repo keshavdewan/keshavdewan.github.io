@@ -1,9 +1,10 @@
+title: Keshav Dewan # your name (or website title) here
 
 description: |
   <div style="text-align: center;">
     <!-- Logo with circular shape (Image on top) -->
-    <img src="/images/KDimage.jpeg?raw=true" alt="Keshav Dewan" style="border-radius: 50%; width: 150px; height: 150px;"/>
-title: Keshav Dewan # your name (or website title) here
+    <img src="/images/KDimage.jpeg?raw=true" style="border-radius: 50%; width: 150px; height: 150px;"/>
+
     <!-- Title below the image -->
     <h1 style="color: #333333; margin-top: 20px;">Keshav Dewan</h1> <!-- Title -->
 
@@ -15,10 +16,6 @@ title: Keshav Dewan # your name (or website title) here
       <strong>Key Skills:</strong> SQL | Power BI | Python | Tableau | Google Data Studio | Advanced Microsoft Office
     </p>
   </div>
-
-# Hide "Hosted on GitHub Pages" in footer
-exclude:
-  - "README.md"
 
 remote_theme: "pages-themes/minimal@v0.2.0"
 
