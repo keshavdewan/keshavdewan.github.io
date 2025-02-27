@@ -4,23 +4,22 @@ description: |
     <!-- Logo with circular shape (Image on top) -->
     <img src="/images/KDimage.jpeg?raw=true" alt="Keshav Dewan" style="border-radius: 50%; width: 150px; height: 150px;"/>
 
-    <!-- Name below the logo -->
-    <h1 style="margin-top: 10px;">Keshav Dewan</h1>
+    <!-- Description text -->
+    <p style="color: #333333; font-size: 16px; margin-top: 20px;">
+      Hello, I am a Data Analyst with a background in Research, Consulting, and Business Development.
+      My transition into Analytics stemmed from a desire to focus on generating insights that drive impactful business decisions.
+      I am constantly refining my skills and am always open to feedback. You can explore my latest work on GitHub.
+    </p>
 
-    <!-- Subheading below the name in blue -->
-    <h3 style="color: blue; margin-top: 5px;">Transforming Data into Insights</h3>
+    <!-- Title and Subheading below the description -->
+    <h1 style="color: #333333; margin-top: 20px;">Keshav Dewan</h1> <!-- Title -->
+    <h3 style="color: #333333; margin-top: 5px;">Transforming Data into Insights</h3> <!-- Subheading -->
   </div>
 
-  <!-- Introduction and Key Skills Section -->
-  <p style="text-align: center; margin-top: 20px;">
-    Hello, I am a Data Analyst with a background in Research, Consulting, and Business Development.
-    My transition into Analytics stemmed from a desire to focus on generating insights that drive impactful business decisions.
-    I am constantly refining my skills and am always open to feedback. You can explore my latest work on GitHub.
-  </p>
-  
-  <!-- Add a gap between the introduction and key skills -->
+  <!-- Add a gap between the description and key skills -->
   <div style="margin-bottom: 20px;"></div>
 
+  <!-- Key Skills Section -->
   <p style="text-align: center;">
     <strong>Key Skills:</strong> SQL | Power BI | Python | Tableau | Google Data Studio | Advanced Microsoft Office
   </p>
