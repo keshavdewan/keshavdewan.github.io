@@ -8,7 +8,7 @@ This 8-week SQL challenge uses various case studies to enhance my SQL skills. Ea
 
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
-<img src = "https://github.com/user-attachments/assets/2776ba14-3402-4657-8ad1-b157cca03021" width width="500" height="400" />
+<img src = "https://github.com/user-attachments/assets/2776ba14-3402-4657-8ad1-b157cca03021" width="500" height="400" />
 
 
 [View Repository](https://github.com/keshavdewan/8-Weeks-SQL-Challenge/tree/main)
