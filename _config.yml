@@ -4,25 +4,17 @@ description: |
     <!-- Logo with circular shape (Image on top) -->
     <img src="/images/KDimage.jpeg?raw=true" alt="Keshav Dewan" style="border-radius: 50%; width: 150px; height: 150px;"/>
 
-    <!-- Description text -->
-    <p style="color: #333333; font-size: 16px; margin-top: 20px;">
-      Hello, I am a Data Analyst with a background in Research, Consulting, and Business Development.
-      My transition into Analytics stemmed from a desire to focus on generating insights that drive impactful business decisions.
-      I am constantly refining my skills and am always open to feedback. You can explore my latest work on GitHub.
-    </p>
-
-    <!-- Title and Subheading below the description -->
+    <!-- Title below the image -->
     <h1 style="color: #333333; margin-top: 20px;">Keshav Dewan</h1> <!-- Title -->
+
+    <!-- Subheading below the title -->
     <h3 style="color: #333333; margin-top: 5px;">Transforming Data into Insights</h3> <!-- Subheading -->
+
+    <!-- Key Skills Section -->
+    <p style="text-align: center;">
+      <strong>Key Skills:</strong> SQL | Power BI | Python | Tableau | Google Data Studio | Advanced Microsoft Office
+    </p>
   </div>
-
-  <!-- Add a gap between the description and key skills -->
-  <div style="margin-bottom: 20px;"></div>
-
-  <!-- Key Skills Section -->
-  <p style="text-align: center;">
-    <strong>Key Skills:</strong> SQL | Power BI | Python | Tableau | Google Data Studio | Advanced Microsoft Office
-  </p>
 
 # Hide "Hosted on GitHub Pages" in footer
 exclude:
