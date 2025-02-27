@@ -1,19 +1,20 @@
 title: Keshav Dewan # your name (or website title) here
 logo: "/images/KDimage.jpeg?raw=true" # your photo (or logo) here
-description: >
-
+description: |
   <strong><br> Transforming data into insights <br></strong>
 
   <br>Hello,
 
-  I am a Data & Business Analyst with a background in Research, Consulting and Business Development.
+  I am a Data & Business Analyst with a background in Research, Consulting, and Business Development.
 
-  <b>Key Skills: SQL| Power BI| Python| Tableau| Google Data Studio| Advanced Microsoft Office </b>
+  <b>Key Skills: SQL | Power BI | Python | Tableau | Google Data Studio | Advanced Microsoft Office </b>
 
-<br>
+  <br>
   <a href="https://www.linkedin.com/in/keshavdewan/">View My LinkedIn Profile</a>
 
-remote_theme: pages-themes/minimal@v0.2.0
+remote_theme: "pages-themes/minimal@v0.2.0"
+
 plugins:
-- jekyll-remote-theme
-google_analytics: UA-000000-0 # your Google Analytics tracking ID here
+  - jekyll-remote-theme
+
+google_analytics: "UA-000000-0" # your Google Analytics tracking ID here
