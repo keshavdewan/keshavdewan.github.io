@@ -34,9 +34,12 @@ remote_theme: "pages-themes/minimal@v0.2.0"
 plugins:
   - jekyll-remote-theme
 
+google_analytics: "UA-000000-0" # your Google Analytics tracking ID here
+
 # Add custom CSS to hide "Hosted on GitHub Pages" in footer
 head:
-  - <style>
+  - |
+    <style>
       footer {
         display: none;
       }
