@@ -1,7 +1,5 @@
 ## Some of my Projects
 
----
-
 ### 8 Weeks SQL Challenge
 
 This 8-week SQL challenge uses various case studies to enhance my SQL skills. Each case study presents unique problems that allow me to demonstrate my knowledge of SQL query writing, data analysis, and logical problem-solving.
