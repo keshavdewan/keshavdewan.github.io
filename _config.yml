@@ -1,21 +1,21 @@
 title: Keshav Dewan # your name (or website title) here
 logo: "/images/KDimage.jpeg?raw=true" # your photo (or logo) here
-description: > # your text below (remove <br> elements if you don't need line breaks)
-  First description 
+description: >
+  First description
   <br> Transforming data into insights <br>
-  Second description 
+  Second description
   <br>Hello,
 
-I am a Data & Business Analyst with a background in Research, Consulting and Business Development.
+  I am a Data & Business Analyst with a background in Research, Consulting and Business Development.
 
-My transition into Analytics stemmed from a desire to focus on generating insights that drive impactful business decisions. During my recent opportunity at a Food Waste Management startup, 
-I worked on sustainability-focused analytics, leveraging data to support waste reduction and promote sustainable practices.
+  My transition into Analytics stemmed from a desire to focus on generating insights that drive impactful business decisions. During my recent opportunity at a Food Waste Management startup,
+  I worked on sustainability-focused analytics, leveraging data to support waste reduction and promote sustainable practices.
 
-Key Skills: SQL| Power BI| Python| Tableau| Google Data Studio| Advanced Microsoft Office
+  Key Skills: SQL| Power BI| Python| Tableau| Google Data Studio| Advanced Microsoft Office
 
-I am constantly refining my skills and am always open to feedback. You can explore my latest work on GitHub.<br>
-  <a href="https://www.linkedin.com/in/keshavdewan/">View My LinkedIn Profile</a> 
-  
+  I am constantly refining my skills and am always open to feedback. You can explore my latest work on GitHub.<br>
+  <a href="https://www.linkedin.com/in/keshavdewan/">View My LinkedIn Profile</a>
+
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
 - jekyll-remote-theme
