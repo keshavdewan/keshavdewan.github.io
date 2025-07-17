@@ -4,7 +4,7 @@
 
 Step into the role of a data analyst at OmniRetail, a U.S. retail chain selling electronics and smart home products through both online and physical stores. To improve customer satisfaction and retention, the company has collected feedback throughout 2024.
 
-<img src = "https://github.com/user-attachments/assets/c8d573f7-0517-45d9-9a4b-aa5dfc46468a" width="400" height="250" />
+<img src = "https://github.com/user-attachments/assets/c8d573f7-0517-45d9-9a4b-aa5dfc46468a" width="400" height="200" />
 
 ---
 
