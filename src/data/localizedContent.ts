@@ -243,9 +243,9 @@ export const STACK_I18N: Record<Lang, StackColumn[]> = {
     },
     {
       name: 'IA & Automatisation de workflows',
-      tools: 'LLMs · Architecture RAG · Model Context Protocol (MCP) · Supabase',
+      tools: 'LLMs · Architecture RAG · Model Context Protocol (MCP) · Supabase · Render',
       detail:
-        'Développement assisté par IA (Claude, ChatGPT, Gemini), prompt engineering, extraction structurée, recherche conversationnelle et automatisation par API/webhooks.',
+        'Développement assisté par IA (Claude, Gemini, Antigravity), prompt engineering, extraction structurée, recherche conversationnelle et automatisation par API/webhooks.',
     },
     {
       name: 'Gouvernance & Storytelling',
@@ -269,9 +269,9 @@ export const STACK_I18N: Record<Lang, StackColumn[]> = {
     },
     {
       name: 'KI & Workflow-Automatisierung',
-      tools: 'LLMs · RAG-Architektur · Model Context Protocol (MCP) · Supabase',
+      tools: 'LLMs · RAG-Architektur · Model Context Protocol (MCP) · Supabase · Render',
       detail:
-        'KI-gestützte Entwicklung (Claude, ChatGPT, Gemini), Prompt Engineering, strukturierte Extraktion, konversationelle Event-Suche und API/Webhook-Automatisierung.',
+        'KI-gestützte Entwicklung (Claude, Gemini, Antigravity), Prompt Engineering, strukturierte Extraktion, konversationelle Event-Suche und API/Webhook-Automatisierung.',
     },
     {
       name: 'Governance & Storytelling',
@@ -321,7 +321,8 @@ export const TARGET_ROLES_I18N: Record<Lang, string[]> = {
     'Spécialiste BI',
     'Consultant Data Analytics',
     'Data Engineering Analyst',
-    'Spécialiste IA & Automatisation de données',
+    'Analyste Data assisté par IA',
+    'Analyste Reporting & Automatisation',
   ],
   de: [
     'Business Intelligence Analyst',
@@ -330,7 +331,8 @@ export const TARGET_ROLES_I18N: Record<Lang, string[]> = {
     'BI Specialist',
     'Data Analytics Consultant',
     'Data Engineering Analyst',
-    'AI & Data Automation Specialist',
+    'AI-Enabled Data Analyst',
+    'Reporting & Automation Analyst',
   ],
 };
 
@@ -341,14 +343,14 @@ export const SKILLS_I18N: Record<Lang, typeof SKILL_GROUPS> = {
     { name: 'Programmation & Bases de données', items: 'Python, Pandas, SQL, PostgreSQL, DBeaver, Supabase' },
     { name: 'Data Engineering & Gouvernance', items: 'Pipelines ETL/ELT, Modélisation en étoile, AWS Lambda, Row-Level Security (RLS), Validation & Audits' },
     { name: 'IA & Automatisation intelligente', items: 'LLMs, Architecture RAG, Model Context Protocol (MCP), Prompt Engineering, API REST & Webhooks, Développement assisté par IA (Claude, ChatGPT, Gemini)' },
-    { name: 'Développement & Collaboration', items: 'Git, CI/CD, VS Code, Documentation technique, Coordination parties prenantes' },
+    { name: 'Développement & Collaboration', items: 'Render, Git, CI/CD, VS Code, Antigravity, Documentation technique, Coordination parties prenantes' },
   ],
   de: [
     { name: 'BI & Visualisierung', items: 'Power BI (PL-300), Microsoft Fabric, DAX, Power Query, Report Builder, Tableau, Amazon QuickSight, Looker Studio' },
     { name: 'Programmierung & Datenbanken', items: 'Python, Pandas, SQL, PostgreSQL, DBeaver, Supabase' },
     { name: 'Data Engineering & Governance', items: 'ETL/ELT-Pipelines, Star-Schema-Modellierung, AWS Lambda, Row-Level Security (RLS), Datenvalidierung & Audits' },
     { name: 'KI & Intelligente Automatisierung', items: 'LLMs, RAG-Architektur, Model Context Protocol (MCP), Prompt Engineering, REST-APIs & Webhooks, KI-gestützte Entwicklung (Claude, ChatGPT, Gemini)' },
-    { name: 'Entwicklung & Zusammenarbeit', items: 'Git, CI/CD, VS Code, Technische Dokumentation, Stakeholder-Kommunikation' },
+    { name: 'Entwicklung & Zusammenarbeit', items: 'Render, Git, CI/CD, VS Code, Antigravity, Technische Dokumentation, Stakeholder-Kommunikation' },
   ],
 };
 
@@ -452,6 +454,89 @@ export const WORK_TRANSLATIONS: Record<'fr' | 'de', Record<string, WorkTranslati
         },
       ],
     },
+    'construction-bi-paginated-reporting': {
+      title: 'PoC BI Construction & Rapports paginés',
+      descriptor: 'Modèle BI construction avec masquage automatique des données de démo et rapports imprimables.',
+      tagline: 'Modèle Power BI Proof-of-Concept réunissant comptabilité, chiffre d’affaires, RH et logistique — avec anonymisation automatique des chiffres sensibles pour les démos et rapports PDF/Excel filtrables sous Power BI Report Builder.',
+      organization: 'Mediasoft Group — PoC BI Construction',
+      status: 'Proof-of-Concept & Documentation',
+      categoryLabel: 'BI & Gouvernance',
+      stats: [
+        { value: '4 domaines', label: 'Comptabilité, chiffre d’affaires, RH et logistique réunis en un modèle' },
+        { value: 'Données sûres', label: 'Brouillage automatique des noms et montants directement dans Power Query' },
+        { value: 'PDF + Interactif', label: 'Tableaux de bord interactifs couplés à des états prêts à imprimer (.rdl)' },
+      ],
+      capabilities: ['Masquage automatique Power Query', 'Formatage clair M / Mrd (DAX)', 'Rapports PDF & Excel (Report Builder)', 'Formatage financier FR/CH', 'Documentation technique BI'],
+      sections: [
+        {
+          heading: 'Présentation du projet',
+          paragraphs: [
+            'Ce Proof-of-Concept conçu chez Mediasoft Group montre comment centraliser comptabilité, revenus historiques, heures RH et logistique chantier dans une seule architecture BI.',
+          ],
+        },
+        {
+          heading: 'Problématique métier',
+          paragraphs: [
+            'Permettre aux futurs clients d’explorer des tableaux de bord ERP réalistes en démonstration sans jamais exposer de vrais chiffres confidentiels, tout en fournissant des états financiers faciles à imprimer ou exporter.',
+          ],
+        },
+        {
+          heading: 'Approche technique',
+          bullets: [
+            'Règles simples dans Power Query qui remplacent automatiquement les vrais noms et montants pour des démonstrations 100 % confidentielles.',
+            'Affichage dynamique en millions (M) et milliards (Mrd) adapté aux normes décimales francophones.',
+            'Tableaux de bord Power BI interactifs accompagnés de rapports paginés Power BI Report Builder (.rdl) filtrables et exportables en PDF ou Excel.',
+          ],
+        },
+        {
+          heading: 'Principaux résultats',
+          bullets: [
+            'Démonstrateur réutilisable et sécurisé accompagné d’une documentation technique complète de 18 sections.',
+          ],
+        },
+      ],
+    },
+    'glpi-it-analytics': {
+      title: 'Analytique Tickets & SLA ITSM (GLPI)',
+      descriptor: 'Modélisation du cycle de vie des tickets, DAX SLA et documentation automatisée via Claude MCP.',
+      tagline: 'Analytique Power BI pour le support IT GLPI avec suivi SLA, planification Gantt et workflow Claude MCP + python-docx analysant le modèle PBIP pour générer les guides.',
+      organization: 'Mediasoft Group — Analytique IT interne',
+      status: 'Modèle PBIP & docs Claude MCP',
+      categoryLabel: 'IA & Automatisation',
+      stats: [
+        { value: '30 tables', label: 'Modèle relationnel GLPI avec 24 mesures DAX en PBIP/TMDL' },
+        { value: 'Claude MCP', label: 'Connexion de Claude via MCP aux fichiers PBIP/TMDL pour automatiser la doc' },
+        { value: 'SLA + Gantt', label: 'Délais de clôture/résolution et suivi Gantt du département BI' },
+      ],
+      capabilities: ['Inspection de modèle Claude MCP', 'Modélisation cycle ITSM', 'Mesures DAX SLA & retards', 'Calculs Gantt', 'Documentation Word/Markdown automatisée'],
+      sections: [
+        {
+          heading: 'Présentation du projet',
+          paragraphs: [
+            'Suite analytique Power BI dédiée aux tickets GLPI, couplée à un workflow Claude MCP et Python (python-docx) qui inspecte le modèle PBIP pour générer automatiquement les guides d’utilisation.',
+          ],
+        },
+        {
+          heading: 'Problématique métier',
+          paragraphs: [
+            'Les équipes IT et BI manquaient de visibilité sur les files de tickets, les délais SLA et les demandes BI, tandis que la documentation manuelle devenait vite obsolète.',
+          ],
+        },
+        {
+          heading: 'Approche technique',
+          bullets: [
+            'Modélisation de 30 tables GLPI et 24 mesures DAX (Moyenne_Jours_Cloture, Moyenne_Jours_Resolution, Est_Ticket_BI, Durée_Gantt).',
+            'Utilisation de Claude MCP sur l’architecture PBIP/TMDL et génération automatique des guides Word et Markdown via python-docx.',
+          ],
+        },
+        {
+          heading: 'Principaux résultats',
+          bullets: [
+            'Pilotage unifié des SLA et suppression des écarts documentaires grâce à Claude MCP et l’automatisation Python.',
+          ],
+        },
+      ],
+    },
     'itu-sdg-dashboards': {
       title: 'Tableaux de bord ODD ONU & Plan stratégique',
       descriptor: 'Suivi de plus de 30 indicateurs institutionnels à l’Union internationale des télécommunications.',
@@ -517,6 +602,108 @@ export const WORK_TRANSLATIONS: Record<'fr' | 'de', Record<string, WorkTranslati
           heading: 'Principaux résultats',
           bullets: [
             'Amélioration de 40 % de l’efficacité des processus et fiabilisation accrue des données de reporting.',
+          ],
+        },
+      ],
+    },
+    'internal-billing-logistics-bi': {
+      title: 'BI Facturation Interne & Logistique Flotte (Modèle à rôles)',
+      descriptor: 'Suivi des refacturations internes de flotte et des expéditions dépôt-chantier en 3 étapes.',
+      tagline: 'Modèle Power BI anonymisé pour le BTP suisse résolvant les refacturations internes entre dépôts émetteurs et chantiers via des dimensions à rôles.',
+      organization: 'Entreprise suisse de construction (via Mediasoft Group)',
+      status: 'Spécification & modèle BI livrés',
+      categoryLabel: 'BI & Gouvernance',
+      stats: [
+        { value: '2 modules', label: 'Locations de flotte (fi212) et commandes de matériel (fi400)' },
+        { value: 'Rôles doubles', label: 'Séparation PRODUIT (dépôt émetteur) vs. CHARGE (chantier récepteur)' },
+        { value: '3 quantités', label: 'Suivi commandé, préparé et livré sur chaque ligne de bon' },
+      ],
+      capabilities: ['Schéma en étoile à rôles', 'Logique de refacturation interne', 'Analytique flotte & engins', 'Suivi d’expédition en 3 étapes'],
+      sections: [
+        {
+          heading: 'Présentation du projet',
+          paragraphs: [
+            'Rapport Power BI conçu pour un responsable logistique (client suisse anonymisé) afin de suivre la facturation interne des véhicules, engins et matériaux mobilisés sur chantiers.',
+          ],
+        },
+        {
+          heading: 'Approche technique',
+          bullets: [
+            'Séparation des points de vue analytiques via DIM_CA_PRODUIT vs. DIM_CA_CHARGE et DIM_GENRES_FRAIS_PRODUIT vs. CHARGE reliés au catalogue DIM_ARTICLES_LIGHT.',
+          ],
+        },
+        {
+          heading: 'Principaux résultats',
+          bullets: [
+            'Traçabilité complète des locations journalières internes et des bons de commande non encore livrés.',
+          ],
+        },
+      ],
+    },
+    'hr-payroll-sql-datamart': {
+      title: 'Couche Datamart SQL RH & Paie ERP',
+      descriptor: 'Transformation de tables ERP OpenEdge en vues SQL DATAMART prêtes pour Power BI.',
+      tagline: 'Conception d’une couche de 10 vues SQL traduisant des codes ERP Progress/OpenEdge cryptiques en vues analytiques RH et paie lisibles en français.',
+      organization: 'Entreprise suisse de construction (via Mediasoft Group)',
+      status: 'Vues SQL Datamart en production',
+      categoryLabel: 'Data Engineering',
+      stats: [
+        { value: '10 vues', label: 'Vues SQL DATAMART.DIM_* et DATAMART.F_* sur tables PUB.*' },
+        { value: 'RH + Paie', label: 'Salaires fixes, variables, soldes, rapports de travail et heures' },
+        { value: 'Schéma unifié', label: 'Nommage métier francophone avant ingestion Power BI' },
+      ],
+      capabilities: ['Ingénierie de vues SQL', 'Abstraction de schéma ERP', 'Modélisation RH & paie', 'Intégration heures & soldes'],
+      sections: [
+        {
+          heading: 'Présentation du projet',
+          paragraphs: [
+            'Couche d’abstraction SQL DATAMART de 10 vues (projet client suisse anonymisé) exposant proprement les données RH et paie issues de tables ERP Progress/OpenEdge.',
+          ],
+        },
+        {
+          heading: 'Approche technique',
+          bullets: [
+            'Traduction des codes ERP à 4 caractères en 4 dimensions et 6 faits normalisés (salariés, calendriers, rapports de travail, fixes, variables et soldes).',
+          ],
+        },
+        {
+          heading: 'Principaux résultats',
+          bullets: [
+            'Suppression des renommages complexes dans Power Query et contrat SQL partagé pour le reporting RH.',
+          ],
+        },
+      ],
+    },
+    'accounting-gl-dax-audit': {
+      title: 'Consolidation Grand Livre & Audit Sémantique DAX',
+      descriptor: 'Modèle Power BI comptable pluriannuel et audit complet de 114 mesures DAX.',
+      tagline: 'Projet suisse anonymisé combinant consolidation du Grand Livre sur 5 ans, 5 hiérarchies de comptes et nettoyage vérifié de 114 mesures DAX.',
+      organization: 'Groupe suisse Hôtellerie & Construction (via Mediasoft Group)',
+      status: 'Audit & modèle sémantique refactorisé',
+      categoryLabel: 'BI & Gouvernance',
+      stats: [
+        { value: '114 mesures', label: 'Dictionnaire DAX audité de bout en bout sur 10 pages' },
+        { value: '24 épurées', label: 'Mesures inutilisées (257 lignes DAX) et 24 entités supprimées' },
+        { value: '5 ans GL', label: 'Consolidation du Grand Livre (2022–2026) à la ligne d’écriture' },
+      ],
+      capabilities: ['Consolidation Grand Livre', 'Modélisation P&L et Bilan signée', 'Audit & refactoring DAX', 'Validation structurelle PBIP / TMDL'],
+      sections: [
+        {
+          heading: 'Présentation du projet',
+          paragraphs: [
+            'Consolidation de 5 années de Grand Livre dans un modèle Power BI unique avec 5 hiérarchies de comptes et audit complet des 114 mesures DAX sur 10 pages.',
+          ],
+        },
+        {
+          heading: 'Approche technique',
+          bullets: [
+            'Convention de signe appliquée une fois en Power Query au grain d’écriture comptable, et vérification systématique des liaisons visuelles avant suppression de 24 mesures mortes.',
+          ],
+        },
+        {
+          heading: 'Principaux résultats',
+          bullets: [
+            'Modèle allégé (257 lignes de DAX superflues retirées) tout en préservant exactement les chiffres financiers.',
           ],
         },
       ],
@@ -751,6 +938,89 @@ export const WORK_TRANSLATIONS: Record<'fr' | 'de', Record<string, WorkTranslati
         },
       ],
     },
+    'construction-bi-paginated-reporting': {
+      title: 'Bau-BI & Paginiertes Reporting PoC',
+      descriptor: 'Bau-BI-Modell mit automatischer Demo-Datenmaskierung und druckfertigen Managementberichten.',
+      tagline: 'Power-BI-Proof-of-Concept für Buchhaltung, Umsatz, HR und Logistik — mit automatischer Verschleierung sensibler Demowerte in Power Query sowie filterbaren PDF-/Excel-Berichten im Power BI Report Builder.',
+      organization: 'Mediasoft Group — Construction BI PoC',
+      status: 'BI Proof-of-Concept & Dokumentation',
+      categoryLabel: 'BI & Governance',
+      stats: [
+        { value: '4 Domänen', label: 'Buchhaltung, Umsatz, HR/Arbeitsrapporte und Logistik in einem Modell' },
+        { value: 'Demo-Sicher', label: 'Automatische Anonymisierung von Firmennamen und Beträgen in Power Query' },
+        { value: 'Druck + Live', label: 'Interaktive Dashboards kombiniert mit druckfertigen PDF-/Excel-Berichten (.rdl)' },
+      ],
+      capabilities: ['Automatische Demo-Maskierung (Power Query)', 'Klare M-/Mrd-Skalierung (DAX)', 'Druckbare PDF- & Excel-Berichte', 'Französische Finanzformatierung', 'Technische BI-Dokumentation'],
+      sections: [
+        {
+          heading: 'Projektübersicht',
+          paragraphs: [
+            'Dieser BI-Proof-of-Concept bei Mediasoft Group zeigt, wie Buchhaltung, Umsatzhistorie, HR-Rapporte und Baustellenlogistik in einem gemeinsamen Reporting-Modell zusammengeführt werden.',
+          ],
+        },
+        {
+          heading: 'Geschäftsproblem',
+          paragraphs: [
+            'Interessenten sollen praxisnahe ERP-Dashboards testen können, ohne vertrauliche Kundenzahlen offenzulegen — inklusive sauber formatierter Berichte für PDF- und Excel-Exporte.',
+          ],
+        },
+        {
+          heading: 'Technischer Ansatz',
+          bullets: [
+            'Automatische Verfremdung von Firmennamen und Geldbeträgen direkt in Power Query für sichere Live-Demos.',
+            'Klare DAX-Darstellung in Millionen (M) und Milliarden (Mrd) passend zur Westschweizer Zahlenformatierung.',
+            'Kombination aus interaktiven Power-BI-Views und filterbaren Report-Builder-Vorlagen (.rdl) für PDF- und Excel-Ausgaben.',
+          ],
+        },
+        {
+          heading: 'Zentrale Erkenntnisse',
+          bullets: [
+            'Wiederverwendbares Demo-Modell samt 18-teiliger technischer BI-Dokumentation.',
+          ],
+        },
+      ],
+    },
+    'glpi-it-analytics': {
+      title: 'IT Service Management (GLPI) Ticket- & SLA-Analytik',
+      descriptor: 'PBIP-Ticketmodell, SLA-DAX und Claude-MCP-gestützte Dokumentationsautomatisierung.',
+      tagline: 'Interaktive Power-BI-Analytik für GLPI-Service-Desks mit SLA-Tracking, Gantt-Zeitplänen sowie Claude-MCP- und python-docx-Workflows zur automatischen Handbucherstellung.',
+      organization: 'Mediasoft Group — Interne IT-Analytik',
+      status: 'PBIP-Modell & Claude-MCP-Doku',
+      categoryLabel: 'KI & Automatisierung',
+      stats: [
+        { value: '30 Tabellen', label: 'Relationales GLPI-Modell mit 24 DAX-Measures in PBIP/TMDL' },
+        { value: 'Claude MCP', label: 'Direkte PBIP/TMDL-Analyse über Claude MCP für automatisierte Doku' },
+        { value: 'SLA + Gantt', label: 'Bearbeitungszeiten und Gantt-Planung für das BI-Team' },
+      ],
+      capabilities: ['Claude-MCP-Modellanalyse', 'ITSM-Lebenszyklusmodell', 'SLA- & Verzugs-DAX', 'Gantt-Zeitplanung', 'Automatisierte Word/Markdown-Doku'],
+      sections: [
+        {
+          heading: 'Projektübersicht',
+          paragraphs: [
+            'End-to-End-Power-BI-Reporting für GLPI-Tickets kombiniert mit Claude MCP und Python (python-docx), um Modellmetadaten automatisch in Benutzerhandbücher zu überführen.',
+          ],
+        },
+        {
+          heading: 'Geschäftsproblem',
+          paragraphs: [
+            'Fehlende Übersicht über Ticket-Warteschlangen, SLA-Laufzeiten und BI-spezifische Anfragen sowie veraltete manuelle Berichts-Dokumentation.',
+          ],
+        },
+        {
+          heading: 'Technischer Ansatz',
+          bullets: [
+            'Aufbau von 30 GLPI-Tabellen und 24 DAX-Measures inkl. Est_Ticket_BI und Gantt-Kennzahlen.',
+            'Einsatz von Claude MCP zur Inspektion der PBIP/TMDL-Dateien und automatischen Erstellung von Word- und Markdown-Leitfäden via python-docx.',
+          ],
+        },
+        {
+          heading: 'Zentrale Erkenntnisse',
+          bullets: [
+            'Transparentes SLA-Monitoring und konsistente Dokumentation ohne manuellen Pflegeaufwand dank Claude MCP und Python.',
+          ],
+        },
+      ],
+    },
     'itu-sdg-dashboards': {
       title: 'UN SDG & Strategic Plan BI-Dashboards',
       descriptor: 'Tracking von über 30 institutionellen Indikatoren bei der ITU.',
@@ -816,6 +1086,108 @@ export const WORK_TRANSLATIONS: Record<'fr' | 'de', Record<string, WorkTranslati
           heading: 'Zentrale Erkenntnisse',
           bullets: [
             'Steigerung der Workflow-Effizienz um 40 % und höhere Zuverlässigkeit der Reporting-Daten.',
+          ],
+        },
+      ],
+    },
+    'internal-billing-logistics-bi': {
+      title: 'Interne Leistungsverrechnung & Flottenlogistik BI (Role-Playing)',
+      descriptor: 'Verfolgung interner Maschinenmieten und dreistufiger Depot-zu-Baustelle-Lieferungen.',
+      tagline: 'Anonymisiertes Schweizer Bau-Power-BI-Modell für interne Umbuchungen zwischen Fuhrpark/Depot und Baustellen über Role-Playing-Dimensionen.',
+      organization: 'Schweizer Bauunternehmen (via Mediasoft Group)',
+      status: 'Gelieferte BI-Spezifikation & Modell',
+      categoryLabel: 'BI & Governance',
+      stats: [
+        { value: '2 Module', label: 'Flottenvermietung (fi212) und Materialbestellungen (fi400)' },
+        { value: 'Role-Playing', label: 'Getrennte PRODUIT- (Depot) und CHARGE- (Baustelle) Dimensionen' },
+        { value: '3 Mengenstufen', label: 'Bestellt, kommissioniert und geliefert je Position' },
+      ],
+      capabilities: ['Role-Playing Star Schema', 'Interne Verrechnung', 'Flotten-Auslastungsanalytik', '3-stufiges Bestelltracking'],
+      sections: [
+        {
+          heading: 'Projektübersicht',
+          paragraphs: [
+            'Power-BI-Bericht für einen Logistikleiter (anonymisierter Schweizer Bau-Kunde) zur Steuerung interner Flottenmieten und Materiallieferungen ohne externe Geldflüsse.',
+          ],
+        },
+        {
+          heading: 'Technischer Ansatz',
+          bullets: [
+            'Trennung von interner Gutschrift (DIM_CA_PRODUIT) und Baustellenbelastung (DIM_CA_CHARGE) über einen gemeinsamen Artikelstamm.',
+          ],
+        },
+        {
+          heading: 'Zentrale Erkenntnisse',
+          bullets: [
+            'Volle Transparenz über Geräteeinsatz, Tagessätze und offene Materialscheine.',
+          ],
+        },
+      ],
+    },
+    'hr-payroll-sql-datamart': {
+      title: 'HR- & Lohnbuchhaltungs-ERP-Datamart (SQL-Views)',
+      descriptor: 'Übersetzung von OpenEdge-ERP-Tabellen in saubere DATAMART-SQL-Views.',
+      tagline: 'Entwicklung einer 10-View-SQL-Datamart-Schicht zur Übersetzung kryptischer Progress/OpenEdge-Codes in Power-BI-fähige HR-Fakten und -Dimensionen.',
+      organization: 'Schweizer Bauunternehmen (via Mediasoft Group)',
+      status: 'Produktive SQL-Datamart-Views',
+      categoryLabel: 'Data Engineering',
+      stats: [
+        { value: '10 Views', label: 'Saubere DATAMART.DIM_* und DATAMART.F_* Views über PUB.*' },
+        { value: 'HR + Lohn', label: 'Fixlöhne, variable Posten, Salden, Arbeitsrapporte & Kalender' },
+        { value: 'Einheitlich', label: 'Klare französische Fachspalten vor dem Power-BI-Import' },
+      ],
+      capabilities: ['SQL-View-Entwicklung', 'Legacy-ERP-Abstraktion', 'HR- & Lohndatenmodellierung', 'Arbeitsrapport-Integration'],
+      sections: [
+        {
+          heading: 'Projektübersicht',
+          paragraphs: [
+            '10-teilige DATAMART-SQL-Schicht (anonymisierter Schweizer Kunde) über kryptischen Progress/OpenEdge-ERP-Tabellen.',
+          ],
+        },
+        {
+          heading: 'Technischer Ansatz',
+          bullets: [
+            'Mapping von 4-stelligen ERP-Codes in 4 Dimensionen und 6 Fakt-Views für Mitarbeiter, Arbeitskalender, Fixlöhne, variable Lohnarten und Salden.',
+          ],
+        },
+        {
+          heading: 'Zentrale Erkenntnisse',
+          bullets: [
+            'Saubere Trennung zwischen ERP-Kürzeln und Downstream-Power-BI-Modellen.',
+          ],
+        },
+      ],
+    },
+    'accounting-gl-dax-audit': {
+      title: 'Hauptbuch-Konsolidierung & Semantikmodell-DAX-Audit',
+      descriptor: 'Mehrjähriges Power-BI-Hauptbuchmodell und vollständiges Audit von 114 DAX-Measures.',
+      tagline: 'Anonymisiertes Schweizer Gruppenprojekt mit 5-Jahres-Hauptbuchkonsolidierung, 5 Kontenhierarchien und Bereinigung von 114 DAX-Measures.',
+      organization: 'Schweizer Hospitality- & Baugruppe (via Mediasoft Group)',
+      status: 'Audit & bereinigtes Semantikmodell',
+      categoryLabel: 'BI & Governance',
+      stats: [
+        { value: '114 Measures', label: 'Vollständiges DAX-Verzeichnis über 10 Berichtsseiten geprüft' },
+        { value: '24 bereinigt', label: 'Ungenutzte Measures (257 DAX-Zeilen) und 24 Alt-Entitäten entfernt' },
+        { value: '5 Jahre GL', label: 'Hauptbuch-Konsolidierung (2022–2026) auf Buchungsebene' },
+      ],
+      capabilities: ['Hauptbuch-Konsolidierung', 'Vorzeichenbereinigte GuV & Bilanz', 'DAX-Refactoring-Audit', 'PBIP / TMDL-Strukturprüfung'],
+      sections: [
+        {
+          heading: 'Projektübersicht',
+          paragraphs: [
+            'Konsolidierung von 5 Jahren Hauptbuchdaten (2022–2026) in ein Power-BI-Modell mit 5 Kontenhierarchien sowie Audit aller 114 DAX-Measures.',
+          ],
+        },
+        {
+          heading: 'Technischer Ansatz',
+          bullets: [
+            'Einheitliche Vorzeichenkonvention in Power Query und Referenzprüfung aller Visual-Bindings vor Entfernung von 24 ungenutzten Measures.',
+          ],
+        },
+        {
+          heading: 'Zentrale Erkenntnisse',
+          bullets: [
+            'Verschlanktes Semantikmodell (257 überflüssige DAX-Zeilen entfernt) bei unveränderten Finanzzahlen.',
           ],
         },
       ],

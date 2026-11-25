@@ -174,13 +174,13 @@ export const UI_COPY: Record<Lang, {
       languagesValue: 'English – Native · French – Intermediate (B1)',
       volunteeringLabel: 'Volunteering',
       volunteeringItems: [
-        { org: 'iCareFish (2026)', detail: 'User engagement and campaign analytics supporting digital transformation decisions' },
+        { org: 'iCareFish (2026 · Remote)', detail: 'User engagement and campaign analytics supporting digital transformation decisions' },
         { org: 'Building Bridges Geneva (2024)', detail: 'Connected cross-sector stakeholders to advance sustainable finance solutions' },
       ],
       connectHeading: "Let's Connect",
       connectP1:
         "I'm always interested in connecting with professionals, recruiters and organizations working in Business Intelligence, Data Analytics, Data Engineering and AI-driven solutions.",
-      connectP2: 'I am open to opportunities across Switzerland and international remote environments.',
+      connectP2: 'I am open to Junior to Mid-level opportunities across Switzerland and international remote environments.',
       targetRolesLabel: 'Areas of interest',
       email: 'Email',
       phone: 'Phone',
@@ -230,8 +230,8 @@ export const UI_COPY: Record<Lang, {
       volItems: [
         {
           title: 'iCareFish',
-          meta: '2026',
-          desc: 'Volunteered as a Data & Research Analyst, analyzing user engagement and campaign performance datasets to support digital transformation decisions.',
+          meta: 'Remote, 2026',
+          desc: 'Volunteered remotely as a Data & Research Analyst, analyzing user engagement and campaign performance datasets to support digital transformation decisions.',
         },
         {
           title: 'Building Bridges',
@@ -308,13 +308,13 @@ export const UI_COPY: Record<Lang, {
       languagesValue: 'Anglais – Langue maternelle · Français – Intermédiaire (B1)',
       volunteeringLabel: 'Bénévolat',
       volunteeringItems: [
-        { org: 'iCareFish (2026)', detail: "Analytique d'engagement utilisateur et de campagnes pour la transformation digitale" },
+        { org: 'iCareFish (2026 · À distance)', detail: "Analytique d'engagement utilisateur et de campagnes pour la transformation digitale" },
         { org: 'Building Bridges Genève (2024)', detail: 'Mise en relation d’acteurs intersectoriels autour de la finance durable' },
       ],
       connectHeading: 'Me contacter',
       connectP1:
         "Je suis toujours ravi d'échanger avec des professionnels, recruteurs et organisations actifs dans la Business Intelligence, l'analytique de données, le Data Engineering et les solutions basées sur l'IA.",
-      connectP2: "Je suis ouvert aux opportunités partout en Suisse ainsi qu'à l'international en télétravail.",
+      connectP2: "Je suis ouvert aux opportunités de niveau Junior à Intermédiaire partout en Suisse ainsi qu'à l'international en télétravail.",
       targetRolesLabel: 'Postes recherchés',
       email: 'E-mail',
       phone: 'Téléphone',
@@ -364,8 +364,8 @@ export const UI_COPY: Record<Lang, {
       volItems: [
         {
           title: 'iCareFish',
-          meta: '2026',
-          desc: "Bénévole en tant que Data & Research Analyst : analyse de l'engagement utilisateur et des performances de campagnes pour orienter les décisions de transformation digitale.",
+          meta: 'À distance, 2026',
+          desc: "Bénévolat à distance en tant que Data & Research Analyst : analyse de l'engagement utilisateur et des performances de campagnes pour orienter les décisions de transformation digitale.",
         },
         {
           title: 'Building Bridges',
@@ -442,13 +442,13 @@ export const UI_COPY: Record<Lang, {
       languagesValue: 'Englisch – Muttersprache · Französisch – Mittelstufe (B1)',
       volunteeringLabel: 'Engagement',
       volunteeringItems: [
-        { org: 'iCareFish (2026)', detail: 'User-Engagement- und Kampagnen-Analytik für digitale Transformation' },
+        { org: 'iCareFish (2026 · Remote)', detail: 'User-Engagement- und Kampagnen-Analytik für digitale Transformation' },
         { org: 'Building Bridges Genf (2024)', detail: 'Branchenübergreifende Vernetzung für Sustainable Finance' },
       ],
       connectHeading: 'Kontakt',
       connectP1:
         'Ich freue mich jederzeit über den Austausch mit Fach- und Führungskräften, Recruitern und Unternehmen aus den Bereichen Business Intelligence, Data Analytics, Data Engineering und KI-gestützten Lösungen.',
-      connectP2: 'Ich bin offen für Positionen in der gesamten Schweiz sowie in internationalen Remote-Umfeldern.',
+      connectP2: 'Ich bin offen für Junior- bis Mid-Level-Positionen in der gesamten Schweiz sowie in internationalen Remote-Umfeldern.',
       targetRolesLabel: 'Zielpositionen',
       email: 'E-Mail',
       phone: 'Telefon',
@@ -498,8 +498,8 @@ export const UI_COPY: Record<Lang, {
       volItems: [
         {
           title: 'iCareFish',
-          meta: '2026',
-          desc: 'Ehrenamtliche Mitarbeit als Data & Research Analyst zur Auswertung von User-Engagement- und Kampagnendaten für digitale Transformationsentscheidungen.',
+          meta: 'Remote, 2026',
+          desc: 'Ehrenamtliche Remote-Mitarbeit als Data & Research Analyst zur Auswertung von User-Engagement- und Kampagnendaten für digitale Transformationsentscheidungen.',
         },
         {
           title: 'Building Bridges',

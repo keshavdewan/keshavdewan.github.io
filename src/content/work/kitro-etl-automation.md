@@ -8,7 +8,7 @@ category: "Data Engineering"
 status: "Delivered during internship"
 color: "brown"
 featured: true
-order: 4
+order: 6
 builtWith:
   - "Python"
   - "Pandas"

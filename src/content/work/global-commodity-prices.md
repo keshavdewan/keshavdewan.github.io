@@ -8,7 +8,7 @@ category: "Data Engineering"
 status: "Live Power BI report"
 color: "brown"
 featured: false
-order: 7
+order: 12
 image: "/images/Global-Commodity-Prices-1960-2022-1.jpg"
 imageCaption: "Power BI dashboard exploring six decades of World Bank commodity price movements across Oil, Coffee, Tea and Sugar."
 builtWith:

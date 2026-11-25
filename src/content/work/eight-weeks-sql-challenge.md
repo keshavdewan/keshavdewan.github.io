@@ -8,7 +8,7 @@ category: "SQL & Analytics"
 status: "Published repositories & articles"
 color: "blue"
 featured: false
-order: 8
+order: 13
 image: "/images/8-Weeks-SQL-Challenge-1.png"
 imageCaption: "PostgreSQL analytical case studies across 8 business domains plus the Parch and Posey relational database."
 builtWith:

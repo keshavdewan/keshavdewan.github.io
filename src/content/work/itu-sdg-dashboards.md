@@ -7,8 +7,8 @@ year: "2023"
 category: "BI & Governance"
 status: "Institutional reporting delivery"
 color: "green"
-featured: true
-order: 3
+featured: false
+order: 7
 builtWith:
   - "Power BI"
   - "SQL"

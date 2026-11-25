@@ -67,7 +67,6 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
         </div>
         <p class="actions">
           <a class="btn solid" href={localizedPath('/work/', lang)}>{t.hero.ctaProjects}</a>
-          <a class="btn" href={SITE.cvPdf} download>{t.hero.ctaCv}</a>
           <a class="btn" href="#contact">{t.hero.ctaContact}</a>
         </p>
       </div>
@@ -266,7 +265,10 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
     <section id="contact" class="field red section">
       <Waves seed={6} count={15} />
       <div class="wrap">
-        <h2 class="display">{t.sections.connectHeading}</h2>
+        <div class="connect-head">
+          <h2 class="display">{t.sections.connectHeading}</h2>
+          <a class="btn solid btn-sm" href={SITE.cvPdf} download>{t.hero.ctaCv}</a>
+        </div>
         <p class="contact-lede">{t.sections.connectP1}</p>
         <p class="contact-sublede">{t.sections.connectP2}</p>
 

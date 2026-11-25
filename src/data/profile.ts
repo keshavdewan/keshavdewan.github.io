@@ -156,9 +156,9 @@ export const STACK_COLUMNS: StackColumn[] = [
   },
   {
     name: 'AI & Workflow Automation',
-    tools: 'LLMs · RAG Architecture · Model Context Protocol (MCP) · Supabase',
+    tools: 'LLMs · RAG Architecture · Model Context Protocol (MCP) · Supabase · Render',
     detail:
-      'AI-assisted SQL and coding workflows (Claude, ChatGPT, Gemini), prompt engineering, structured extraction, conversational event discovery, and API/webhook automation.',
+      'AI-assisted SQL and coding workflows (Claude, Gemini, Antigravity), prompt engineering, structured extraction, conversational event discovery, and API/webhook automation.',
   },
   {
     name: 'Governance & Storytelling',
@@ -213,7 +213,8 @@ export const TARGET_ROLES = [
   'BI Specialist',
   'Data Analytics Consultant',
   'Data Engineering Analyst',
-  'AI & Data Automation Specialist',
+  'AI-Enabled Data Analyst',
+  'Reporting & Automation Analyst',
 ];
 
 export const SKILL_GROUPS = [
@@ -235,6 +236,6 @@ export const SKILL_GROUPS = [
   },
   {
     name: 'Development & Collaboration',
-    items: 'Git, CI/CD Workflows, VS Code, Technical Documentation, Stakeholder Alignment',
+    items: 'Render, Git, CI/CD Workflows, VS Code, Antigravity, Technical Documentation, Stakeholder Alignment',
   },
 ];

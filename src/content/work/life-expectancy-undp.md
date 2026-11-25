@@ -8,7 +8,7 @@ category: "SQL & Analytics"
 status: "Live Power BI report"
 color: "green"
 featured: false
-order: 9
+order: 14
 image: "/images/Life-Expectancy-at-Birth-at-UNDP.jpg"
 imageCaption: "Interactive Power BI view comparing global life expectancy trends, HDI rankings and regional distributions (1990–2021)."
 builtWith:

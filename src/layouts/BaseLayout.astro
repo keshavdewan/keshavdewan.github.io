@@ -169,10 +169,23 @@ const personSchema = includeSchema
     <slot />
 
     <footer class="sitefoot">
-      <div class="wrap">
-        <p>
-          {t.footer.line1}{' '}
-          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+      <div class="wrap sitefoot-inner">
+        <p>{t.footer.line1}</p>
+        <p class="sitefoot-links">
+          <a class="sitefoot-link" href={`mailto:${SITE.email}`}>
+            <img class="sitefoot-icon" src="/images/tech/gmail.svg" alt="" width="16" height="16" loading="lazy" />
+            <span>{SITE.email}</span>
+          </a>
+          <span aria-hidden="true">·</span>
+          <a class="sitefoot-link" href={SITE.phoneHref}>
+            <img class="sitefoot-icon" src="/images/tech/phone.svg" alt="" width="16" height="16" loading="lazy" />
+            <span>{SITE.phone}</span>
+          </a>
+          <span aria-hidden="true">·</span>
+          <a class="sitefoot-link" href={SITE.linkedin} target="_blank" rel="noopener noreferrer">
+            <img class="sitefoot-icon" src="/images/tech/linkedin.svg" alt="" width="16" height="16" loading="lazy" />
+            <span>LinkedIn</span>
+          </a>
         </p>
       </div>
     </footer>

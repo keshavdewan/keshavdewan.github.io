@@ -11,11 +11,13 @@ featured: true
 order: 2
 builtWith:
   - "Python"
-  - "REST APIs"
-  - "LLMs"
+  - "Supabase"
+  - "Render"
+  - "Antigravity"
   - "RAG"
   - "MCP"
-  - "Supabase"
+  - "REST APIs"
+  - "LLMs"
   - "Webhooks"
   - "WhatsApp integration"
 capabilities:
@@ -48,7 +50,7 @@ Local event listings in Geneva are spread across venue websites, newsletters and
 ## Data Sources & Technologies
 
 - **Data sources:** External event feeds retrieved via REST APIs and inbound user queries received through WhatsApp webhook triggers.
-- **Technologies:** Python, REST APIs, Supabase, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), webhooks and WhatsApp messaging integration.
+- **Technologies:** Python, REST APIs, Supabase, Render, Antigravity, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), webhooks and WhatsApp messaging integration.
 
 ## Technical Approach
 

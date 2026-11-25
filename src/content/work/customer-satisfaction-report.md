@@ -7,8 +7,8 @@ year: "2025"
 category: "BI & Governance"
 status: "Published case study"
 color: "purple"
-featured: true
-order: 5
+featured: false
+order: 10
 builtWith:
   - "Power BI"
   - "DAX"

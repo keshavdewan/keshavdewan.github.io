@@ -13,6 +13,7 @@ export const TECH_STACK_LOGOS = [
   { name: 'Tableau', src: '/images/tech/tableau.svg' },
   { name: 'Excel', src: '/images/tech/excel.svg' },
   { name: 'Supabase', src: '/images/tech/supabase.svg' },
+  { name: 'Render', src: '/images/tech/render.svg' },
   { name: 'Claude', src: '/images/tech/claude.svg' },
   { name: 'Gemini', src: '/images/tech/gemini.svg' },
   { name: 'Antigravity', src: '/images/tech/antigravity.svg' },
@@ -35,6 +36,7 @@ export function getTechLogo(label: string): string | null {
   if (s.includes('tableau')) return '/images/tech/tableau.svg';
   if (s.includes('excel') || s.includes('google sheet')) return '/images/tech/excel.svg';
   if (s.includes('supabase')) return '/images/tech/supabase.svg';
+  if (s.includes('render')) return '/images/tech/render.svg';
   if (s.includes('claude')) return '/images/tech/claude.svg';
   if (s.includes('gemini')) return '/images/tech/gemini.svg';
   if (s.includes('antigravity')) return '/images/tech/antigravity.svg';

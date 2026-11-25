@@ -7,8 +7,8 @@ year: "2025"
 category: "BI & Governance"
 status: "Live Power BI report"
 color: "green"
-featured: true
-order: 6
+featured: false
+order: 11
 builtWith:
   - "Power BI"
   - "DAX"

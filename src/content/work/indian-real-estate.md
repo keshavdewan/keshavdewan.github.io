@@ -8,7 +8,7 @@ category: "SQL & Analytics"
 status: "Live Tableau Public viz"
 color: "purple"
 featured: false
-order: 10
+order: 15
 image: "/images/Indian-Real-Estate.png"
 imageCaption: "Tableau Public dashboard segmenting property types, bedroom counts and price-per-sq-ft across 7 Indian cities."
 builtWith:
