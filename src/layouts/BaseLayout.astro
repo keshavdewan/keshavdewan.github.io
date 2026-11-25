@@ -131,10 +131,10 @@ const personSchema = includeSchema
             <a href={`${homeUrl}#about`}>{t.nav.about}</a>
           </li>
           <li>
-            <a href={cvUrl} aria-current={activeNav === 'cv' ? 'page' : undefined}>{t.nav.cv}</a>
+            <a href={`${homeUrl}#contact`}>{t.nav.contact}</a>
           </li>
           <li>
-            <a href={`${homeUrl}#contact`}>{t.nav.contact}</a>
+            <a href={cvUrl} aria-current={activeNav === 'cv' ? 'page' : undefined}>{t.nav.cv}</a>
           </li>
         </ul>
         <div class="nav-controls">
