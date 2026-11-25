@@ -1,8 +1,8 @@
 ---
 title: "Indian Real Estate Market Analytics"
-descriptor: "7-city property pricing & inventory analysis in Python & Tableau"
-tagline: "Analyzing scraped residential property listings across 7 Indian cities to uncover price-per-sq-ft correlations across apartments, villas, and houses."
-organization: "Real Estate Domain Project"
+descriptor: "Residential property pricing and inventory analysis across seven Indian cities."
+tagline: "Connecting commercial real estate domain experience with Python data wrangling and Tableau visualizations to analyze residential listings across seven major cities."
+organization: "Real Estate Domain Analytics"
 year: "2023"
 category: "SQL & Analytics"
 status: "Live Tableau Public viz"
@@ -10,20 +10,23 @@ color: "purple"
 featured: false
 order: 10
 image: "/images/Indian-Real-Estate.png"
-imageCaption: "Tableau Public dashboard segmenting residential supply, bedroom distribution, and price per sq ft across 7 cities."
+imageCaption: "Tableau Public dashboard segmenting property types, bedroom counts and price-per-sq-ft across 7 Indian cities."
 builtWith:
-  - "Python (Pandas, Seaborn, Matplotlib)"
-  - "Tableau Public"
-  - "Microsoft Excel"
+  - "Python"
+  - "Pandas"
+  - "Tableau"
+  - "Excel"
 capabilities:
-  - "Scraped listing wrangling"
-  - "Price & area segmentation"
-  - "Bedroom vs. price-per-sq-ft correlation"
+  - "Property dataset cleaning"
+  - "Price-per-sq-ft segmentation"
+  - "Bedroom & area correlation"
+  - "Cross-city inventory comparison"
+  - "Interactive Tableau storytelling"
 stats:
   - value: "7 Cities"
-    label: "Comparative pricing & inventory across major urban markets"
+    label: "Residential inventory and pricing compared across major markets"
   - value: "3 Types"
-    label: "Apartments, Independent Houses, and Villas segmented"
+    label: "Apartments, Independent Houses and Villas segmented"
 links:
   - label: "Live Tableau Dashboard"
     url: "https://public.tableau.com/app/profile/keshav.dewan3649/viz/IndianRealEstate/RealEstate?publish=yes"
@@ -31,12 +34,24 @@ links:
     url: "https://github.com/keshavdewan/Indian-Real-Estate-Data"
 ---
 
-## Overview
+## Project Overview
 
-Combining my background in real estate research with Python and Tableau, this project cleans and analyzes scraped property listings across **7 major Indian cities**, segmented across **Apartments**, **Independent Houses**, and **Villas**.
+This project combines my prior real estate research and commercial leasing background with Python and Tableau analytics to examine scraped residential property listings across **seven Indian cities**—spanning Apartments, Independent Houses and Villas.
 
-## Key insights delivered
+## Business Problem
 
-- Quantified inventory dominance by property type and bedroom configuration across cities.
-- Examined correlations between bedroom count, total area range, and price per square foot to guide buyer and investor segmentation.
+Raw property listing exports contain inconsistent area units, outlier prices and mixed property formats, making cross-city comparisons difficult for buyers, analysts and investors.
 
+## Data Sources & Technologies
+
+- **Data sources:** Scraped residential property listings dataset covering 7 Indian cities.
+- **Technologies:** Python, Pandas, Seaborn, Matplotlib, Tableau and Microsoft Excel.
+
+## Technical Approach & Implementation
+
+- Cleaned and standardized listing attributes in Python (`Pandas`) and performed initial EDA on property type counts, bedroom configurations and price distributions.
+- Exported curated tables into **Tableau** to build interactive visualizations comparing dominant property types, bedroom availability, area segmentation and correlations between bedroom count, area range and price per square foot.
+
+## Key Findings & Results
+
+- Demonstrated how domain knowledge from commercial real estate research translates directly into clean segmentation logic (price per sq. ft., area brackets and supply mix) in modern BI tools.

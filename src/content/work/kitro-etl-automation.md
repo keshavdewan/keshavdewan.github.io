@@ -1,77 +1,90 @@
 ---
 title: "AWS Costing & Sensor ETL Automation"
-descriptor: "Python & AWS Lambda pipelines cutting manual reporting effort"
-tagline: "Automated multi-source data ingestion, anomaly detection, and cloud costing pipelines for a Zurich sustainability food-tech startup."
-organization: "Kitro SA, Zurich"
+descriptor: "Python-based data processing and AWS Lambda automation."
+tagline: "Automated Python ETL pipelines and serverless AWS Lambda cost-tracking workflows for a Zurich sustainability technology company, improving workflow efficiency by 40%."
+organization: "KITRO SA, Zurich"
 year: "2024"
 category: "Data Engineering"
-status: "Production delivery"
+status: "Delivered during internship"
 color: "brown"
 featured: true
-order: 3
+order: 4
 builtWith:
-  - "Python (Pandas)"
+  - "Python"
+  - "Pandas"
+  - "SQL"
   - "AWS Lambda"
-  - "Amazon QuickSight"
-  - "Power BI"
   - "Google Sheets API"
+  - "Power BI"
+  - "Amazon QuickSight"
 capabilities:
-  - "Automated ETL/ELT pipelines"
-  - "Monthly AWS cost calculation"
-  - "Sensor & operational data cleaning"
-  - "Anomaly & discrepancy detection"
-  - "Stakeholder KPI dashboards"
+  - "Python ETL workflow automation"
+  - "Serverless AWS Lambda scheduling"
+  - "Data cleansing & reconciliation"
+  - "Discrepancy investigation"
+  - "Power BI & QuickSight reporting"
 stats:
   - value: "40%"
-    label: "Improvement in workflow efficiency by automating manual processing"
+    label: "Workflow efficiency improvement from automated data processing"
   - value: "AWS Lambda"
-    label: "Scheduled serverless Python jobs for monthly costing"
+    label: "Automated Python workflows for monthly AWS cost tracking"
   - value: "Multi-Source"
-    label: "Unified operational, sensor, and billing datasets"
+    label: "Cleaned and reconciled datasets for Power BI & QuickSight"
 links:
-  - label: "Read CV"
+  - label: "View CV & Experience"
     url: "/cv/"
 ---
 
-## Context
+## Project Overview
 
-At **Kitro SA** in Zurich (Apr 2024 – Oct 2024), food-waste hardware sensors and cloud infrastructure generated high-volume operational logs alongside recurring monthly AWS cost-tracking tasks. Manual spreadsheet preparation was time-consuming and vulnerable to copy-paste discrepancies.
+At **KITRO SA** in Zurich (April 2024 – October 2024), I developed automated Python data processing workflows and reporting solutions to reduce manual spreadsheet preparation and improve dataset reliability across sustainability and infrastructure metrics.
 
-## Solution
+## Business Problem
 
-- **Serverless costing pipeline:** Built scheduled Python workflows on **AWS Lambda** to pull, aggregate, and calculate monthly AWS costing metrics automatically into structured Google Spreadsheets and reporting views.
-- **Sensor & operational ETL:** Wrote Python cleaning and standardization scripts to reconcile raw multi-source operational and food-waste datasets, surfacing anomalies and missing records early.
-- **Cross-functional visibility:** Built interactive dashboards in **Amazon QuickSight** and **Power BI** summarizing customer behavior, usage patterns, and operational performance.
+Processing large multi-source datasets and preparing recurring monthly AWS cost calculations manually required significant analyst time and risked reconciliation discrepancies across downstream reports.
+
+## Data Sources & Technologies
+
+- **Data sources:** Large multi-source operational/sensor datasets and monthly AWS billing and usage logs.
+- **Technologies:** Python, Pandas, SQL, AWS Lambda, Google Sheets API, Power BI and Amazon QuickSight.
+
+## Technical Approach
 
 <figure data-diagram>
   <ol>
     <li>
-      <strong>Raw Sources</strong>
+      <strong>1. Extraction</strong>
       <ul>
-        <li>AWS Billing &amp; Usage<em>Monthly infrastructure metrics</em></li>
-        <li>Sensor &amp; Ops Logs<em>Multi-source customer activity</em></li>
+        <li>SQL &amp; Python<em>Multi-source &amp; AWS usage data</em></li>
       </ul>
     </li>
     <li>
-      <strong>Serverless Python</strong>
+      <strong>2. Automation &amp; Validation</strong>
       <ul>
-        <li>AWS Lambda<em>Scheduled extraction &amp; cost rules</em></li>
-        <li>Pandas Validation<em>Anomaly &amp; discrepancy checks</em></li>
+        <li>AWS Lambda &amp; Pandas<em>Cleansing, checks &amp; costing rules</em></li>
       </ul>
     </li>
     <li>
-      <strong>Reporting Layer</strong>
+      <strong>3. Reporting</strong>
       <ul>
-        <li>QuickSight &amp; Power BI<em>Usage &amp; sustainability trends</em></li>
-        <li>Google Sheets<em>Automated monthly cost ledger</em></li>
+        <li>Power BI, QuickSight &amp; Sheets<em>Automated ledgers &amp; KPI dashboards</em></li>
       </ul>
     </li>
   </ol>
-  <figcaption>Replacing manual spreadsheet wrangling with scheduled Python &amp; AWS Lambda automation.</figcaption>
+  <figcaption>Automated ETL and AWS costing architecture replacing manual processing steps.</figcaption>
 </figure>
 
-## Impact
+## Implementation
 
-- Reduced manual data processing effort and improved overall workflow efficiency by **40%**.
-- Strengthened reporting accuracy and dataset reliability by resolving pipeline bottlenecks alongside technical and operational teams.
+- Built Python-based ETL workflows using `Pandas` and SQL to extract, clean, validate and reconcile large multi-source datasets.
+- Implemented automated monthly AWS cost-tracking jobs using Python, **AWS Lambda** and the Google Sheets API.
+- Partnered with technical and business teams to investigate data discrepancies and built reporting dashboards in **Power BI** and **Amazon QuickSight**.
 
+## Key Findings & Results
+
+- Automated repetitive data processing workflows, **improving efficiency by 40%**.
+- Improved reporting reliability by catching anomalies and format inconsistencies during automated validation checks before data reached dashboards.
+
+## Challenges & Learnings
+
+- Investigating anomalies across multi-source pipelines required close coordination with engineering teams to trace schema shifts back to upstream collection.

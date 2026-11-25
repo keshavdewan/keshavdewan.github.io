@@ -1,49 +1,67 @@
 ---
 title: "UN SDG & Strategic Plan BI Dashboards"
-descriptor: "Tracking 30+ institutional indicators at ITU Geneva"
-tagline: "Interactive Power BI monitoring and baseline reconciliation for the International Telecommunication Union's 2019–2023 Strategic Plan and UN SDG 2030 targets."
-organization: "ITU (United Nations), Geneva"
+descriptor: "Tracking 30+ institutional indicators at the International Telecommunication Union."
+tagline: "Consolidated multi-departmental data into interactive Power BI dashboards tracking ITU's 2019–2023 Strategic Plan and more than 30 UN Sustainable Development Goal indicators."
+organization: "International Telecommunication Union (ITU) — United Nations, Geneva"
 year: "2023"
 category: "BI & Governance"
-status: "Delivered for leadership review"
+status: "Institutional reporting delivery"
 color: "green"
 featured: true
-order: 4
+order: 3
 builtWith:
   - "Power BI"
   - "SQL"
-  - "Advanced Excel"
-  - "Data Auditing"
+  - "Excel"
+  - "Data Analysis"
 capabilities:
   - "UN SDG KPI monitoring"
-  - "Baseline audit & reconciliation"
-  - "Cross-departmental standardization"
-  - "Executive steering dashboards"
-  - "Data storytelling"
+  - "Multi-departmental data consolidation"
+  - "Data validation & reconciliation"
+  - "Standardized executive reporting"
+  - "Stakeholder presentations"
 stats:
   - value: "30+"
-    label: "UN SDG and institutional indicators monitored & audited"
+    label: "Institutional and UN SDG indicators tracked and validated"
   - value: "2019–2023"
-    label: "Strategic Plan implementation period tracked (Jul 2022–Apr 2023)"
+    label: "ITU Strategic Plan implementation reporting cycle"
   - value: "UN Geneva"
-    label: "Executive steering committee & cross-department reporting"
+    label: "Multi-departmental alignment for senior leadership review"
 links:
-  - label: "Read CV"
+  - label: "View CV & Experience"
     url: "/cv/"
 ---
 
-## Context
+## Project Overview
 
-During my BI Specialist internship at the **International Telecommunication Union (ITU)** in Geneva (Mar 2023 – Jul 2023), leadership needed consolidated visibility into institutional progress across the Union's 2019–2023 Strategic Plan and **30+ UN Sustainable Development Goal (SDG)** indicators.
+During my BI Specialist internship at the **International Telecommunication Union (ITU)** in Geneva (March 2023 – July 2023), I contributed to institutional performance reporting and monitoring of the ITU 2019–2023 Strategic Plan and progress toward the United Nations Sustainable Development Goals (SDGs).
 
-## What I built & audited
+## Business Problem
 
-- **Executive Power BI dashboards:** Designed interactive Power BI reports translating fragmented departmental operational metrics into verified executive data stories and KPI views.
-- **Cross-department standardization:** Conducted secondary research and worked across non-technical departments to align definitions, reporting cadences, and data formats.
-- **Baseline reconciliation & auditing:** Audited and reconciled progress figures across 30+ indicators against institutional baselines using SQL and Excel so steering committees reviewed consistent, defensible numbers.
+Indicator data across an international UN agency originates from multiple specialized departments with varying reporting formats and cadences. Senior stakeholders required a standardized, verified Power BI reporting view covering more than 30 institutional and SDG indicators.
 
-## Outcome
+## Data Sources & Technologies
 
-- Bridged the gap between technical data preparation and senior executive decision-making in an international humanitarian/UN environment.
-- Delivered verified progress tracking for the Strategic Plan implementation review (July 2022 – April 2023) with clear visual hierarchy for leadership.
+- **Data sources:** Multi-departmental institutional progress submissions, Strategic Plan baselines (July 2022 – April 2023 reporting window) and secondary research datasets.
+- **Technologies:** Power BI, SQL, Microsoft Excel, Data Analysis and Data Visualization.
 
+## Technical Approach
+
+- Conducted secondary research and worked across departments to align metric definitions and standardize reporting templates.
+- Used SQL and Excel to validate incoming figures and reconcile discrepancies against institutional baselines prior to visualization.
+- Built interactive Power BI pages structured for executive review rather than raw spreadsheet inspection.
+
+## Implementation
+
+- Designed Power BI dashboards tracking progress across **30+ UN SDG and institutional indicators**.
+- Consolidated multi-departmental tables into structured analytical views enabling leadership to inspect progress by strategic goal and reporting period.
+- Prepared and presented analytical outputs to senior stakeholders.
+
+## Key Findings & Results
+
+- Delivered verified, consistent Power BI monitoring views supporting executive oversight of the ITU Strategic Plan and SDG targets.
+- Reduced friction between technical data preparation and non-technical leadership committees through standardized indicator definitions.
+
+## Challenges & Learnings
+
+- Reconciling metrics submitted by independent departments required clear documentation of baseline assumptions and careful verification before publishing executive figures.

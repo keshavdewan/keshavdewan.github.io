@@ -11,28 +11,64 @@ interface Props {
   activeNav?: 'home' | 'work' | 'cv';
   lang?: Lang;
   currentPath?: string;
+  includeSchema?: boolean;
 }
 
 const {
   title,
-  description = SITE.lede,
+  description = UI_COPY.en.seo.homeDescription,
   note = 'purple',
   activeNav = 'home',
   lang = 'en',
   currentPath = '/',
+  includeSchema = false,
 } = Astro.props;
 
 const t = UI_COPY[lang];
 const homeUrl = localizedPath('/', lang);
 const workUrl = localizedPath('/work/', lang);
 const cvUrl = localizedPath('/cv/', lang);
-const contactUrl = `${homeUrl}#contact`;
 
 const langUrls = {
   en: localizedPath(currentPath, 'en'),
   fr: localizedPath(currentPath, 'fr'),
   de: localizedPath(currentPath, 'de'),
 };
+
+const canonicalUrl = `${SITE.siteUrl}${localizedPath(currentPath, lang)}`;
+const ogImageUrl = `${SITE.siteUrl}/images/keshav-portrait.jpg`;
+
+const personSchema = includeSchema
+  ? JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: SITE.name,
+      jobTitle: SITE.title,
+      url: SITE.siteUrl,
+      image: ogImageUrl,
+      email: SITE.email,
+      telephone: SITE.phone,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Geneva',
+        addressCountry: 'CH',
+      },
+      sameAs: [SITE.linkedin, SITE.github, SITE.medium, SITE.tableau],
+      knowsAbout: [
+        'Business Intelligence',
+        'Power BI',
+        'Microsoft Fabric',
+        'SQL',
+        'PostgreSQL',
+        'Python',
+        'Data Engineering',
+        'ETL',
+        'Generative AI',
+        'Retrieval-Augmented Generation',
+        'Model Context Protocol',
+      ],
+    })
+  : null;
 ---
 <!doctype html>
 <html lang={lang}>
@@ -41,9 +77,27 @@ const langUrls = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en" href={`${SITE.siteUrl}${langUrls.en}`} />
+    <link rel="alternate" hreflang="fr" href={`${SITE.siteUrl}${langUrls.fr}`} />
+    <link rel="alternate" hreflang="de" href={`${SITE.siteUrl}${langUrls.de}`} />
+    <link rel="alternate" hreflang="x-default" href={`${SITE.siteUrl}${langUrls.en}`} />
+
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:locale" content={lang === 'fr' ? 'fr_CH' : lang === 'de' ? 'de_CH' : 'en_US'} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    {personSchema && <script type="application/ld+json" set:html={personSchema} />}
+
     <script is:inline>
       try {
         const t = localStorage.getItem('theme');
@@ -62,13 +116,25 @@ const langUrls = {
         <a class="brand" href={homeUrl}>{SITE.name}</a>
         <ul>
           <li>
-            <a href={workUrl} aria-current={activeNav === 'work' ? 'page' : undefined}>{t.nav.work}</a>
+            <a href={homeUrl} aria-current={activeNav === 'home' ? 'page' : undefined}>{t.nav.home}</a>
+          </li>
+          <li>
+            <a href={`${homeUrl}#about`}>{t.nav.about}</a>
+          </li>
+          <li>
+            <a href={`${homeUrl}#experience`}>{t.nav.experience}</a>
+          </li>
+          <li>
+            <a href={workUrl} aria-current={activeNav === 'work' ? 'page' : undefined}>{t.nav.projects}</a>
+          </li>
+          <li>
+            <a href={`${homeUrl}#expertise`}>{t.nav.expertise}</a>
           </li>
           <li>
             <a href={cvUrl} aria-current={activeNav === 'cv' ? 'page' : undefined}>{t.nav.cv}</a>
           </li>
           <li>
-            <a href={contactUrl}>{t.nav.contact}</a>
+            <a href={`${homeUrl}#contact`}>{t.nav.contact}</a>
           </li>
         </ul>
         <div class="nav-controls">

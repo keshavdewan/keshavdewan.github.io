@@ -1,7 +1,7 @@
 ---
-title: "Global Commodity Prices (1960–2022)"
-descriptor: "World Bank 'Pink Sheet' economic dynamics in Python & Power BI"
-tagline: "Six decades of Oil, Coffee, Tea, and Sugar price cycles analyzed with Python time-series EDA and an interactive Power BI dashboard."
+title: "Global Commodity Price Analysis (1960–2022)"
+descriptor: "Exploring six decades of global commodity price movements using Python and Power BI."
+tagline: "Analyzed World Bank Pink Sheet data covering Oil, Coffee, Tea and Sugar using Python exploratory analysis and an interactive Power BI dashboard."
 organization: "World Bank Pink Sheet Analysis"
 year: "2024"
 category: "Data Engineering"
@@ -10,23 +10,27 @@ color: "brown"
 featured: false
 order: 7
 image: "/images/Global-Commodity-Prices-1960-2022-1.jpg"
-imageCaption: "Power BI dashboard tracking long-term global commodity price cycles across Oil, Coffee, Tea, and Sugar (1960–2022)."
+imageCaption: "Power BI dashboard exploring six decades of World Bank commodity price movements across Oil, Coffee, Tea and Sugar."
 builtWith:
-  - "Python (Pandas, Seaborn, Plotly, Matplotlib)"
+  - "Python"
+  - "Pandas"
+  - "Matplotlib"
+  - "Seaborn"
+  - "Plotly"
   - "Power BI"
   - "DAX"
 capabilities:
-  - "Time-series EDA"
-  - "YoY & MoM variance tracking"
-  - "Macroeconomic event correlation"
-  - "Interactive Power BI slicers & KPIs"
+  - "Exploratory time-series analysis"
+  - "Year-over-year & month-over-month DAX"
+  - "Historical shock comparison"
+  - "Interactive Power BI reporting"
 stats:
-  - value: "62 Years"
-    label: "Historical World Bank Pink Sheet coverage (1960–2022)"
+  - value: "1960–2022"
+    label: "Six decades of World Bank Pink Sheet historical price data"
   - value: "4 Commodities"
-    label: "Crude Oil, Coffee, Tea, and Sugar price dynamics"
+    label: "Oil, Coffee, Tea and Sugar price trajectories analyzed"
   - value: "YoY & MoM"
-    label: "Year-over-year and month-over-month volatility tracking"
+    label: "Historical volatility and percentage-change comparisons"
 links:
   - label: "Live Power BI Dashboard"
     url: "https://app.powerbi.com/view?r=eyJrIjoiMzczZGYyNzEtNGFmNC00Mjk0LWI1MTEtZjNiOGUyMTZiNmE4IiwidCI6ImQ1YjdmMzZhLTAyNTktNDMzZS1iYTNkLTZmM2Y3MTFkMDNiYyIsImMiOjh9"
@@ -34,12 +38,25 @@ links:
     url: "https://github.com/keshavdewan/Global-Commodity-Prices-1960---2022-"
 ---
 
-## Overview
+## Project Overview
 
-Using the World Bank's "Pink Sheet" dataset, this project examines more than six decades of global price movements for **Oil, Coffee, Tea, and Sugar** — foundational commodities sensitive to inflation shocks, supply disruptions, and macroeconomic cycles.
+This project analyzes more than six decades (1960–2022) of global commodity prices for **Oil, Coffee, Tea and Sugar** using the World Bank's "Pink Sheet" dataset, pairing Python exploratory data analysis with an interactive Power BI dashboard.
 
-## Methodology
+## Business Problem
 
-- **Python exploratory analysis:** Performed data wrangling and time-series visualization in Jupyter Notebooks using `Pandas`, `Seaborn`, `Plotly`, and `Matplotlib` to surface historical spikes and structural shifts.
-- **Power BI executive layer:** Built interactive Power BI pages featuring dynamic KPIs, new slicers, navigation buttons, and YoY/MoM percentage change breakdowns so users can inspect exact shock years and underlying drivers.
+Long-horizon commodity datasets contain decades of cyclical spikes and macroeconomic shocks that are hard to compare in static spreadsheets. Analysts need interactive year-over-year and month-over-month views to inspect when and why prices diverged.
 
+## Data Sources & Technologies
+
+- **Data sources:** World Bank "Pink Sheet" commodity price series (1960–2022).
+- **Technologies:** Python, Pandas, Matplotlib, Seaborn, Plotly, Power BI and DAX.
+
+## Technical Approach & Implementation
+
+- Performed data wrangling and time-series EDA in Python notebooks using `Pandas`, `Matplotlib`, `Seaborn` and `Plotly` to inspect distributions, missing periods and multi-decade trends.
+- Built an interactive Power BI dashboard using DAX year-over-year (YoY) and month-over-month (MoM) calculations, dynamic KPIs and modern slicer/button navigation.
+
+## Key Findings & Results
+
+- Visualized multi-decade price cycles and key inflection points across Oil, Coffee, Tea and Sugar in one interactive Power BI experience.
+- Combined Python statistical exploration with accessible executive BI filtering.
