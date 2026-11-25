@@ -110,11 +110,13 @@ const education = EDUCATION_I18N[lang];
     <section class="cv-row">
       <h2 id="vol-h">{t.cvPage.volH}</h2>
       <ul class="cv-list">
-        <li>
-          <strong>{t.cvPage.volTitle}</strong> — <span>{t.cvPage.volMeta}</span>
-          <br />
-          <span>{t.cvPage.volDesc}</span>
-        </li>
+        {t.cvPage.volItems.map((vol) => (
+          <li>
+            <strong>{vol.title}</strong> — <span>{vol.meta}</span>
+            <br />
+            <span>{vol.desc}</span>
+          </li>
+        ))}
       </ul>
     </section>
 

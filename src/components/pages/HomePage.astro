@@ -3,10 +3,9 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Waves from '../Waves.astro';
 import Rosette from '../Rosette.astro';
-import MicroStrip from '../MicroStrip.astro';
 import { SITE } from '../../data/profile';
 import { UI_COPY, localizedPath, type Lang } from '../../data/i18n';
-import { EXPERIENCE_I18N, STACK_I18N, ARTICLES_I18N, WORK_TRANSLATIONS } from '../../data/localizedContent';
+import { EXPERIENCE_I18N, STACK_I18N, WORK_TRANSLATIONS } from '../../data/localizedContent';
 import { TECH_STACK_LOGOS, getCompanyLogo, getTechLogo } from '../../data/logos';
 
 interface Props {
@@ -17,9 +16,8 @@ const { lang } = Astro.props;
 const t = UI_COPY[lang];
 const allWork = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
 const selectedWork = allWork.filter((entry) => entry.data.featured);
-const featuredRoles = EXPERIENCE_I18N[lang].slice(0, 4);
+const featuredRoles = EXPERIENCE_I18N[lang].slice(0, 3);
 const stackPillars = STACK_I18N[lang];
-const featuredArticles = ARTICLES_I18N[lang].slice(0, 4);
 
 const getProjectDisplay = (entry: (typeof allWork)[number]) => {
   if (lang === 'en') {
@@ -47,7 +45,6 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
 >
   <header class="field purple hero">
     <Waves seed={1} count={26} />
-    <MicroStrip />
     <div class="wrap">
       <div>
         <h1 class="display">{SITE.name}</h1>
@@ -55,7 +52,7 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
         <p class="focus">{t.hero.focus}</p>
         <p class="lede">{t.hero.lede}</p>
         <p class="actions">
-          <a class="btn solid" href={localizedPath('/work/', lang)}>{t.hero.ctaWork(allWork.length)}</a>
+          <a class="btn solid" href={localizedPath('/work/', lang)}>{t.hero.ctaWork}</a>
           <a class="btn" href={localizedPath('/cv/', lang)}>{t.hero.ctaCv}</a>
         </p>
       </div>
@@ -144,7 +141,7 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
           })}
         </ul>
         <p class="more">
-          <a href={localizedPath('/work/', lang)}>{t.sections.workMore(allWork.length)}</a>
+          <a href={localizedPath('/work/', lang)}>{t.sections.workMore}</a>
         </p>
       </div>
     </section>
@@ -174,29 +171,6 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
             </li>
           ))}
         </ul>
-      </div>
-    </section>
-
-    <section id="writing" class="field yellow section">
-      <Waves seed={5} count={16} />
-      <div class="wrap">
-        <h2 class="display">{t.sections.writing}</h2>
-        <ul class="rows">
-          {featuredArticles.map((article) => (
-            <li>
-              <a href={article.url} target="_blank" rel="noopener noreferrer">
-                <h3>{article.title}</h3>
-                <span class="who">{article.venue} · {article.date}</span>
-              </a>
-              <p>
-                <span class="desc">{article.summary}</span>
-              </p>
-            </li>
-          ))}
-        </ul>
-        <p class="more">
-          <a href={localizedPath('/writing/', lang)}>{t.sections.writingMore(ARTICLES_I18N[lang].length)}</a>
-        </p>
       </div>
     </section>
 
@@ -259,4 +233,3 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
     </section>
   </main>
 </BaseLayout>
-

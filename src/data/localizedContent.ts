@@ -1,6 +1,6 @@
 import type { Lang } from './i18n';
-import type { RoleEntry, ArticleEntry } from './profile';
-import { EXPERIENCE, STACK_PILLARS, SKILL_GROUPS, EDUCATION, ARTICLES } from './profile';
+import type { RoleEntry } from './profile';
+import { EXPERIENCE, STACK_PILLARS, SKILL_GROUPS, EDUCATION } from './profile';
 
 export const EXPERIENCE_I18N: Record<Lang, RoleEntry[]> = {
   en: EXPERIENCE,
@@ -170,9 +170,9 @@ export const STACK_I18N: Record<Lang, typeof STACK_PILLARS> = {
   en: STACK_PILLARS,
   fr: [
     {
-      name: 'BI & Modélisation sémantique',
-      tools: 'Power BI (PL-300) · Microsoft Fabric · DAX · Power Query',
-      detail: 'Schémas en étoile, Row-Level Security (RLS), filtrage dynamique, Git CI/CD et tableaux de bord exécutifs.',
+      name: 'BI & Ingénierie Fabric',
+      tools: 'Power BI (PL-300) · Microsoft Fabric (DP-600) · DAX · Power Query',
+      detail: 'Architecture Lakehouse & schémas en étoile, Row-Level Security (RLS), filtrage dynamique, Git CI/CD et tableaux de bord exécutifs.',
     },
     {
       name: 'Data Engineering & SQL',
@@ -192,9 +192,9 @@ export const STACK_I18N: Record<Lang, typeof STACK_PILLARS> = {
   ],
   de: [
     {
-      name: 'BI & Semantische Modellierung',
-      tools: 'Power BI (PL-300) · Microsoft Fabric · DAX · Power Query',
-      detail: 'Star-Schema-Modelle, Row-Level Security (RLS), dynamische Filterung, Git CI/CD und Executive Scorecards.',
+      name: 'BI & Fabric Engineering',
+      tools: 'Power BI (PL-300) · Microsoft Fabric (DP-600) · DAX · Power Query',
+      detail: 'Lakehouse- & Star-Schema-Modelle, Row-Level Security (RLS), dynamische Filterung, Git CI/CD und Executive Scorecards.',
     },
     {
       name: 'Data Engineering & SQL',
@@ -217,7 +217,7 @@ export const STACK_I18N: Record<Lang, typeof STACK_PILLARS> = {
 export const SKILLS_I18N: Record<Lang, typeof SKILL_GROUPS> = {
   en: SKILL_GROUPS,
   fr: [
-    { name: 'Analytique & BI', items: 'Power BI (Certifié PL-300), Microsoft Fabric, DAX, Power Query, Modélisation en étoile, Tableau, Looker Studio, Amazon QuickSight, Excel avancé' },
+    { name: 'Analytique & BI', items: 'Power BI (Certifié PL-300), Microsoft Fabric (Certifié DP-600), DAX, Power Query, Modélisation en étoile, Tableau, Looker Studio, Amazon QuickSight, Excel avancé' },
     { name: 'Automatisation & Scripts', items: 'Python (Pandas, Matplotlib, Seaborn, Plotly), SQL (PostgreSQL, DBeaver), API REST, AWS Lambda, Pipelines ETL/ELT' },
     { name: 'Intégration IA & NLP', items: 'LLM, Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), Prompt Engineering, Classification & extraction de texte, Supabase' },
     { name: 'Reporting & Gouvernance', items: 'Row-Level Security (RLS), Validation & audit des données, Détection d’anomalies, Suivi KPI, Confidentialité, Git & CI/CD' },
@@ -225,7 +225,7 @@ export const SKILLS_I18N: Record<Lang, typeof SKILL_GROUPS> = {
     { name: 'Expérience sectorielle', items: 'ONU & Organisations internationales (UIT), Systèmes ERP, Food-Tech & durabilité (Kitro SA), Immobilier d’entreprise' },
   ],
   de: [
-    { name: 'Analytics & BI', items: 'Power BI (PL-300 zertifiziert), Microsoft Fabric, DAX, Power Query, Star-Schema-Modellierung, Tableau, Looker Studio, Amazon QuickSight, Advanced Excel' },
+    { name: 'Analytics & BI', items: 'Power BI (PL-300 zertifiziert), Microsoft Fabric (DP-600 zertifiziert), DAX, Power Query, Star-Schema-Modellierung, Tableau, Looker Studio, Amazon QuickSight, Advanced Excel' },
     { name: 'Automatisierung & Scripting', items: 'Python (Pandas, Matplotlib, Seaborn, Plotly), SQL (PostgreSQL, DBeaver), REST-APIs, AWS Lambda, ETL/ELT-Pipelines' },
     { name: 'KI- & NLP-Integration', items: 'Large Language Models (LLM), Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), Prompt Engineering, Textklassifikation, Supabase' },
     { name: 'Reporting & Data Governance', items: 'Row-Level Security (RLS), Datenvalidierung & Audits, Anomalieerkennung, KPI-Monitoring, Vertraulichkeit, Git & CI/CD' },
@@ -237,26 +237,19 @@ export const SKILLS_I18N: Record<Lang, typeof SKILL_GROUPS> = {
 export const EDUCATION_I18N: Record<Lang, typeof EDUCATION> = {
   en: EDUCATION,
   fr: [
+    { degree: 'DP-600 : Microsoft Certified Fabric Analytics Engineer Associate', institution: 'Certification Microsoft', detail: 'Certification sur la conception, mise en œuvre et gouvernance de lakehouses et modèles sémantiques Microsoft Fabric.' },
     { degree: 'PL-300 : Microsoft Power BI Data Analyst Associate', institution: 'Certification Microsoft', detail: 'Certification sur la préparation, modélisation, visualisation et gouvernance de données Power BI.' },
     { degree: 'Certification Data Analytics', institution: 'CareerFoundry, Allemagne', detail: 'Formation intensive par projets en SQL, Python, Excel avancé, Tableau et Power BI.' },
     { degree: 'Master en gestion avancée de la construction', institution: 'NICMAR, Inde', detail: '2014–2016 · Planification quantitative, gestion commerciale et économie des infrastructures.' },
     { degree: 'Bachelor en ingénierie (BTech)', institution: 'MDU, Inde', detail: '2008–2012 · Fondamentaux d’ingénierie, pensée systémique et mathématiques appliquées.' },
   ],
   de: [
+    { degree: 'DP-600: Microsoft Certified Fabric Analytics Engineer Associate', institution: 'Microsoft-Zertifizierung', detail: 'Zertifiziert für Architektur, Implementierung und Governance von Microsoft-Fabric-Lakehouses und Semantikmodellen.' },
     { degree: 'PL-300: Microsoft Power BI Data Analyst Associate', institution: 'Microsoft-Zertifizierung', detail: 'Zertifiziert in Datenaufbereitung, Modellierung, Visualisierung und Governance mit Power BI.' },
     { degree: 'Data Analytics Zertifizierung', institution: 'CareerFoundry, Deutschland', detail: 'Projektbasiertes Intensivprogramm in SQL, Python, Advanced Excel, Tableau und Power BI.' },
     { degree: 'Master in Advanced Construction Management', institution: 'NICMAR, Indien', detail: '2014–2016 · Quantitative Projektplanung, kaufmännisches Management und Infrastrukturökonomie.' },
     { degree: 'Bachelor in Engineering (BTech)', institution: 'MDU, Indien', detail: '2008–2012 · Ingenieurwissenschaftliche Grundlagen, Systemdenken und angewandte Mathematik.' },
   ],
-};
-
-export const ARTICLES_I18N: Record<Lang, ArticleEntry[]> = {
-  en: ARTICLES,
-  fr: ARTICLES.map((a) => ({
-    ...a,
-    category: a.category === 'BI & Dashboards' ? 'BI & Dashboards' : 'SQL Case Study',
-  })),
-  de: ARTICLES,
 };
 
 export interface WorkTranslation {

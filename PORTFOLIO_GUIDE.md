@@ -93,9 +93,9 @@ Edit `UI_COPY.en`, `UI_COPY.fr`, and `UI_COPY.de` in `src/data/i18n.ts`:
 - **English:** `EXPERIENCE` array in `src/data/profile.ts`.
 - **French & German:** `EXPERIENCE_I18N.fr` and `EXPERIENCE_I18N.de` in `src/data/localizedContent.ts`.
 - **Important behavior:**
-  - The **Homepage (`#experience`)** automatically displays the **first 4 roles** (`EXPERIENCE.slice(0, 4)`) in a 2×2 grid.
-  - The **CV page (`/cv/`)** displays **all roles** in the array.
-  - Keep your 4 most important/recent roles at the top of the array.
+  - The **Homepage (`#experience`)** automatically displays the **first 3 roles** (`EXPERIENCE.slice(0, 3)` — Mediasoft, Kitro, ITU) in a 3-column grid.
+  - The **Career Timeline on `/cv/#experience`** displays **all roles** in the array.
+  - Keep your 3 flagship roles at the top of the array.
   - Each role object has: `title`, `company`, `location`, `period`, `bullets` (array of strings), and optional `stack`.
 
 ### B. The Stack Section (`STACK_PILLARS` / `STACK_I18N`)

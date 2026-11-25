@@ -33,8 +33,8 @@ links:
     url: "https://github.com/keshavdewan/8-Weeks-SQL-Challenge"
   - label: "Parch & Posey Repo"
     url: "https://github.com/keshavdewan/SQL-Case-Study---Parch-and-Posey"
-  - label: "Writing Index"
-    url: "/writing/"
+  - label: "Medium Articles"
+    url: "https://medium.com/@kdrokz"
 ---
 
 ## Scope & coverage

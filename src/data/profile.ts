@@ -1,7 +1,7 @@
 export const SITE = {
   name: 'Keshav Dewan',
   role: 'Data Analyst | AI & Automation | Power BI & Fabric',
-  focus: 'Geneva, Switzerland · Swiss Work Permit Available · PL-300 Certified',
+  focus: 'Geneva, Switzerland · Swiss Work Permit Available · PL-300 & DP-600 Certified',
   lede:
     'I turn complex operational and enterprise datasets into governed Power BI semantic models, automated Python ETL pipelines, and practical LLM workflows — from UN SDG reporting in Geneva to Microsoft Fabric ERP analytics.',
   email: 'keshavdewan06@gmail.com',
@@ -13,8 +13,6 @@ export const SITE = {
   medium: 'https://medium.com/@kdrokz',
   tableau: 'https://public.tableau.com/app/profile/keshav.dewan3649',
   cvPdf: '/docs/Keshav_Dewan_CV.pdf',
-  microStrip:
-    'power bi pl-300 / microsoft fabric / row-level security (rls) / dax & power query / star schema modeling / python (pandas) / postgresql / rest apis / aws lambda & quicksight / llm & rag pipelines / model context protocol (mcp) / un sdg monitoring / data governance & audits / ',
 };
 
 export interface RoleEntry {
@@ -109,10 +107,10 @@ export const EXPERIENCE: RoleEntry[] = [
 
 export const STACK_PILLARS = [
   {
-    name: 'BI & Semantic Modeling',
-    tools: 'Power BI (PL-300) · Microsoft Fabric · DAX · Power Query',
+    name: 'BI & Fabric Engineering',
+    tools: 'Power BI (PL-300) · Microsoft Fabric (DP-600) · DAX · Power Query',
     detail:
-      'Star-schema semantic models, Row-Level Security (RLS), dynamic filtering, Git CI/CD versioning, and executive KPI scorecards.',
+      'Lakehouse & star-schema semantic models, Row-Level Security (RLS), dynamic filtering, Git CI/CD versioning, and executive KPI scorecards.',
   },
   {
     name: 'Data Engineering & SQL',
@@ -137,7 +135,7 @@ export const STACK_PILLARS = [
 export const SKILL_GROUPS = [
   {
     name: 'Analytics & BI',
-    items: 'Power BI (PL-300 Certified), Microsoft Fabric, DAX, Power Query, Star Schema Data Modeling, Tableau, Looker Studio, Amazon QuickSight, Advanced Excel',
+    items: 'Power BI (PL-300 Certified), Microsoft Fabric (DP-600 Certified), DAX, Power Query, Star Schema Data Modeling, Tableau, Looker Studio, Amazon QuickSight, Advanced Excel',
   },
   {
     name: 'Automation & Scripting',
@@ -161,109 +159,12 @@ export const SKILL_GROUPS = [
   },
 ];
 
-export interface ArticleEntry {
-  title: string;
-  venue: string;
-  date: string;
-  summary: string;
-  url: string;
-  category: 'BI & Dashboards' | 'SQL Case Study';
-}
-
-export const ARTICLES: ArticleEntry[] = [
-  {
-    title: 'Energy Consumption Dashboard — Monitoring Multi-Utility Building Usage',
-    venue: 'Medium (@kdrokz)',
-    date: 'Feb 2025',
-    summary:
-      'Designing a four-page Power BI monitoring suite across water (88.49% of total units), electricity, and gas consumption for US cities (2016–2019).',
-    url: 'https://medium.com/@kdrokz/energy-consumption-dashboard-c3ebb24d22a8',
-    category: 'BI & Dashboards',
-  },
-  {
-    title: 'Customer Satisfaction Report — OmniRetail Loyalty & Support Drivers',
-    venue: 'Medium (@kdrokz)',
-    date: 'Jul 2025',
-    summary:
-      'Breaking down customer satisfaction scores, support interactions, and regional loyalty clusters using Power BI and ZoomCharts.',
-    url: 'https://medium.com/@kdrokz/customer-satisfaction-report-0842b2d2607a',
-    category: 'BI & Dashboards',
-  },
-  {
-    title: "Case Study 1 — Danny's Diner (8 Weeks SQL Challenge)",
-    venue: 'Medium (@kdrokz)',
-    date: '2024',
-    summary:
-      'Customer spend, visit frequency, loyalty points, and first-purchase patterns solved with PostgreSQL CTEs and window functions.',
-    url: 'https://medium.com/@kdrokz/case-study-1-danys-diner-0f502ca6e2a7',
-    category: 'SQL Case Study',
-  },
-  {
-    title: 'Case Study 2 — Pizza Runner (Data Cleaning & Delivery Metrics)',
-    venue: 'DevGenius',
-    date: '2024',
-    summary:
-      'Cleaning dirty order logs, standardizing runner durations/distances, and analyzing pizza customization trends in PostgreSQL.',
-    url: 'https://blog.devgenius.io/case-study-2-pizza-runner-0af3f3939539',
-    category: 'SQL Case Study',
-  },
-  {
-    title: 'Case Study 3 — Foodie-Fi (Subscription Churn & Cohort Growth)',
-    venue: 'Medium (@kdrokz)',
-    date: '2024',
-    summary:
-      'Analyzing SaaS-style streaming subscription upgrades, trial-to-paid conversion timing, and churn cohorts with SQL.',
-    url: 'https://medium.com/@kdrokz/case-study-3-foodie-fi-a6a12109e895',
-    category: 'SQL Case Study',
-  },
-  {
-    title: 'Case Study 4 — Data Bank (Customer Node Allocation & Balances)',
-    venue: 'Medium (@kdrokz)',
-    date: '2024',
-    summary:
-      'Tracking rolling monthly customer balances, deposit-to-withdrawal ratios, and data storage allocation across regional nodes.',
-    url: 'https://medium.com/@kdrokz/case-study-4-data-bank-%EF%B8%8F-04dcb238666e',
-    category: 'SQL Case Study',
-  },
-  {
-    title: 'Case Study 5 — Data Mart (Before/After Packaging Impact)',
-    venue: 'DevGenius',
-    date: '2024',
-    summary:
-      'Evaluating the 12-week pre/post sustainability packaging shift across regions, platforms, and customer demographics.',
-    url: 'https://blog.devgenius.io/case-study-5-data-mart-224760e2e138',
-    category: 'SQL Case Study',
-  },
-  {
-    title: 'Case Study 6 — Clique Bait (Digital Funnel & Abandonment Analysis)',
-    venue: 'TowardsDev',
-    date: '2024',
-    summary:
-      'Modeling web session clickstreams to measure view-to-cart, cart-to-purchase, and campaign impression conversion funnels.',
-    url: 'https://towardsdev.com/case-study-6-clique-bait-22a9f30a8b59',
-    category: 'SQL Case Study',
-  },
-  {
-    title: 'Case Study 7 — Balanced Tree Clothing Co. (Retail Basket & Discounts)',
-    venue: 'Medium (@kdrokz)',
-    date: '2024',
-    summary:
-      'Revenue, discount leakage, and market-basket product pair combinations across categories and segments.',
-    url: 'https://medium.com/@kdrokz/case-study-7-balanced-tree-clothing-co-3b01ce26c43e',
-    category: 'SQL Case Study',
-  },
-  {
-    title: 'Case Study 8 — Fresh Segments (JSON Interest Metrics & Ranking)',
-    venue: 'Medium (@kdrokz)',
-    date: '2024',
-    summary:
-      'Ranking customer interest composition scores and rolling 3-month index averages across time-series marketing segments.',
-    url: 'https://medium.com/@kdrokz/case-study-8-fresh-segments-67ea141e6fe4',
-    category: 'SQL Case Study',
-  },
-];
-
 export const EDUCATION = [
+  {
+    degree: 'DP-600: Microsoft Certified Fabric Analytics Engineer Associate',
+    institution: 'Microsoft Certification',
+    detail: 'Certified in designing, implementing, and governing enterprise Microsoft Fabric lakehouses, semantic models, and analytics workflows.',
+  },
   {
     degree: 'PL-300: Microsoft Power BI Data Analyst Associate',
     institution: 'Microsoft Certification',
@@ -285,4 +186,3 @@ export const EDUCATION = [
     detail: '2008–2012 · Engineering foundations, structured systems thinking, and applied mathematics.',
   },
 ];
-

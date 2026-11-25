@@ -8,7 +8,7 @@ interface Props {
   title: string;
   description?: string;
   note?: 'purple' | 'blue' | 'green' | 'yellow' | 'red' | 'brown';
-  activeNav?: 'home' | 'work' | 'writing' | 'cv';
+  activeNav?: 'home' | 'work' | 'cv';
   lang?: Lang;
   currentPath?: string;
 }
@@ -25,7 +25,6 @@ const {
 const t = UI_COPY[lang];
 const homeUrl = localizedPath('/', lang);
 const workUrl = localizedPath('/work/', lang);
-const writingUrl = localizedPath('/writing/', lang);
 const cvUrl = localizedPath('/cv/', lang);
 const contactUrl = `${homeUrl}#contact`;
 
@@ -64,9 +63,6 @@ const langUrls = {
         <ul>
           <li>
             <a href={workUrl} aria-current={activeNav === 'work' ? 'page' : undefined}>{t.nav.work}</a>
-          </li>
-          <li>
-            <a href={writingUrl} aria-current={activeNav === 'writing' ? 'page' : undefined}>{t.nav.writing}</a>
           </li>
           <li>
             <a href={cvUrl} aria-current={activeNav === 'cv' ? 'page' : undefined}>{t.nav.cv}</a>
