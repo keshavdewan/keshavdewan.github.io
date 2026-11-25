@@ -1,10 +1,8 @@
 import type { Lang } from './i18n';
-import type { RoleEntry, ExpertiseCategory, WorkflowItem, TechGroup } from './profile';
+import type { RoleEntry, StackColumn } from './profile';
 import {
   EXPERIENCE,
-  AREAS_OF_EXPERTISE,
-  AI_WORKFLOW,
-  TECHNICAL_EXPERTISE,
+  STACK_COLUMNS,
   BRAND_PILLARS,
   EDUCATION,
   TARGET_ROLES,
@@ -15,7 +13,7 @@ export const EXPERIENCE_I18N: Record<Lang, RoleEntry[]> = {
   en: EXPERIENCE,
   fr: [
     {
-      title: 'Stagiaire Analyste Business Intelligence',
+      title: 'BI Analyst Intern',
       company: 'Mediasoft Group',
       location: 'Nyon, Suisse',
       period: 'Avril 2026 – Septembre 2026',
@@ -23,50 +21,47 @@ export const EXPERIENCE_I18N: Record<Lang, RoleEntry[]> = {
         "Contribution à des projets Business Intelligence portant sur l'extraction, la transformation, la validation, la modélisation sémantique et le reporting Power BI de données ERP.",
       bullets: [
         'Extraction, transformation et validation de jeux de données ERP relationnels complexes via SQL et DBeaver.',
-        'Développement et maintenance de modèles sémantiques Power BI intégrant données financières, RH et métier.',
-        'Préparation des données sous Power Query et création de mesures DAX pour répondre aux besoins de reporting.',
+        'Développement et maintenance de modèles sémantiques Power BI intégrant données financières, RH et métier via Power Query et DAX.',
         'Implémentation du Row-Level Security (RLS) et du filtrage dynamique pour sécuriser l’accès aux informations.',
-        'Analyse des écarts entre systèmes sources, jeux de données et rapports afin de renforcer la fiabilité des données.',
-        'Contribution au développement Microsoft Fabric, au versionnement Git et aux workflows CI/CD.',
-        'Réalisation de rapports paginés et paramétrés avec Power BI Report Builder.',
-        'Collaboration avec les équipes métier et techniques pour recueillir les besoins et valider les livrables analytiques.',
+        'Analyse des écarts entre systèmes sources ERP, jeux de données et rapports afin de renforcer la fiabilité du reporting.',
+        'Appui au développement Microsoft Fabric, versionnement Git, CI/CD et rapports paramétrés Power BI Report Builder.',
+        'Rédaction de la documentation technique complète des modèles sémantiques en collaboration avec les équipes métier et techniques.',
       ],
-      stack: 'SQL, DBeaver, Power BI, DAX, Power Query, Microsoft Fabric, Git, CI/CD, Report Builder',
+      stack: 'SQL · DBeaver · Power BI · DAX · Power Query · Microsoft Fabric · Git · CI/CD · Report Builder',
     },
     {
-      title: 'Stagiaire Data Analyst',
+      title: 'Data Analyst Intern',
       company: 'KITRO SA',
       location: 'Zurich, Suisse',
       period: 'Avril 2024 – Octobre 2024',
       summary:
-        'Collaboration au sein d’une entreprise technologique dédiée à la durabilité pour concevoir des solutions de traitement, d’automatisation et de reporting des données.',
+        'Développement de solutions d’automatisation ETL Python, de validation des données et de reporting au sein d’une entreprise technologique dédiée à la durabilité.',
       bullets: [
-        'Développement de flux ETL en Python pour de grands ensembles de données multi-sources.',
-        'Automatisation des processus de traitement des données, augmentant l’efficacité de 40 %.',
-        'Extraction et transformation de jeux de données avec SQL et Python.',
-        'Nettoyage, validation et réconciliation des données pour améliorer la fiabilité du reporting.',
-        'Conception de rapports et tableaux de bord avec Power BI et Amazon QuickSight.',
-        'Mise en place de workflows automatisés de suivi des coûts AWS avec Python et AWS Lambda.',
-        'Analyse des incohérences de données en collaboration avec les équipes techniques et métier.',
+        'Développement de flux ETL en Python pour de grands ensembles de données multi-sources (capteurs et opérations).',
+        'Automatisation des traitements répétitifs via Python et AWS Lambda, améliorant l’efficacité des workflows de 40 %.',
+        'Mise en place de workflows mensuels automatisés de suivi des coûts AWS avec Python, AWS Lambda et Google Sheets API.',
+        'Nettoyage, validation et réconciliation des données sous SQL et Python pour détecter anomalies et écarts.',
+        'Conception de tableaux de bord interactifs avec Power BI et Amazon QuickSight.',
+        'Collaboration transverse pour lever les goulets d’étranglement et fiabiliser les jeux de données.',
       ],
-      stack: 'Python, Pandas, SQL, AWS Lambda, Google Sheets API, Power BI, Amazon QuickSight',
+      stack: 'Python · Pandas · SQL · AWS Lambda · Google Sheets API · Power BI · Amazon QuickSight',
     },
     {
-      title: 'Stagiaire Spécialiste BI',
+      title: 'BI Specialist Intern',
       company: 'International Telecommunication Union (ITU)',
       organizationNote: 'Nations Unies',
       location: 'Genève, Suisse',
       period: 'Mars 2023 – Juillet 2023',
       summary:
-        "Contribution au reporting de performance institutionnel et au suivi du Plan stratégique de l'UIT ainsi que des Objectifs de développement durable des Nations Unies.",
+        "Contribution au reporting de performance institutionnel et au suivi du Plan stratégique de l'UIT (2019–2023) et des Objectifs de développement durable des Nations Unies.",
       bullets: [
-        'Conception de tableaux de bord Power BI suivant plus de 30 indicateurs des Objectifs de développement durable (ODD).',
-        'Consolidation de données multi-départements dans des rapports analytiques interactifs.',
-        'Recherches documentaires et coordination inter-départements pour standardiser le reporting.',
-        'Appui à la validation et à la réconciliation des données.',
-        'Présentation des résultats analytiques et tableaux de bord aux parties prenantes de direction.',
+        'Conception de tableaux de bord Power BI suivant plus de 30 indicateurs ODD et institutionnels.',
+        'Consolidation de données multi-départements avec SQL, Power BI et Excel avancé pour les rapports de direction.',
+        'Audit et réconciliation des chiffres sur plus de 30 indicateurs par rapport aux lignes de base officielles.',
+        'Coordination inter-départements pour harmoniser et standardiser les définitions de reporting.',
+        'Présentation des résultats analytiques devant les comités de direction et parties prenantes seniors.',
       ],
-      stack: 'Power BI, SQL, Excel, Analyse de données, Visualisation de données',
+      stack: 'Power BI · SQL · Excel · Analyse de données · Visualisation de données',
     },
     {
       title: 'Manager – Location commerciale',
@@ -76,18 +71,16 @@ export const EXPERIENCE_I18N: Record<Lang, RoleEntry[]> = {
       summary:
         "Activité dans l'immobilier commercial alliant études de marché, données de portefeuille, analyse commerciale et reporting de direction.",
       bullets: [
-        "Exploitation de données financières, commerciales et de portefeuille multi-sources sur plus de 8M sq. ft. d'actifs tertiaires.",
+        "Exploitation de données financières, commerciales et de portefeuille multi-sources sur plus de 8M+ sq. ft. d'actifs tertiaires.",
         'Coordination de la réconciliation des données, du recueil des besoins et du reporting exécutif avec les équipes finance et juridique.',
-        'Suivi de la performance du portefeuille contribuant à un taux d’occupation de 97 %.',
-        'Réalisation d’études de marché et de veille concurrentielle pour éclairer le positionnement.',
-        'Synthèse des données commerciales et de portefeuille en présentations destinées à la direction.',
-        'Collaboration étroite avec les parties prenantes juridiques, commerciales et financières.',
+        'Contribution au suivi de la performance soutenant un taux d’occupation de 97 %.',
+        'Réalisation d’études de marché et de synthèses exécutives pour la direction.',
       ],
-      stack: 'Analytique portefeuille, Études de marché, Reporting commercial, Parties prenantes',
+      stack: 'Analytique portefeuille · Études de marché · Reporting commercial · Parties prenantes',
     },
     {
       title: 'Assistant Manager – Business Analyst',
-      company: 'BPTP Limited',
+      company: 'BPTP Ltd.',
       location: 'Inde',
       period: 'Janvier 2019 – Octobre 2019',
       summary:
@@ -95,10 +88,9 @@ export const EXPERIENCE_I18N: Record<Lang, RoleEntry[]> = {
       bullets: [
         'Études concurrentielles, de marché et clients pour appuyer les décisions d’expansion.',
         'Gestion des processus de collecte et d’analyse des données de performance commerciale.',
-        'Analyse des informations marché et portefeuille.',
-        'Restitution des conclusions et recommandations aux clients et équipes internes.',
+        'Analyse des informations marché et portefeuille et restitution des recommandations aux clients et équipes internes.',
       ],
-      stack: 'Business Analysis, Études de marché, Suivi de performance, Présentations clients',
+      stack: 'Business Analysis · Études de marché · Suivi de performance · Présentations clients',
     },
     {
       title: 'Associé – Recherche & Conseil',
@@ -111,7 +103,7 @@ export const EXPERIENCE_I18N: Record<Lang, RoleEntry[]> = {
         'Analyse des données clients, ventes et loyers sous Looker Studio (Google Data Studio).',
         'Développement de tableaux de bord de tendances marché pour le suivi des portefeuilles.',
       ],
-      stack: 'Looker Studio, Études de marché, Analytique immobilière',
+      stack: 'Looker Studio · Études de marché · Analytique immobilière',
     },
     {
       title: 'Manager – Analyste Intelligence Marché',
@@ -123,63 +115,60 @@ export const EXPERIENCE_I18N: Record<Lang, RoleEntry[]> = {
         'Coordination des revues de due diligence, conformité et intelligence marché.',
         'Production de rapports analytiques à l’appui des décisions commerciales.',
       ],
-      stack: 'Intelligence marché, Due Diligence, Analyse commerciale',
+      stack: 'Intelligence marché · Due Diligence · Analyse commerciale',
     },
   ],
   de: [
     {
-      title: 'Praktikant Business Intelligence Analyst',
+      title: 'BI Analyst Intern',
       company: 'Mediasoft Group',
       location: 'Nyon, Schweiz',
       period: 'April 2026 – September 2026',
       summary:
         'Mitarbeit an Business-Intelligence-Projekten mit Fokus auf ERP-Datenextraktion, Transformation, Validierung, Semantikmodellierung und Power-BI-Reporting.',
       bullets: [
-        'Extraktion, Transformation und Validierung komplexer relationaler ERP-Datensätze mit SQL und DBeaver.',
-        'Entwicklung und Pflege von Power-BI-Semantikmodellen für Finanz-, HR- und Unternehmensdaten.',
-        'Datenaufbereitung mit Power Query sowie Entwicklung von DAX-Berechnungen für das Berichtswesen.',
-        'Implementierung von Row-Level Security (RLS) und dynamischer Filterung zur sicheren Zugriffssteuerung.',
-        'Untersuchung von Abweichungen zwischen Quellsystemen, Datensätzen und Berichten zur Steigerung der Datenqualität.',
-        'Unterstützung von Microsoft-Fabric-Entwicklung, Git-Versionskontrolle und CI/CD-Workflows.',
-        'Erstellung parametrisierter Berichte mit Power BI Report Builder.',
-        'Zusammenarbeit mit Fach- und IT-Stakeholdern zur Anforderungsaufnahme und Validierung der Ergebnisse.',
+        'Extraktion, Transformation und Validierung komplexer relationaler ERP-Datensätze mit SQL und DBeaver zur Sicherstellung von Datenintegrität.',
+        'Entwicklung und Pflege von Power-BI-Semantikmodellen für Finanz-, HR- und Geschäftsdaten mit Power Query und DAX.',
+        'Implementierung von Row-Level Security (RLS) und dynamischer Filterung zur sicheren Zugriffssteuerung je Rolle.',
+        'Analyse von Abweichungen zwischen ERP-Quellsystemen, Datensätzen und Berichten zur Steigerung der Berichtsqualität.',
+        'Unterstützung von Microsoft-Fabric-Entwicklung, Git-Versionskontrolle, CI/CD-Workflows und Power BI Report Builder.',
+        'Erstellung einer durchgängigen technischen Dokumentation in Zusammenarbeit mit Fach- und IT-Stakeholdern.',
       ],
-      stack: 'SQL, DBeaver, Power BI, DAX, Power Query, Microsoft Fabric, Git, CI/CD, Report Builder',
+      stack: 'SQL · DBeaver · Power BI · DAX · Power Query · Microsoft Fabric · Git · CI/CD · Report Builder',
     },
     {
-      title: 'Praktikant Data Analyst',
+      title: 'Data Analyst Intern',
       company: 'KITRO SA',
       location: 'Zürich, Schweiz',
       period: 'April 2024 – Oktober 2024',
       summary:
-        'Entwicklung von Datenverarbeitungs-, Automatisierungs- und Reporting-Lösungen bei einem nachhaltigkeitsorientierten Technologieunternehmen.',
+        'Entwicklung von Python-ETL-Automatisierung, Datenvalidierung und Reporting-Lösungen bei einem nachhaltigkeitsorientierten Technologieunternehmen.',
       bullets: [
-        'Entwicklung Python-basierter ETL-Workflows für umfangreiche Multi-Source-Datensätze.',
-        'Automatisierung von Datenverarbeitungsprozessen mit einer Effizienzsteigerung von 40 %.',
-        'Extraktion und Transformation von Datensätzen mit SQL und Python.',
-        'Datenbereinigung, Validierung und Abstimmung zur Verbesserung der Berichtszuverlässigkeit.',
-        'Erstellung von Reporting-Lösungen mit Power BI und Amazon QuickSight.',
-        'Entwicklung automatisierter AWS-Kostenverfolgungsprozesse mit Python und AWS Lambda.',
-        'Klärung von Datenabweichungen in Zusammenarbeit mit technischen und fachlichen Teams.',
+        'Entwicklung Python-basierter End-to-End-ETL-Workflows für umfangreiche Multi-Source- und Sensordatensätze.',
+        'Automatisierung wiederkehrender Datenprozesse mit Python und AWS Lambda — Effizienzsteigerung um 40 %.',
+        'Aufbau automatisierter monatlicher AWS-Kostenverfolgungsprozesse mit Python, AWS Lambda und Google Sheets API.',
+        'Datenbereinigung, Validierung und Abgleich mit SQL und Python zur Erkennung von Anomalien und Abweichungen.',
+        'Aufbau interaktiver Dashboards mit Power BI und Amazon QuickSight.',
+        'Enge Zusammenarbeit mit Technik- und Fachteams zur Beseitigung von Pipeline-Engpässen.',
       ],
-      stack: 'Python, Pandas, SQL, AWS Lambda, Google Sheets API, Power BI, Amazon QuickSight',
+      stack: 'Python · Pandas · SQL · AWS Lambda · Google Sheets API · Power BI · Amazon QuickSight',
     },
     {
-      title: 'Praktikant BI-Spezialist',
+      title: 'BI Specialist Intern',
       company: 'International Telecommunication Union (ITU)',
       organizationNote: 'Vereinte Nationen',
       location: 'Genf, Schweiz',
       period: 'März 2023 – Juli 2023',
       summary:
-        'Mitwirkung am institutionellen Leistungsreporting sowie am Monitoring des ITU-Strategieplans und der UN-Nachhaltigkeitsziele.',
+        'Mitwirkung am institutionellen Leistungsreporting sowie am Monitoring des ITU-Strategieplans (2019–2023) und der UN-Nachhaltigkeitsziele.',
       bullets: [
-        'Entwicklung von Power-BI-Dashboards zur Verfolgung von über 30 UN-SDG-Indikatoren.',
-        'Konsolidierung abteilungsübergreifender Informationen in interaktiven Analyseberichten.',
-        'Sekundärforschung und Abstimmung mit Fachabteilungen zur Standardisierung des Reportings.',
-        'Unterstützung bei Datenvalidierung und Baseline-Abgleich.',
-        'Präsentation von Analyseergebnissen und Berichten vor Führungsgremien.',
+        'Entwicklung interaktiver Power-BI-Dashboards zur Verfolgung von über 30 UN-SDG- und Organisationsindikatoren.',
+        'Konsolidierung abteilungsübergreifender Datensätze mit SQL, Power BI und Advanced Excel für das Executive-Reporting.',
+        'Prüfung und Abgleich von über 30 Indikatoren gegen institutionelle Baselines für verifizierte Führungskennzahlen.',
+        'Zusammenarbeit mit Fachabteilungen zur Standardisierung globaler Berichtsdefinitionen.',
+        'Präsentation verifizierter Analyseergebnisse vor Executive Steering Committees.',
       ],
-      stack: 'Power BI, SQL, Excel, Datenanalyse, Datenvisualisierung',
+      stack: 'Power BI · SQL · Excel · Datenanalyse · Datenvisualisierung',
     },
     {
       title: 'Manager – Commercial Leasing',
@@ -192,15 +181,13 @@ export const EXPERIENCE_I18N: Record<Lang, RoleEntry[]> = {
         'Auswertung von Finanz-, Vertrags- und Portfoliodaten aus mehreren Quellen für ein Portfolio von über 8M+ sq. ft.',
         'Koordination von Datenabstimmung, Anforderungsaufnahme und Executive-Reporting mit Finanz- und Rechtsabteilungen.',
         'Beitrag zum Portfolio-Monitoring bei einer Vermietungsquote von 97 %.',
-        'Durchführung von Markt- und Wettbewerbsanalysen zur Einschätzung der Marktlage.',
-        'Aufbereitung kommerzieller Kennzahlen in Präsentationen für das Management.',
-        'Enge Zusammenarbeit mit Rechts-, Vertriebs- und Finanz-Stakeholdern.',
+        'Markt- und Wettbewerbsanalysen sowie Aufbereitung kommerzieller Ergebnisse für das Management.',
       ],
-      stack: 'Portfolio-Analytik, Marktforschung, Kommerzielles Reporting, Stakeholder-Abstimmung',
+      stack: 'Portfolio-Analytik · Marktforschung · Kommerzielles Reporting · Stakeholder-Abstimmung',
     },
     {
       title: 'Assistant Manager – Business Analyst',
-      company: 'BPTP Limited',
+      company: 'BPTP Ltd.',
       location: 'Indien',
       period: 'Januar 2019 – Oktober 2019',
       summary:
@@ -208,10 +195,9 @@ export const EXPERIENCE_I18N: Record<Lang, RoleEntry[]> = {
       bullets: [
         'Durchführung von Wettbewerbs-, Markt- und Kundenanalysen für Expansionsentscheidungen.',
         'Steuerung von Datenerfassungs- und Analyseprozessen für das Leistungs-Tracking.',
-        'Analyse von Markt- und Portfoliodaten.',
-        'Präsentation von Ergebnissen und Handlungsempfehlungen vor Kunden und internen Stakeholdern.',
+        'Analyse von Markt- und Portfoliodaten sowie Präsentation von Empfehlungen vor Kunden und internen Stakeholdern.',
       ],
-      stack: 'Business Analysis, Marktforschung, Performance-Tracking, Präsentationen',
+      stack: 'Business Analysis · Marktforschung · Performance-Tracking · Präsentationen',
     },
     {
       title: 'Associate – Research & Consulting',
@@ -223,7 +209,7 @@ export const EXPERIENCE_I18N: Record<Lang, RoleEntry[]> = {
         'Auswertung von Kunden-, Verkaufs- und Mietdaten mit Looker Studio (Google Data Studio).',
         'Aufbau interaktiver Markttrend-Dashboards für Portfolioanalysen.',
       ],
-      stack: 'Looker Studio, Marktforschung, Immobilienanalytik',
+      stack: 'Looker Studio · Marktforschung · Immobilienanalytik',
     },
     {
       title: 'Manager – Market Intelligence Analyst',
@@ -235,140 +221,64 @@ export const EXPERIENCE_I18N: Record<Lang, RoleEntry[]> = {
         'Koordination von Due-Diligence- und Compliance-Prüfungen sowie Marktanalysen.',
         'Erstellung fundierter Marktberichte zur Unterstützung kommerzieller Entscheidungen.',
       ],
-      stack: 'Market Intelligence, Due Diligence, Kommerzielle Analyse',
+      stack: 'Market Intelligence · Due Diligence · Kommerzielle Analyse',
     },
   ],
 };
 
-export const AREAS_I18N: Record<Lang, ExpertiseCategory[]> = {
-  en: AREAS_OF_EXPERTISE,
+export const STACK_I18N: Record<Lang, StackColumn[]> = {
+  en: STACK_COLUMNS,
   fr: [
     {
-      title: 'Business Intelligence & Reporting',
-      items: ['Power BI', 'DAX', 'Power Query', 'Rapports paginés', 'Développement de KPI', 'Tableaux de bord de direction'],
+      name: 'BI & Ingénierie Fabric',
+      tools: 'Power BI (PL-300) · Microsoft Fabric (DP-600) · DAX · Power Query',
+      detail:
+        'Modèles sémantiques Lakehouse et en étoile, Row-Level Security (RLS), filtrage dynamique, versionnement Git CI/CD et tableaux de bord KPI exécutifs.',
     },
     {
-      title: 'Analytique & Visualisation de données',
-      items: ['SQL', 'Python', 'Tableau', 'Amazon QuickSight', 'Exploration de données', 'Analyse statistique et descriptive'],
+      name: 'Data Engineering & SQL',
+      tools: 'Python (Pandas) · PostgreSQL · AWS Lambda · QuickSight',
+      detail:
+        "Pipelines ETL/ELT automatisés, ingestion via API REST et webhooks, analytique par fonctions de fenêtrage et détection d'anomalies multi-sources.",
     },
     {
-      title: 'Data Engineering & Modélisation',
-      items: ['Pipelines ETL/ELT', 'PostgreSQL', 'Python & Pandas', 'Microsoft Fabric', 'Schéma en étoile', 'Modélisation relationnelle'],
+      name: 'IA & Automatisation de workflows',
+      tools: 'LLMs · Architecture RAG · Model Context Protocol (MCP) · Supabase',
+      detail:
+        'Développement assisté par IA (Claude, ChatGPT, Gemini), prompt engineering, extraction structurée, recherche conversationnelle et automatisation par API/webhooks.',
     },
     {
-      title: 'Gouvernance & Qualité des données',
-      items: ['Validation des données', 'Réconciliation', 'Assurance qualité', 'Row-Level Security', 'Documentation technique', 'Glossaires métier'],
-    },
-    {
-      title: 'IA & Automatisation intelligente',
-      items: ['IA générative', 'Intégration LLM', 'ChatGPT, Claude et Gemini', 'Prompt Engineering', 'RAG', 'Model Context Protocol', 'API REST & Webhooks', 'Développement assisté par IA'],
-      accent: true,
+      name: 'Gouvernance & Storytelling',
+      tools: 'Validation des données · Audits KPI · Tableau · Looker Studio',
+      detail:
+        'Réconciliation sur plus de 30 indicateurs ONU, alignement avec les équipes non techniques et récits décisionnels clairs.',
     },
   ],
   de: [
     {
-      title: 'Business Intelligence & Reporting',
-      items: ['Power BI', 'DAX', 'Power Query', 'Paginierte Berichte', 'KPI-Entwicklung', 'Executive Dashboards'],
+      name: 'BI & Fabric Engineering',
+      tools: 'Power BI (PL-300) · Microsoft Fabric (DP-600) · DAX · Power Query',
+      detail:
+        'Lakehouse- und Star-Schema-Semantikmodelle, Row-Level Security (RLS), dynamische Filterung, Git CI/CD-Versionierung und Executive-KPI-Scorecards.',
     },
     {
-      title: 'Datenanalyse & Visualisierung',
-      items: ['SQL', 'Python', 'Tableau', 'Amazon QuickSight', 'Datenexploration', 'Statistische & deskriptive Analyse'],
+      name: 'Data Engineering & SQL',
+      tools: 'Python (Pandas) · PostgreSQL · AWS Lambda · QuickSight',
+      detail:
+        'Automatisierte ETL/ELT-Pipelines, REST-API- und Webhook-Ingestion, Window-Function-Analytik sowie Multi-Source-Anomalieerkennung.',
     },
     {
-      title: 'Data Engineering & Modellierung',
-      items: ['ETL/ELT-Pipelines', 'PostgreSQL', 'Python & Pandas', 'Microsoft Fabric', 'Star Schema', 'Relationale Datenmodellierung'],
+      name: 'KI & Workflow-Automatisierung',
+      tools: 'LLMs · RAG-Architektur · Model Context Protocol (MCP) · Supabase',
+      detail:
+        'KI-gestützte Entwicklung (Claude, ChatGPT, Gemini), Prompt Engineering, strukturierte Extraktion, konversationelle Event-Suche und API/Webhook-Automatisierung.',
     },
     {
-      title: 'Data Governance & Qualität',
-      items: ['Datenvalidierung', 'Datenabgleich', 'Qualitätssicherung', 'Row-Level Security', 'Datendokumentation', 'Fachglossare'],
+      name: 'Governance & Storytelling',
+      tools: 'Datenvalidierung · KPI-Audits · Tableau · Looker Studio',
+      detail:
+        'Baseline-Abstimmung über mehr als 30 UN-Indikatoren, Zusammenarbeit mit Fachabteilungen und klare Entscheidungsvorlagen.',
     },
-    {
-      title: 'KI & Intelligente Automatisierung',
-      items: ['Generative AI', 'LLM-Integration', 'ChatGPT, Claude und Gemini', 'Prompt Engineering', 'RAG', 'Model Context Protocol', 'REST-APIs & Webhooks', 'KI-gestützte Entwicklung'],
-      accent: true,
-    },
-  ],
-};
-
-export const AI_WORKFLOW_I18N: Record<Lang, WorkflowItem[]> = {
-  en: AI_WORKFLOW,
-  fr: [
-    {
-      title: 'Développement assisté par IA',
-      description:
-        "Utilisation d'assistants de code (Claude, ChatGPT, Gemini) pour accélérer le prototypage SQL/DAX, le débogage et la documentation technique.",
-      proofLabel: 'Appliqué dans Enterprise BI & Semantic Model Optimization',
-      proofUrl: '/fr/work/mediasoft-fabric-bi/',
-    },
-    {
-      title: 'Intégration LLM',
-      description:
-        'Connexion de modèles de langage à des applications Python, API REST externes et bases structurées pour traiter des requêtes en langage naturel.',
-      proofLabel: 'Appliqué dans le chatbot Hey! Geneva',
-      proofUrl: '/fr/work/hey-geneva-chatbot/',
-    },
-    {
-      title: 'IA & Récupération de données',
-      description:
-        'Utilisation du RAG et du Model Context Protocol (MCP) pour interroger les tables Supabase et les métadonnées BI avant de générer une réponse.',
-      proofLabel: 'Appliqué dans Hey! Geneva & workflows Claude/MCP',
-      proofUrl: '/fr/work/hey-geneva-chatbot/',
-    },
-    {
-      title: 'Automatisation de workflows',
-      description:
-        'Combinaison de Python, webhooks, API REST et tâches planifiées pour automatiser le nettoyage, l’ingestion et le suivi récurrent des données.',
-      proofLabel: 'Appliqué chez KITRO (AWS Costing) & Hey! Geneva',
-      proofUrl: '/fr/work/kitro-etl-automation/',
-    },
-  ],
-  de: [
-    {
-      title: 'KI-gestützte Entwicklung',
-      description:
-        'Einsatz von Coding-Assistenten (Claude, ChatGPT, Gemini) zur Beschleunigung von SQL/DAX-Entwicklung, Fehlersuche und technischer Dokumentation.',
-      proofLabel: 'Umgesetzt in Enterprise BI & Semantic Model Optimization',
-      proofUrl: '/de/work/mediasoft-fabric-bi/',
-    },
-    {
-      title: 'LLM-Integration',
-      description:
-        'Anbindung von Sprachmodellen an Python-Anwendungen, externe REST-APIs und strukturierte Datenbanken für fundierte Antworten.',
-      proofLabel: 'Umgesetzt im Chatbot Hey! Geneva',
-      proofUrl: '/de/work/hey-geneva-chatbot/',
-    },
-    {
-      title: 'KI & Datenabruf',
-      description:
-        'Einsatz von RAG und Model Context Protocol (MCP), um relevante Datensätze aus Supabase oder BI-Metadaten vor der Antwortgenerierung abzurufen.',
-      proofLabel: 'Umgesetzt in Hey! Geneva & Claude/MCP-Workflows',
-      proofUrl: '/de/work/hey-geneva-chatbot/',
-    },
-    {
-      title: 'Workflow-Automatisierung',
-      description:
-        'Verbindung von Python, Webhooks, REST-APIs und serverlosen Zeitplänen zur Automatisierung wiederkehrender Daten- und Reporting-Prozesse.',
-      proofLabel: 'Umgesetzt bei KITRO (AWS Costing) & Hey! Geneva',
-      proofUrl: '/de/work/kitro-etl-automation/',
-    },
-  ],
-};
-
-export const TECH_EXPERTISE_I18N: Record<Lang, TechGroup[]> = {
-  en: TECHNICAL_EXPERTISE,
-  fr: [
-    { name: 'BI & Visualisation', tools: ['Power BI', 'DAX', 'Power Query', 'Report Builder', 'Tableau', 'Amazon QuickSight'] },
-    { name: 'Programmation & Bases de données', tools: ['Python', 'Pandas', 'SQL', 'PostgreSQL', 'DBeaver'] },
-    { name: 'Data Engineering', tools: ['Microsoft Fabric', 'AWS Lambda', 'ETL/ELT', 'Pipelines de données', 'Modélisation de données'] },
-    { name: 'IA & Technologies émergentes', tools: ['LLMs', 'RAG', 'MCP', 'Prompt Engineering', 'API REST', 'Webhooks', 'Codage assisté par IA'] },
-    { name: 'Développement & Collaboration', tools: ['Git', 'CI/CD', 'VS Code', 'Documentation technique'] },
-  ],
-  de: [
-    { name: 'BI & Visualisierung', tools: ['Power BI', 'DAX', 'Power Query', 'Report Builder', 'Tableau', 'Amazon QuickSight'] },
-    { name: 'Programmierung & Datenbanken', tools: ['Python', 'Pandas', 'SQL', 'PostgreSQL', 'DBeaver'] },
-    { name: 'Data Engineering', tools: ['Microsoft Fabric', 'AWS Lambda', 'ETL/ELT', 'Datenpipelines', 'Datenmodellierung'] },
-    { name: 'KI & Neue Technologien', tools: ['LLMs', 'RAG', 'MCP', 'Prompt Engineering', 'REST-APIs', 'Webhooks', 'KI-gestützte Entwicklung'] },
-    { name: 'Entwicklung & Zusammenarbeit', tools: ['Git', 'CI/CD', 'VS Code', 'Technische Dokumentation'] },
   ],
 };
 
@@ -426,8 +336,20 @@ export const TARGET_ROLES_I18N: Record<Lang, string[]> = {
 
 export const SKILLS_I18N: Record<Lang, typeof SKILL_GROUPS> = {
   en: SKILL_GROUPS,
-  fr: TECH_EXPERTISE_I18N.fr.map((g) => ({ name: g.name, items: g.tools.join(', ') })),
-  de: TECH_EXPERTISE_I18N.de.map((g) => ({ name: g.name, items: g.tools.join(', ') })),
+  fr: [
+    { name: 'BI & Visualisation', items: 'Power BI (PL-300), Microsoft Fabric, DAX, Power Query, Report Builder, Tableau, Amazon QuickSight, Looker Studio' },
+    { name: 'Programmation & Bases de données', items: 'Python, Pandas, SQL, PostgreSQL, DBeaver, Supabase' },
+    { name: 'Data Engineering & Gouvernance', items: 'Pipelines ETL/ELT, Modélisation en étoile, AWS Lambda, Row-Level Security (RLS), Validation & Audits' },
+    { name: 'IA & Automatisation intelligente', items: 'LLMs, Architecture RAG, Model Context Protocol (MCP), Prompt Engineering, API REST & Webhooks, Développement assisté par IA (Claude, ChatGPT, Gemini)' },
+    { name: 'Développement & Collaboration', items: 'Git, CI/CD, VS Code, Documentation technique, Coordination parties prenantes' },
+  ],
+  de: [
+    { name: 'BI & Visualisierung', items: 'Power BI (PL-300), Microsoft Fabric, DAX, Power Query, Report Builder, Tableau, Amazon QuickSight, Looker Studio' },
+    { name: 'Programmierung & Datenbanken', items: 'Python, Pandas, SQL, PostgreSQL, DBeaver, Supabase' },
+    { name: 'Data Engineering & Governance', items: 'ETL/ELT-Pipelines, Star-Schema-Modellierung, AWS Lambda, Row-Level Security (RLS), Datenvalidierung & Audits' },
+    { name: 'KI & Intelligente Automatisierung', items: 'LLMs, RAG-Architektur, Model Context Protocol (MCP), Prompt Engineering, REST-APIs & Webhooks, KI-gestützte Entwicklung (Claude, ChatGPT, Gemini)' },
+    { name: 'Entwicklung & Zusammenarbeit', items: 'Git, CI/CD, VS Code, Technische Dokumentation, Stakeholder-Kommunikation' },
+  ],
 };
 
 export interface WorkTranslation {

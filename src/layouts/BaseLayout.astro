@@ -119,16 +119,16 @@ const personSchema = includeSchema
             <a href={homeUrl} aria-current={activeNav === 'home' ? 'page' : undefined}>{t.nav.home}</a>
           </li>
           <li>
-            <a href={`${homeUrl}#about`}>{t.nav.about}</a>
-          </li>
-          <li>
             <a href={`${homeUrl}#experience`}>{t.nav.experience}</a>
           </li>
           <li>
-            <a href={workUrl} aria-current={activeNav === 'work' ? 'page' : undefined}>{t.nav.projects}</a>
+            <a href={`${homeUrl}#work`} aria-current={activeNav === 'work' ? 'page' : undefined}>{t.nav.projects}</a>
           </li>
           <li>
-            <a href={`${homeUrl}#expertise`}>{t.nav.expertise}</a>
+            <a href={`${homeUrl}#stack`}>{t.nav.stack}</a>
+          </li>
+          <li>
+            <a href={`${homeUrl}#about`}>{t.nav.about}</a>
           </li>
           <li>
             <a href={cvUrl} aria-current={activeNav === 'cv' ? 'page' : undefined}>{t.nav.cv}</a>
@@ -174,7 +174,6 @@ const personSchema = includeSchema
           {t.footer.line1}{' '}
           <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
         </p>
-        <p>{t.footer.line2}</p>
       </div>
     </footer>
 
@@ -211,6 +210,33 @@ const personSchema = includeSchema
             window.location.href = targetUrl + (window.location.hash || '');
           }
         });
+      }
+
+      const topnav = document.querySelector('.topnav');
+      if (topnav) {
+        const bands = Array.from(document.querySelectorAll('header.field, main section, main.body, main.cv, main.section'));
+        const getBandTone = (el) => {
+          for (const tone of ['purple', 'blue', 'green', 'brown', 'red', 'yellow']) {
+            if (el.classList.contains(tone)) return tone;
+          }
+          return 'paper';
+        };
+        const onScroll = () => {
+          const scrolled = window.scrollY > 16;
+          topnav.classList.toggle('is-scrolled', scrolled);
+          const probeY = 28;
+          let activeTone = document.body.getAttribute('data-note') || 'purple';
+          for (const el of bands) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top <= probeY && rect.bottom > probeY) {
+              activeTone = getBandTone(el);
+              break;
+            }
+          }
+          topnav.setAttribute('data-over', activeTone);
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
       }
     </script>
   </body>

@@ -5,40 +5,46 @@ export interface LogoMeta {
 
 export const TECH_STACK_LOGOS = [
   { name: 'Power BI', src: '/images/tech/powerbi.svg' },
+  { name: 'Power BI Report Builder', src: '/images/tech/reportbuilder.svg' },
   { name: 'Microsoft Fabric', src: '/images/tech/fabric.svg' },
   { name: 'SQL / PostgreSQL', src: '/images/tech/postgresql.svg' },
+  { name: 'DBeaver', src: '/images/tech/dbeaver.svg' },
   { name: 'Python', src: '/images/tech/python.svg' },
   { name: 'Tableau', src: '/images/tech/tableau.svg' },
-  { name: 'AWS Lambda', src: '/images/tech/aws.svg' },
   { name: 'Excel', src: '/images/tech/excel.svg' },
   { name: 'Supabase', src: '/images/tech/supabase.svg' },
-  { name: 'LLMs, RAG & MCP', src: '/images/tech/ai.svg' },
+  { name: 'Claude', src: '/images/tech/claude.svg' },
+  { name: 'Gemini', src: '/images/tech/gemini.svg' },
+  { name: 'Antigravity', src: '/images/tech/antigravity.svg' },
+  { name: 'LLMs & MCP', src: '/images/tech/ai.svg' },
   { name: 'Git & CI/CD', src: '/images/tech/git.svg' },
 ];
 
 export function getTechLogo(label: string): string | null {
   const s = label.toLowerCase();
-  if (s.includes('power bi') || s.includes('dax') || s.includes('power query') || s.includes('report builder')) {
+  if (s.includes('report builder')) return '/images/tech/reportbuilder.svg';
+  if (s.includes('power bi') || s.includes('dax') || s.includes('power query')) {
     return '/images/tech/powerbi.svg';
   }
   if (s.includes('fabric')) return '/images/tech/fabric.svg';
-  if (s.includes('postgres') || s.includes('sql') || s.includes('dbeaver')) return '/images/tech/postgresql.svg';
+  if (s.includes('dbeaver')) return '/images/tech/dbeaver.svg';
+  if (s.includes('postgres') || s.includes('sql')) return '/images/tech/postgresql.svg';
   if (s.includes('python') || s.includes('pandas') || s.includes('matplotlib') || s.includes('seaborn') || s.includes('plotly')) {
     return '/images/tech/python.svg';
   }
   if (s.includes('tableau')) return '/images/tech/tableau.svg';
-  if (s.includes('aws') || s.includes('quicksight') || s.includes('lambda')) return '/images/tech/aws.svg';
   if (s.includes('excel') || s.includes('google sheet')) return '/images/tech/excel.svg';
   if (s.includes('supabase')) return '/images/tech/supabase.svg';
+  if (s.includes('claude')) return '/images/tech/claude.svg';
+  if (s.includes('gemini')) return '/images/tech/gemini.svg';
+  if (s.includes('antigravity')) return '/images/tech/antigravity.svg';
   if (s.includes('git') || s.includes('ci/cd')) return '/images/tech/git.svg';
   if (
     s.includes('llm') ||
     s.includes('rag') ||
     s.includes('mcp') ||
     s.includes('ai') ||
-    s.includes('claude') ||
     s.includes('chatgpt') ||
-    s.includes('gemini') ||
     s.includes('prompt') ||
     s.includes('webhook') ||
     s.includes('rest api') ||

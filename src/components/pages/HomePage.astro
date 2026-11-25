@@ -7,11 +7,8 @@ import { SITE } from '../../data/profile';
 import { UI_COPY, localizedPath, type Lang } from '../../data/i18n';
 import {
   EXPERIENCE_I18N,
-  AREAS_I18N,
-  AI_WORKFLOW_I18N,
-  TECH_EXPERTISE_I18N,
+  STACK_I18N,
   BRAND_PILLARS_I18N,
-  EDUCATION_I18N,
   TARGET_ROLES_I18N,
   WORK_TRANSLATIONS,
 } from '../../data/localizedContent';
@@ -25,12 +22,9 @@ const { lang } = Astro.props;
 const t = UI_COPY[lang];
 const allWork = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
 const selectedWork = allWork.filter((entry) => entry.data.featured);
-const roles = EXPERIENCE_I18N[lang].slice(0, 5);
-const areas = AREAS_I18N[lang];
-const aiWorkflow = AI_WORKFLOW_I18N[lang];
-const techGroups = TECH_EXPERTISE_I18N[lang];
+const latestRoles = EXPERIENCE_I18N[lang].slice(0, 3);
+const stackColumns = STACK_I18N[lang];
 const pillars = BRAND_PILLARS_I18N[lang];
-const education = EDUCATION_I18N[lang];
 const targetRoles = TARGET_ROLES_I18N[lang];
 
 const getProjectDisplay = (entry: (typeof allWork)[number]) => {
@@ -96,25 +90,29 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
       <Waves seed={2} count={20} />
       <div class="wrap">
         <h2 class="display">{t.sections.experience}</h2>
-        <div class="panels panels-two">
-          {roles.map((role, idx) => {
+
+        <div class="exp-stack">
+          {latestRoles.map((role) => {
             const logo = getCompanyLogo(role.company);
             const orgLabel = role.organizationNote ? `${role.company} (${role.organizationNote})` : role.company;
             return (
-              <article class={`panel role-card ${idx === roles.length - 1 && roles.length % 2 === 1 ? 'role-card-wide' : ''}`}>
+              <article class="panel role-card role-card-spacious">
                 <div class="role-head">
                   {logo && (
                     <div class="company-logo">
                       <img src={logo.src} alt={logo.alt} loading="lazy" />
                     </div>
                   )}
-                  <div>
-                    <h3>{role.title}</h3>
-                    <p class="at">{orgLabel} · {role.location} · {role.period}</p>
+                  <div class="role-meta">
+                    <div class="role-title-row">
+                      <h3>{role.title}</h3>
+                      <span class="role-dates">{role.period}</span>
+                    </div>
+                    <p class="at">{orgLabel} · {role.location}</p>
                   </div>
                 </div>
                 <p class="role-summary">{role.summary}</p>
-                <ul>
+                <ul class="role-bullets-grid">
                   {role.bullets.map((b) => (
                     <li>{b}</li>
                   ))}
@@ -124,6 +122,7 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
             );
           })}
         </div>
+
         <p class="more">
           <a href={`${localizedPath('/cv/', lang)}#experience`}>{t.sections.careerTimelineLink}</a>
         </p>
@@ -133,7 +132,7 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
     <section id="work" class="field green section">
       <Waves seed={3} count={18} />
       <div class="wrap">
-        <h2 class="display">{t.sections.projects}</h2>
+        <h2 class="display single-line-heading">{t.sections.projects}</h2>
         <div class="project-cards">
           {selectedWork.map((entry) => {
             const disp = getProjectDisplay(entry);
@@ -153,7 +152,7 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
                         <img src={orgLogo.src} alt={orgLogo.alt} loading="lazy" />
                       </span>
                     )}
-                    <span>{disp.organization} · {entry.data.year}</span>
+                    <span>{disp.organization}</span>
                   </div>
                   <h3>
                     <a href={localizedPath(`/work/${entry.slug}/`, lang)}>{disp.title}</a>
@@ -191,48 +190,11 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
       </div>
     </section>
 
-    <section id="expertise" class="section">
-      <div class="wrap">
-        <h2 class="display">{t.sections.areasOfExpertise}</h2>
-        <div class="expertise-grid">
-          {areas.map((area) => (
-            <article class={`expertise-card ${area.accent ? 'is-ai' : ''}`}>
-              <h3>{area.title}</h3>
-              <ul>
-                {area.items.map((item) => {
-                  const icon = getTechLogo(item);
-                  return (
-                    <li>
-                      {icon && <img class="tech-chip-icon" src={icon} alt="" loading="lazy" />}
-                      <span>{item}</span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </article>
-          ))}
-        </div>
-
-        <div class="workflow-block">
-          <h3 class="workflow-heading">{t.sections.aiWorkflow}</h3>
-          <p class="workflow-intro">{t.sections.aiWorkflowIntro}</p>
-          <div class="workflow-grid">
-            {aiWorkflow.map((wf) => (
-              <article class="workflow-card">
-                <h4>{wf.title}</h4>
-                <p>{wf.description}</p>
-                <a href={wf.proofUrl}>{wf.proofLabel} &rarr;</a>
-              </article>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="technical" class="field brown section">
+    <section id="stack" class="field brown section">
       <Waves seed={4} count={16} />
       <div class="wrap">
-        <h2 class="display">{t.sections.technicalExpertise}</h2>
+        <h2 class="display">{t.sections.stack}</h2>
+        <p class="lab-intro">{t.sections.stackIntro}</p>
 
         <p class="tech-strip-label">{t.sections.stackLogosLabel}</p>
         <ul class="tech-strip">
@@ -244,24 +206,15 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
           ))}
         </ul>
 
-        <div class="tech-groups">
-          {techGroups.map((group) => (
-            <div class="tech-group">
-              <h3>{group.name}</h3>
-              <div class="tech-chips">
-                {group.tools.map((tool) => {
-                  const icon = getTechLogo(tool);
-                  return (
-                    <span class="tech-chip">
-                      {icon && <img class="tech-chip-icon" src={icon} alt="" loading="lazy" />}
-                      {tool}
-                    </span>
-                  );
-                })}
-              </div>
-            </div>
+        <ul class="machines">
+          {stackColumns.map((col) => (
+            <li>
+              <strong>{col.name}</strong>
+              <span class="hw">{col.tools}</span>
+              <p>{col.detail}</p>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
 
@@ -274,9 +227,18 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
               <p>{p}</p>
             ))}
             <p class="languages">
-              <strong>{t.sections.languagesLabel}:</strong> {t.sections.languagesValue}<br />
-              <strong>{t.sections.volunteeringLabel}:</strong> {t.sections.volunteeringValue}
+              <strong>{t.sections.languagesLabel}:</strong> {t.sections.languagesValue}
             </p>
+            <div class="volunteering-block">
+              <p class="volunteering-heading"><strong>{t.sections.volunteeringLabel}:</strong></p>
+              <ul class="volunteering-list">
+                {t.sections.volunteeringItems.map((vol) => (
+                  <li>
+                    <strong>{vol.org}</strong> — {vol.detail}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
           <div class="about-side">
             <figure class="about-portrait">
@@ -297,22 +259,6 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
               ))}
             </ul>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="education" class="field yellow section">
-      <Waves seed={5} count={16} />
-      <div class="wrap">
-        <h2 class="display">{t.sections.education}</h2>
-        <div class="edu-grid">
-          {education.map((edu) => (
-            <article class="edu-card">
-              <h3>{edu.degree}</h3>
-              <p class="edu-inst">{edu.institution}</p>
-              <p>{edu.detail}</p>
-            </article>
-          ))}
         </div>
       </div>
     </section>

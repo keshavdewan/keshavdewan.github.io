@@ -25,10 +25,10 @@ export const UI_COPY: Record<Lang, {
   };
   nav: {
     home: string;
-    about: string;
     experience: string;
     projects: string;
-    expertise: string;
+    stack: string;
+    about: string;
     cv: string;
     contact: string;
     themeDark: string;
@@ -49,23 +49,21 @@ export const UI_COPY: Record<Lang, {
   };
   sections: {
     experience: string;
+    careerTimelineHeading: string;
     careerTimelineLink: string;
     projects: string;
     otherProjectsLink: string;
     viewCaseStudy: string;
-    areasOfExpertise: string;
-    aiWorkflow: string;
-    aiWorkflowIntro: string;
-    technicalExpertise: string;
+    stack: string;
+    stackIntro: string;
     stackLogosLabel: string;
     aboutMe: string;
     aboutParagraphs: string[];
     aboutPortraitAlt: string;
-    education: string;
     languagesLabel: string;
     languagesValue: string;
     volunteeringLabel: string;
-    volunteeringValue: string;
+    volunteeringItems: { org: string; detail: string }[];
     connectHeading: string;
     connectP1: string;
     connectP2: string;
@@ -111,7 +109,6 @@ export const UI_COPY: Record<Lang, {
   };
   footer: {
     line1: string;
-    line2: string;
   };
 }> = {
   en: {
@@ -120,21 +117,21 @@ export const UI_COPY: Record<Lang, {
       homeTitle: 'Keshav Dewan | Business Intelligence & Data Analyst | Power BI & AI',
       homeDescription:
         'Business Intelligence and Data Analyst based in Geneva, Switzerland. Experienced in Power BI, SQL, Python, Microsoft Fabric, data engineering, ETL automation and AI integration.',
-      workTitle: 'Selected Projects & Case Studies — Keshav Dewan',
+      workTitle: 'Projects & Case Studies — Keshav Dewan',
       workDescription:
         'Business Intelligence, Microsoft Fabric, Python ETL, SQL and AI integration case studies by Keshav Dewan.',
       cvTitle: 'CV — Keshav Dewan | Business Intelligence & Data Analyst',
       cvDescription:
-        'Curriculum Vitae of Keshav Dewan — Business Intelligence & Data Analyst in Geneva, Switzerland (PL-300 Certified).',
+        'Curriculum Vitae of Keshav Dewan — Business Intelligence & Data Analyst in Geneva, Switzerland (PL-300 & DP-600 Certified).',
     },
     nav: {
       home: 'Home',
-      about: 'About',
       experience: 'Experience',
       projects: 'Projects',
-      expertise: 'Expertise',
+      stack: 'Tech Stack',
+      about: 'About Me',
       cv: 'CV',
-      contact: 'Contact',
+      contact: "Let's Connect",
       themeDark: 'Dark',
       themeLight: 'Light',
       langLabel: 'Language',
@@ -142,30 +139,29 @@ export const UI_COPY: Record<Lang, {
     hero: {
       heading: 'Business Intelligence & Data Analyst',
       specialization: 'Power BI · SQL · Python · Microsoft Fabric · AI & Automation',
-      locationBadge: 'Geneva, Switzerland · Swiss work permit available · Microsoft Certified (PL-300)',
+      locationBadge: 'Geneva, Switzerland · Swiss work permit available · Microsoft Certified (PL-300 & DP-600)',
       intro1:
-        'I am a Business Intelligence and Data Analyst based in Geneva, Switzerland, with a background in engineering, research, consulting and commercial real estate.',
+        'I am a Business Intelligence and Data Analyst based in Geneva, Switzerland, with a background in strategy development, research and consulting while working with Fortune 500 companies.',
       intro2:
         'I specialize in transforming complex datasets into meaningful insights through data modelling, automated ETL pipelines, interactive dashboards and AI-powered solutions.',
       intro3:
         'My experience spans international organizations, Swiss technology companies and enterprise BI projects. I enjoy combining analytical thinking, technical expertise and emerging AI technologies to solve practical business problems.',
       ctaProjects: 'Explore My Projects',
       ctaCv: 'Download My CV',
-      ctaContact: 'Get in Touch',
+      ctaContact: "Let's Connect",
       portraitAlt: 'Corporate headshot of Keshav Dewan, Business Intelligence and Data Analyst in Geneva',
     },
     sections: {
       experience: 'Professional Experience',
-      careerTimelineLink: 'Full Career Timeline & CV →',
-      projects: 'Selected Projects & Case Studies',
-      otherProjectsLink: 'View All Projects →',
+      careerTimelineHeading: 'Career Timeline',
+      careerTimelineLink: 'Career Timeline →',
+      projects: 'Projects & Case Studies',
+      otherProjectsLink: 'Other Projects →',
       viewCaseStudy: 'View Case Study →',
-      areasOfExpertise: 'Areas of Expertise',
-      aiWorkflow: 'AI in My Workflow',
-      aiWorkflowIntro:
-        'Practical ways I combine Generative AI, LLMs, RAG, MCP and coding assistants with BI engineering and Python automation.',
-      technicalExpertise: 'Technical Expertise',
-      stackLogosLabel: 'Core technologies & platforms',
+      stack: 'Tech Stack',
+      stackIntro:
+        'PL-300 & DP-600 certified BI and Microsoft Fabric engineering paired with Python automation, relational SQL rigor, and grounded AI workflows — built for enterprise and humanitarian environments.',
+      stackLogosLabel: 'Core products & technologies',
       aboutMe: 'About Me',
       aboutParagraphs: [
         "I'm Keshav, a Business Intelligence and Data Analyst based in Geneva, Switzerland.",
@@ -176,15 +172,17 @@ export const UI_COPY: Record<Lang, {
         'I enjoy working at the intersection of business requirements and technology, translating complex data into clear, reliable and actionable insights.',
       ],
       aboutPortraitAlt: 'Keshav Dewan, Business Intelligence & Data Analyst based in Geneva, Switzerland',
-      education: 'Education & Certifications',
       languagesLabel: 'Languages',
       languagesValue: 'English – Native · French – Intermediate (B1)',
       volunteeringLabel: 'Volunteering',
-      volunteeringValue: 'iCareFish (2026) — User engagement & campaign analytics · Building Bridges Geneva (2024) — Sustainable finance',
+      volunteeringItems: [
+        { org: 'iCareFish (2026)', detail: 'User engagement and campaign analytics supporting digital transformation decisions' },
+        { org: 'Building Bridges Geneva (2024)', detail: 'Connected cross-sector stakeholders to advance sustainable finance solutions' },
+      ],
       connectHeading: "Let's Connect",
       connectP1:
         "I'm always interested in connecting with professionals, recruiters and organizations working in Business Intelligence, Data Analytics, Data Engineering and AI-driven solutions.",
-      connectP2: 'I am open to opportunities across Switzerland and international environments.',
+      connectP2: 'I am open to opportunities across Switzerland and international remote environments.',
       targetRolesLabel: 'Areas of interest',
       email: 'Email',
       phone: 'Phone',
@@ -195,11 +193,11 @@ export const UI_COPY: Record<Lang, {
     },
     workPage: {
       backHome: '← Home',
-      heading: 'Selected Projects & Case Studies',
+      heading: 'Projects & Case Studies',
       tagline:
         'Detailed case studies spanning enterprise BI semantic modelling, AI & RAG automation, UN SDG reporting, Python ETL pipelines and SQL analytics.',
       statsCases: 'Detailed case studies',
-      statsCert: 'Microsoft Certified Power BI Data Analyst (PL-300)',
+      statsCert: 'Microsoft Certified (PL-300 & DP-600)',
       statsLive: 'Live Power BI & Tableau reports',
       filterLabel: 'Filter projects by category',
       viewCaseStudy: 'View Case Study →',
@@ -224,11 +222,11 @@ export const UI_COPY: Record<Lang, {
       viewProjects: 'Explore My Projects',
       profileH: 'Profile',
       profileP1:
-        'Business Intelligence & Data Analyst based in Geneva, Switzerland (Swiss work permit available) with a proven track record across international organizations, Swiss technology companies and commercial real estate. Microsoft Certified Power BI Data Analyst Associate (PL-300) experienced in relational ERP extraction, semantic modelling, DAX, Python ETL pipelines and institutional KPI reporting.',
+        'Business Intelligence & Data Analyst based in Geneva, Switzerland, with a proven track record across international organizations, Swiss technology companies and commercial real estate. Experienced in relational ERP extraction, semantic modelling, DAX, Python ETL pipelines and institutional KPI reporting.',
       profileP2:
         'Combines classical BI and data governance discipline with practical AI integration — including LLMs, Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), REST APIs, webhooks and AI-assisted development workflows.',
-      experienceH: 'Professional Experience',
-      skillsH: 'Technical Expertise',
+      experienceH: 'Career Timeline',
+      skillsH: 'Tech Stack',
       eduH: 'Education & Certifications',
       volH: 'Volunteering',
       volItems: [
@@ -247,7 +245,6 @@ export const UI_COPY: Record<Lang, {
     },
     footer: {
       line1: 'Keshav Dewan — Business Intelligence & Data Analyst in Geneva, Switzerland.',
-      line2: 'Swiss banknote colour fields and guilloche geometry. Set in Archivo Variable.',
     },
   },
   fr: {
@@ -256,21 +253,21 @@ export const UI_COPY: Record<Lang, {
       homeTitle: 'Keshav Dewan | Analyste Business Intelligence & Data | Power BI & IA',
       homeDescription:
         'Analyste Business Intelligence et Data basé à Genève, Suisse. Expérimenté en Power BI, SQL, Python, Microsoft Fabric, ingénierie des données, automatisation ETL et intégration IA.',
-      workTitle: 'Projets sélectionnés & études de cas — Keshav Dewan',
+      workTitle: 'Projets & études de cas — Keshav Dewan',
       workDescription:
         'Études de cas en Business Intelligence, Microsoft Fabric, ETL Python, SQL et intégration IA par Keshav Dewan.',
       cvTitle: 'CV — Keshav Dewan | Analyste Business Intelligence & Data',
       cvDescription:
-        'Curriculum Vitae de Keshav Dewan — Analyste Business Intelligence & Data à Genève, Suisse (Certifié PL-300).',
+        'Curriculum Vitae de Keshav Dewan — Analyste Business Intelligence & Data à Genève, Suisse (Certifié PL-300 & DP-600).',
     },
     nav: {
       home: 'Accueil',
-      about: 'À propos',
       experience: 'Expérience',
       projects: 'Projets',
-      expertise: 'Expertise',
+      stack: 'Tech Stack',
+      about: 'À propos',
       cv: 'CV',
-      contact: 'Contact',
+      contact: 'Me contacter',
       themeDark: 'Sombre',
       themeLight: 'Clair',
       langLabel: 'Langue',
@@ -278,9 +275,9 @@ export const UI_COPY: Record<Lang, {
     hero: {
       heading: 'Analyste Business Intelligence & Data',
       specialization: 'Power BI · SQL · Python · Microsoft Fabric · IA & Automatisation',
-      locationBadge: 'Genève, Suisse · Permis de travail suisse · Certifié Microsoft (PL-300)',
+      locationBadge: 'Genève, Suisse · Permis de travail suisse · Certifié Microsoft (PL-300 & DP-600)',
       intro1:
-        "Je suis Analyste Business Intelligence et Data basé à Genève, en Suisse, avec un parcours alliant ingénierie, recherche, conseil et immobilier d'entreprise.",
+        'Je suis Analyste Business Intelligence et Data basé à Genève, en Suisse, avec un parcours en développement stratégique, recherche et conseil auprès d’entreprises Fortune 500.',
       intro2:
         "Je transforme des ensembles de données complexes en indicateurs fiables grâce à la modélisation de données, aux pipelines ETL automatisés, aux tableaux de bord interactifs et aux solutions d'IA appliquée.",
       intro3:
@@ -292,16 +289,15 @@ export const UI_COPY: Record<Lang, {
     },
     sections: {
       experience: 'Expérience professionnelle',
-      careerTimelineLink: 'Parcours complet & CV →',
-      projects: 'Projets sélectionnés',
-      otherProjectsLink: 'Voir tous les projets →',
+      careerTimelineHeading: 'Parcours professionnel',
+      careerTimelineLink: 'Parcours professionnel →',
+      projects: 'Projets & études de cas',
+      otherProjectsLink: 'Autres projets →',
       viewCaseStudy: "Voir l'étude de cas →",
-      areasOfExpertise: "Domaines d'expertise",
-      aiWorkflow: "L'IA dans mon workflow",
-      aiWorkflowIntro:
-        "Exemples concrets d'intégration de l'IA générative, des LLM, du RAG, du MCP et des assistants de code avec l'ingénierie BI et Python.",
-      technicalExpertise: 'Expertise technique',
-      stackLogosLabel: 'Technologies & plateformes principales',
+      stack: 'Tech Stack',
+      stackIntro:
+        "Certifications PL-300 & DP-600 en BI et Microsoft Fabric alliées à l'automatisation Python, au SQL relationnel et aux workflows IA ancrés — conçues pour les environnements d'entreprise et humanitaires.",
+      stackLogosLabel: 'Produits & technologies clés',
       aboutMe: 'À propos',
       aboutParagraphs: [
         'Je suis Keshav, Analyste Business Intelligence et Data basé à Genève, en Suisse.',
@@ -312,15 +308,17 @@ export const UI_COPY: Record<Lang, {
         "J'apprécie particulièrement travailler à l'interface entre besoins métier et technologie, en traduisant des données complexes en informations claires, fiables et directement exploitables.",
       ],
       aboutPortraitAlt: 'Keshav Dewan, Analyste Business Intelligence & Data à Genève, Suisse',
-      education: 'Formation & certifications',
       languagesLabel: 'Langues',
       languagesValue: 'Anglais – Langue maternelle · Français – Intermédiaire (B1)',
       volunteeringLabel: 'Bénévolat',
-      volunteeringValue: 'iCareFish (2026) — Analytique engagement & campagnes · Building Bridges Genève (2024) — Finance durable',
+      volunteeringItems: [
+        { org: 'iCareFish (2026)', detail: "Analytique d'engagement utilisateur et de campagnes pour la transformation digitale" },
+        { org: 'Building Bridges Genève (2024)', detail: 'Mise en relation d’acteurs intersectoriels autour de la finance durable' },
+      ],
       connectHeading: 'Me contacter',
       connectP1:
         "Je suis toujours ravi d'échanger avec des professionnels, recruteurs et organisations actifs dans la Business Intelligence, l'analytique de données, le Data Engineering et les solutions basées sur l'IA.",
-      connectP2: 'Je suis ouvert aux opportunités partout en Suisse ainsi que dans des environnements internationaux.',
+      connectP2: "Je suis ouvert aux opportunités partout en Suisse ainsi qu'à l'international en télétravail.",
       targetRolesLabel: 'Postes recherchés',
       email: 'E-mail',
       phone: 'Téléphone',
@@ -331,11 +329,11 @@ export const UI_COPY: Record<Lang, {
     },
     workPage: {
       backHome: '← Accueil',
-      heading: 'Projets sélectionnés',
+      heading: 'Projets & études de cas',
       tagline:
         'Études de cas détaillées en modélisation sémantique BI, automatisation IA & RAG, reporting ODD de l’ONU, pipelines ETL Python et analytique SQL.',
       statsCases: 'Études de cas détaillées',
-      statsCert: 'Certifié Microsoft Power BI Data Analyst (PL-300)',
+      statsCert: 'Certifié Microsoft (PL-300 & DP-600)',
       statsLive: 'Rapports Power BI & Tableau en ligne',
       filterLabel: 'Filtrer les projets par catégorie',
       viewCaseStudy: "Voir l'étude de cas →",
@@ -360,11 +358,11 @@ export const UI_COPY: Record<Lang, {
       viewProjects: 'Explorer mes projets',
       profileH: 'Profil',
       profileP1:
-        "Analyste Business Intelligence & Data basé à Genève, Suisse (permis de travail suisse disponible), fort d'une expérience au sein d'organisations internationales, d'entreprises technologiques suisses et de l'immobilier commercial. Certifié Microsoft Power BI Data Analyst Associate (PL-300), expérimenté en extraction ERP relationnelle, modélisation sémantique, DAX, pipelines ETL Python et reporting KPI institutionnel.",
+        "Analyste Business Intelligence & Data basé à Genève, Suisse, fort d'une expérience au sein d'organisations internationales, d'entreprises technologiques suisses et de l'immobilier commercial. Expérimenté en extraction ERP relationnelle, modélisation sémantique, DAX, pipelines ETL Python et reporting KPI institutionnel.",
       profileP2:
         "Allie rigueur BI et gouvernance des données à une pratique concrète de l'intégration IA : LLM, Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), API REST, webhooks et workflows de développement assistés par IA.",
-      experienceH: 'Expérience professionnelle',
-      skillsH: 'Expertise technique',
+      experienceH: 'Parcours professionnel',
+      skillsH: 'Tech Stack',
       eduH: 'Formation & certifications',
       volH: 'Bénévolat',
       volItems: [
@@ -383,7 +381,6 @@ export const UI_COPY: Record<Lang, {
     },
     footer: {
       line1: 'Keshav Dewan — Analyste Business Intelligence & Data à Genève, Suisse.',
-      line2: 'Champs colorés et tracés guillochés inspirés des billets suisses. Typographie Archivo Variable.',
     },
   },
   de: {
@@ -392,19 +389,19 @@ export const UI_COPY: Record<Lang, {
       homeTitle: 'Keshav Dewan | Business Intelligence & Data Analyst | Power BI & KI',
       homeDescription:
         'Business Intelligence und Data Analyst mit Sitz in Genf, Schweiz. Erfahrung in Power BI, SQL, Python, Microsoft Fabric, Data Engineering, ETL-Automatisierung und KI-Integration.',
-      workTitle: 'Ausgewählte Projekte & Fallstudien — Keshav Dewan',
+      workTitle: 'Projekte & Fallstudien — Keshav Dewan',
       workDescription:
         'Fallstudien zu Business Intelligence, Microsoft Fabric, Python-ETL, SQL und KI-Integration von Keshav Dewan.',
       cvTitle: 'Lebenslauf — Keshav Dewan | Business Intelligence & Data Analyst',
       cvDescription:
-        'Lebenslauf von Keshav Dewan — Business Intelligence & Data Analyst in Genf, Schweiz (PL-300 zertifiziert).',
+        'Lebenslauf von Keshav Dewan — Business Intelligence & Data Analyst in Genf, Schweiz (PL-300 & DP-600 zertifiziert).',
     },
     nav: {
       home: 'Start',
-      about: 'Über mich',
       experience: 'Erfahrung',
       projects: 'Projekte',
-      expertise: 'Kompetenzen',
+      stack: 'Tech Stack',
+      about: 'Über mich',
       cv: 'Lebenslauf',
       contact: 'Kontakt',
       themeDark: 'Dunkel',
@@ -414,30 +411,29 @@ export const UI_COPY: Record<Lang, {
     hero: {
       heading: 'Business Intelligence & Data Analyst',
       specialization: 'Power BI · SQL · Python · Microsoft Fabric · KI & Automatisierung',
-      locationBadge: 'Genf, Schweiz · Schweizer Arbeitsbewilligung · Microsoft-zertifiziert (PL-300)',
+      locationBadge: 'Genf, Schweiz · Schweizer Arbeitsbewilligung · Microsoft-zertifiziert (PL-300 & DP-600)',
       intro1:
-        'Ich bin Business Intelligence und Data Analyst mit Sitz in Genf, Schweiz, und bringe einen Hintergrund in Ingenieurwesen, Forschung, Beratung und Gewerbeimmobilien mit.',
+        'Ich bin Business Intelligence und Data Analyst mit Sitz in Genf, Schweiz, mit einem Hintergrund in Strategieentwicklung, Forschung und Beratung in Zusammenarbeit mit Fortune-500-Unternehmen.',
       intro2:
         'Mein Schwerpunkt liegt darauf, komplexe Datensätze durch Datenmodellierung, automatisierte ETL-Pipelines, interaktive Dashboards und KI-gestützte Lösungen in belastbare Erkenntnisse zu verwandeln.',
       intro3:
         'Meine Erfahrung umfasst internationale Organisationen, Schweizer Technologieunternehmen und Enterprise-BI-Projekte. Ich verbinde analytisches Denken, technische Umsetzung und moderne KI-Technologien zur Lösung praxisnaher Geschäftsaufgaben.',
       ctaProjects: 'Projekte entdecken',
       ctaCv: 'Lebenslauf herunterladen',
-      ctaContact: 'Kontakt aufnehmen',
+      ctaContact: 'Kontakt',
       portraitAlt: 'Professionelles Porträt von Keshav Dewan, Business Intelligence und Data Analyst in Genf',
     },
     sections: {
       experience: 'Berufserfahrung',
-      careerTimelineLink: 'Vollständiger Lebenslauf →',
-      projects: 'Ausgewählte Projekte',
-      otherProjectsLink: 'Alle Projekte ansehen →',
+      careerTimelineHeading: 'Karriereverlauf',
+      careerTimelineLink: 'Karriereverlauf →',
+      projects: 'Projekte & Fallstudien',
+      otherProjectsLink: 'Weitere Projekte →',
       viewCaseStudy: 'Fallstudie ansehen →',
-      areasOfExpertise: 'Fachliche Schwerpunkte',
-      aiWorkflow: 'KI in meinem Workflow',
-      aiWorkflowIntro:
-        'Konkrete Einsatzbeispiele für Generative AI, LLMs, RAG, MCP und KI-gestützte Entwicklung im Zusammenspiel mit BI und Python.',
-      technicalExpertise: 'Technische Kompetenzen',
-      stackLogosLabel: 'Kerntechnologien & Plattformen',
+      stack: 'Tech Stack',
+      stackIntro:
+        'PL-300- & DP-600-zertifizierte BI- und Microsoft-Fabric-Expertise kombiniert mit Python-Automatisierung, relationalem SQL und fundierten KI-Workflows — entwickelt für Unternehmens- und UN-Umgebungen.',
+      stackLogosLabel: 'Kernprodukte & Technologien',
       aboutMe: 'Über mich',
       aboutParagraphs: [
         'Ich bin Keshav, Business Intelligence und Data Analyst mit Sitz in Genf, Schweiz.',
@@ -448,15 +444,17 @@ export const UI_COPY: Record<Lang, {
         'Besonders schätze ich die Schnittstelle zwischen Fachbereich und Technologie — komplexe Daten in klare, verlässliche und umsetzbare Erkenntnisse zu übersetzen.',
       ],
       aboutPortraitAlt: 'Keshav Dewan, Business Intelligence & Data Analyst in Genf, Schweiz',
-      education: 'Ausbildung & Zertifizierungen',
       languagesLabel: 'Sprachen',
       languagesValue: 'Englisch – Muttersprache · Französisch – Mittelstufe (B1)',
       volunteeringLabel: 'Engagement',
-      volunteeringValue: 'iCareFish (2026) — User-Engagement- & Kampagnen-Analytik · Building Bridges Genf (2024) — Sustainable Finance',
+      volunteeringItems: [
+        { org: 'iCareFish (2026)', detail: 'User-Engagement- und Kampagnen-Analytik für digitale Transformation' },
+        { org: 'Building Bridges Genf (2024)', detail: 'Branchenübergreifende Vernetzung für Sustainable Finance' },
+      ],
       connectHeading: 'Kontakt',
       connectP1:
         'Ich freue mich jederzeit über den Austausch mit Fach- und Führungskräften, Recruitern und Unternehmen aus den Bereichen Business Intelligence, Data Analytics, Data Engineering und KI-gestützten Lösungen.',
-      connectP2: 'Ich bin offen für Positionen in der gesamten Schweiz sowie in internationalen Umfeldern.',
+      connectP2: 'Ich bin offen für Positionen in der gesamten Schweiz sowie in internationalen Remote-Umfeldern.',
       targetRolesLabel: 'Zielpositionen',
       email: 'E-Mail',
       phone: 'Telefon',
@@ -467,11 +465,11 @@ export const UI_COPY: Record<Lang, {
     },
     workPage: {
       backHome: '← Startseite',
-      heading: 'Ausgewählte Projekte',
+      heading: 'Projekte & Fallstudien',
       tagline:
         'Detaillierte Fallstudien zu Enterprise-BI-Semantikmodellen, KI- & RAG-Automatisierung, UN-SDG-Reporting, Python-ETL-Pipelines und SQL-Analysen.',
       statsCases: 'Detaillierte Fallstudien',
-      statsCert: 'Microsoft Certified Power BI Data Analyst (PL-300)',
+      statsCert: 'Microsoft-zertifiziert (PL-300 & DP-600)',
       statsLive: 'Interaktive Power-BI- & Tableau-Berichte',
       filterLabel: 'Projekte nach Kategorie filtern',
       viewCaseStudy: 'Fallstudie ansehen →',
@@ -496,11 +494,11 @@ export const UI_COPY: Record<Lang, {
       viewProjects: 'Projekte entdecken',
       profileH: 'Profil',
       profileP1:
-        'Business Intelligence & Data Analyst mit Sitz in Genf, Schweiz (Schweizer Arbeitsbewilligung vorhanden) und nachweislicher Erfahrung in internationalen Organisationen, Schweizer Technologieunternehmen und der Gewerbeimmobilienbranche. Microsoft Certified Power BI Data Analyst Associate (PL-300) mit Schwerpunkt auf relationaler ERP-Extraktion, Semantikmodellierung, DAX, Python-ETL-Pipelines und institutionellem KPI-Reporting.',
+        'Business Intelligence & Data Analyst mit Sitz in Genf, Schweiz, mit nachweislicher Erfahrung in internationalen Organisationen, Schweizer Technologieunternehmen und der Gewerbeimmobilienbranche. Erfahren in relationaler ERP-Extraktion, Semantikmodellierung, DAX, Python-ETL-Pipelines und institutionellem KPI-Reporting.',
       profileP2:
         'Verbindet klassische BI- und Data-Governance-Disziplin mit praxisnaher KI-Integration — darunter LLMs, Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), REST-APIs, Webhooks und KI-gestützte Entwicklungsworkflows.',
-      experienceH: 'Berufserfahrung',
-      skillsH: 'Technische Kompetenzen',
+      experienceH: 'Karriereverlauf',
+      skillsH: 'Tech Stack',
       eduH: 'Ausbildung & Zertifizierungen',
       volH: 'Ehrenamtliches Engagement',
       volItems: [
@@ -519,7 +517,6 @@ export const UI_COPY: Record<Lang, {
     },
     footer: {
       line1: 'Keshav Dewan — Business Intelligence & Data Analyst in Genf, Schweiz.',
-      line2: 'Farbfelder und Guilloche-Linien inspiriert von Schweizer Banknoten. Gesetzt in Archivo Variable.',
     },
   },
 };

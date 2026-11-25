@@ -28,23 +28,21 @@ export interface RoleEntry {
 
 export const EXPERIENCE: RoleEntry[] = [
   {
-    title: 'Business Intelligence Analyst Intern',
+    title: 'BI Analyst Intern',
     company: 'Mediasoft Group',
     location: 'Nyon, Switzerland',
     period: 'April 2026 – September 2026',
     summary:
       'Worked on Business Intelligence projects involving ERP data extraction, transformation, validation, semantic modelling and Power BI reporting.',
     bullets: [
-      'Extracted, transformed and validated complex relational ERP datasets using SQL and DBeaver.',
-      'Developed and maintained Power BI semantic models integrating financial, HR and business datasets.',
-      'Used Power Query and DAX to prepare data, develop calculations and support reporting requirements.',
-      'Implemented Row-Level Security (RLS) and dynamic filtering to ensure secure access to business information.',
-      'Investigated discrepancies between source systems, datasets and reports to improve data quality and reporting accuracy.',
-      'Supported Microsoft Fabric development, Git version control and CI/CD workflows.',
-      'Developed Power BI Report Builder reports and parameterized reporting outputs.',
-      'Collaborated with business and technical stakeholders to understand requirements and validate analytical outputs.',
+      'Extracted, transformed and validated complex relational ERP datasets using SQL and DBeaver to establish strict data integrity and governance.',
+      'Developed and maintained Power BI semantic models integrating financial, HR and business datasets using Power Query and DAX.',
+      'Implemented Row-Level Security (RLS) and dynamic filtering rules to ensure secure access to business information across roles.',
+      'Investigated discrepancies between source ERP systems, datasets and reports to improve data quality and reporting accuracy.',
+      'Supported Microsoft Fabric development, Git version control, CI/CD workflows and parameterized Power BI Report Builder outputs.',
+      'Authored end-to-end technical documentation for semantic models and reporting workflows alongside business and technical stakeholders.',
     ],
-    stack: 'SQL, DBeaver, Power BI, DAX, Power Query, Microsoft Fabric, Git, CI/CD, Report Builder',
+    stack: 'SQL · DBeaver · Power BI · DAX · Power Query · Microsoft Fabric · Git · CI/CD · Report Builder',
   },
   {
     title: 'Data Analyst Intern',
@@ -52,17 +50,16 @@ export const EXPERIENCE: RoleEntry[] = [
     location: 'Zurich, Switzerland',
     period: 'April 2024 – October 2024',
     summary:
-      'Worked with a sustainability-focused technology company developing data processing, automation and reporting solutions.',
+      'Worked with a sustainability-focused technology company developing Python ETL automation, data validation and reporting solutions.',
     bullets: [
-      'Developed Python-based ETL workflows for large multi-source datasets.',
-      'Automated data processing workflows, improving efficiency by 40%.',
-      'Extracted and transformed datasets using SQL and Python.',
-      'Performed data cleansing, validation and reconciliation to improve reporting reliability.',
-      'Built reporting solutions using Power BI and Amazon QuickSight.',
-      'Developed automated AWS cost-tracking workflows using Python and AWS Lambda.',
-      'Worked with technical and business teams to investigate data discrepancies.',
+      'Developed Python-based end-to-end ETL workflows for large multi-source operational and food-waste sensor datasets.',
+      'Automated repetitive data processing workflows using Python and AWS Lambda, improving workflow efficiency by 40%.',
+      'Built automated monthly AWS cost-tracking pipelines using Python, AWS Lambda and the Google Sheets API.',
+      'Performed data cleansing, validation and reconciliation across multi-source datasets using SQL and Python to detect anomalies and discrepancies.',
+      'Built interactive reporting solutions using Power BI and Amazon QuickSight to summarize usage patterns and performance.',
+      'Partnered with cross-functional technical and business teams to resolve pipeline bottlenecks and strengthen dataset reliability.',
     ],
-    stack: 'Python, Pandas, SQL, AWS Lambda, Google Sheets API, Power BI, Amazon QuickSight',
+    stack: 'Python · Pandas · SQL · AWS Lambda · Google Sheets API · Power BI · Amazon QuickSight',
   },
   {
     title: 'BI Specialist Intern',
@@ -71,15 +68,15 @@ export const EXPERIENCE: RoleEntry[] = [
     location: 'Geneva, Switzerland',
     period: 'March 2023 – July 2023',
     summary:
-      'Contributed to institutional performance reporting and monitoring of the ITU Strategic Plan and United Nations Sustainable Development Goals.',
+      'Contributed to institutional performance reporting and monitoring of the ITU Strategic Plan (2019–2023) and United Nations Sustainable Development Goals.',
     bullets: [
-      'Designed Power BI dashboards tracking more than 30 UN Sustainable Development Goal indicators.',
-      'Consolidated multi-departmental information into interactive analytical reports.',
-      'Conducted secondary research and collaborated with departments to standardize reporting.',
-      'Supported data validation and reconciliation.',
-      'Presented analytical insights and reporting outputs to senior stakeholders.',
+      'Designed interactive Power BI dashboards tracking more than 30 UN Sustainable Development Goal (SDG) and institutional indicators.',
+      'Consolidated multi-departmental datasets using SQL, Power BI and Advanced Excel into executive analytical reports.',
+      'Audited and reconciled progress reporting across 30+ indicators against institutional baselines to ensure consistent figures for leadership.',
+      'Conducted secondary research and collaborated across non-technical departments to standardize global reporting definitions.',
+      'Presented verified analytical insights and reporting outputs to executive steering committees and senior stakeholders.',
     ],
-    stack: 'Power BI, SQL, Excel, Data Analysis, Data Visualization',
+    stack: 'Power BI · SQL · Excel · Data Analysis · Data Visualization',
   },
   {
     title: 'Manager – Commercial Leasing',
@@ -92,15 +89,13 @@ export const EXPERIENCE: RoleEntry[] = [
       'Worked with multi-source financial, commercial and portfolio information across an 8M+ sq. ft. commercial real estate portfolio.',
       'Coordinated data reconciliation, requirements gathering and executive reporting with finance and legal teams.',
       'Contributed to portfolio performance monitoring supporting a 97% occupancy rate.',
-      'Conducted market and competitor research to understand market conditions.',
-      'Synthesized commercial and portfolio information into executive presentations.',
-      'Collaborated with legal, commercial and financial stakeholders.',
+      'Conducted market and competitor research and synthesized commercial findings into executive presentations.',
     ],
-    stack: 'Portfolio Analytics, Market Research, Commercial Reporting, Stakeholder Coordination',
+    stack: 'Portfolio Analytics · Market Research · Commercial Reporting · Stakeholder Coordination',
   },
   {
     title: 'Assistant Manager – Business Analyst',
-    company: 'BPTP Limited',
+    company: 'BPTP Ltd.',
     location: 'India',
     period: 'January 2019 – October 2019',
     summary:
@@ -108,10 +103,9 @@ export const EXPERIENCE: RoleEntry[] = [
     bullets: [
       'Conducted competitor, market and customer research to support business expansion decisions.',
       'Managed data collection and analysis processes for business performance tracking.',
-      'Analysed market and portfolio information.',
-      'Presented findings and recommendations to clients and internal stakeholders.',
+      'Analysed market and portfolio information and presented findings and recommendations to clients and internal stakeholders.',
     ],
-    stack: 'Business Analysis, Market Research, Performance Tracking, Client Presentations',
+    stack: 'Business Analysis · Market Research · Performance Tracking · Client Presentations',
   },
   {
     title: 'Associate – Research & Consulting',
@@ -124,7 +118,7 @@ export const EXPERIENCE: RoleEntry[] = [
       'Collected and analyzed sales, rental and customer datasets using Looker Studio (Google Data Studio).',
       'Built interactive market trend dashboards to inform real estate investment and portfolio allocation decisions.',
     ],
-    stack: 'Looker Studio, Market Research, Real Estate Analytics',
+    stack: 'Looker Studio · Market Research · Real Estate Analytics',
   },
   {
     title: 'Manager – Market Intelligence Analyst',
@@ -137,103 +131,40 @@ export const EXPERIENCE: RoleEntry[] = [
       'Coordinated business due diligence, compliance reviews and commercial market analysis.',
       'Delivered client intelligence reports supporting strategic commercial decisions.',
     ],
-    stack: 'Market Intelligence, Due Diligence, Commercial Analysis',
+    stack: 'Market Intelligence · Due Diligence · Commercial Analysis',
   },
 ];
 
-export interface ExpertiseCategory {
-  title: string;
-  items: string[];
-  accent?: boolean;
-}
-
-export const AREAS_OF_EXPERTISE: ExpertiseCategory[] = [
-  {
-    title: 'Business Intelligence & Reporting',
-    items: ['Power BI', 'DAX', 'Power Query', 'Paginated Reports', 'KPI Development', 'Executive Dashboards'],
-  },
-  {
-    title: 'Data Analytics & Visualization',
-    items: ['SQL', 'Python', 'Tableau', 'Amazon QuickSight', 'Data Exploration', 'Statistical and Descriptive Analysis'],
-  },
-  {
-    title: 'Data Engineering & Modelling',
-    items: ['ETL/ELT Pipelines', 'PostgreSQL', 'Python & Pandas', 'Microsoft Fabric', 'Star Schema', 'Relational Data Modelling'],
-  },
-  {
-    title: 'Data Governance & Quality',
-    items: ['Data Validation', 'Data Reconciliation', 'Data Quality Assurance', 'Row-Level Security', 'Data Documentation', 'Business Glossaries'],
-  },
-  {
-    title: 'AI & Intelligent Automation',
-    items: ['Generative AI', 'LLM Integration', 'ChatGPT, Claude and Gemini', 'Prompt Engineering', 'RAG', 'Model Context Protocol', 'REST APIs & Webhooks', 'AI-Assisted Development'],
-    accent: true,
-  },
-];
-
-export interface WorkflowItem {
-  title: string;
-  description: string;
-  proofLabel: string;
-  proofUrl: string;
-}
-
-export const AI_WORKFLOW: WorkflowItem[] = [
-  {
-    title: 'AI-Assisted Development',
-    description:
-      'Using AI coding assistants (Claude, ChatGPT, Gemini) to accelerate SQL/DAX prototyping, debugging, refactoring and technical documentation workflows.',
-    proofLabel: 'Applied in Enterprise BI & Semantic Model Optimization',
-    proofUrl: '/work/mediasoft-fabric-bi/',
-  },
-  {
-    title: 'LLM Integration',
-    description:
-      'Connecting language models with Python applications, external REST APIs and structured databases to turn unstructured queries into grounded responses.',
-    proofLabel: 'Applied in Hey! Geneva Event Discovery Chatbot',
-    proofUrl: '/work/hey-geneva-chatbot/',
-  },
-  {
-    title: 'AI & Data Retrieval',
-    description:
-      'Using Retrieval-Augmented Generation (RAG) and Model Context Protocol (MCP) to query Supabase tables and BI metadata before generating outputs.',
-    proofLabel: 'Applied in Hey! Geneva & Claude/MCP BI workflows',
-    proofUrl: '/work/hey-geneva-chatbot/',
-  },
-  {
-    title: 'Workflow Automation',
-    description:
-      'Combining Python, webhooks, REST APIs and serverless scheduling to automate repetitive data cleaning, ingestion and reporting pipelines.',
-    proofLabel: 'Applied in KITRO AWS Costing & Hey! Geneva',
-    proofUrl: '/work/kitro-etl-automation/',
-  },
-];
-
-export interface TechGroup {
+export interface StackColumn {
   name: string;
-  tools: string[];
+  tools: string;
+  detail: string;
 }
 
-export const TECHNICAL_EXPERTISE: TechGroup[] = [
+export const STACK_COLUMNS: StackColumn[] = [
   {
-    name: 'BI & Visualization',
-    tools: ['Power BI', 'DAX', 'Power Query', 'Report Builder', 'Tableau', 'Amazon QuickSight'],
+    name: 'BI & Fabric Engineering',
+    tools: 'Power BI (PL-300) · Microsoft Fabric (DP-600) · DAX · Power Query',
+    detail:
+      'Lakehouse and star-schema semantic models, Row-Level Security (RLS), dynamic filtering, Git CI/CD versioning, and executive KPI scorecards.',
   },
   {
-    name: 'Programming & Databases',
-    tools: ['Python', 'Pandas', 'SQL', 'PostgreSQL', 'DBeaver'],
+    name: 'Data Engineering & SQL',
+    tools: 'Python (Pandas) · PostgreSQL · AWS Lambda · QuickSight',
+    detail:
+      'Automated ETL/ELT pipelines, REST API and webhook ingestion, window-function analytics, and multi-source anomaly detection.',
   },
   {
-    name: 'Data Engineering',
-    tools: ['Microsoft Fabric', 'AWS Lambda', 'ETL/ELT', 'Data Pipelines', 'Data Modelling'],
+    name: 'AI & Workflow Automation',
+    tools: 'LLMs · RAG Architecture · Model Context Protocol (MCP) · Supabase',
+    detail:
+      'AI-assisted SQL and coding workflows (Claude, ChatGPT, Gemini), prompt engineering, structured extraction, conversational event discovery, and API/webhook automation.',
   },
   {
-    name: 'AI & Emerging Technologies',
-    tools: ['LLMs', 'RAG', 'MCP', 'Prompt Engineering', 'REST APIs', 'Webhooks', 'AI-Assisted Coding'],
-  },
-  {
-    name: 'Development & Collaboration',
-    tools: ['Git', 'CI/CD', 'VS Code', 'Technical Documentation'],
+    name: 'Governance & Storytelling',
+    tools: 'Data Validation · KPI Audits · Tableau · Looker Studio',
+    detail:
+      'Baseline reconciliation across 30+ UN indicators, stakeholder alignment across non-technical teams, and clear decision narratives.',
   },
 ];
 
@@ -285,7 +216,25 @@ export const TARGET_ROLES = [
   'AI & Data Automation Specialist',
 ];
 
-export const SKILL_GROUPS = TECHNICAL_EXPERTISE.map((g) => ({
-  name: g.name,
-  items: g.tools.join(', '),
-}));
+export const SKILL_GROUPS = [
+  {
+    name: 'BI & Visualization',
+    items: 'Power BI (PL-300), Microsoft Fabric, DAX, Power Query, Report Builder, Tableau, Amazon QuickSight, Looker Studio',
+  },
+  {
+    name: 'Programming & Databases',
+    items: 'Python, Pandas, SQL, PostgreSQL, DBeaver, Supabase',
+  },
+  {
+    name: 'Data Engineering & Governance',
+    items: 'ETL/ELT Pipelines, Star Schema Modelling, AWS Lambda, Row-Level Security (RLS), Data Validation & Audits',
+  },
+  {
+    name: 'AI & Intelligent Automation',
+    items: 'LLMs, RAG Architecture, Model Context Protocol (MCP), Prompt Engineering, REST APIs & Webhooks, AI-Assisted Development (Claude, ChatGPT, Gemini)',
+  },
+  {
+    name: 'Development & Collaboration',
+    items: 'Git, CI/CD Workflows, VS Code, Technical Documentation, Stakeholder Alignment',
+  },
+];

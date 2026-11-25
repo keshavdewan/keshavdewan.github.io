@@ -29,20 +29,6 @@ const categories = ['All', 'BI & Governance', 'AI & Automation', 'Data Engineeri
       <a class="back-link" href={localizedPath('/', lang)}>{t.workPage.backHome}</a>
       <h1 class="display">{t.workPage.heading}</h1>
       <p class="tagline">{t.workPage.tagline}</p>
-      <dl class="stats">
-        <div>
-          <dt>{allWork.length}</dt>
-          <dd>{t.workPage.statsCases}</dd>
-        </div>
-        <div>
-          <dt>PL-300</dt>
-          <dd>{t.workPage.statsCert}</dd>
-        </div>
-        <div>
-          <dt>4</dt>
-          <dd>{t.workPage.statsLive}</dd>
-        </div>
-      </dl>
     </div>
   </header>
 
@@ -82,7 +68,7 @@ const categories = ['All', 'BI & Governance', 'AI & Automation', 'Data Engineeri
                         <img src={orgLogo.src} alt={orgLogo.alt} loading="lazy" />
                       </span>
                     )}
-                    {catLabel} · {org} · {entry.data.year}
+                    {catLabel} · {org}
                   </span>
                 </a>
                 {entry.data.image && (

@@ -32,9 +32,7 @@ stats:
     label: "API ingestion, Python cleaning, database, AI layer & WhatsApp webhooks"
   - value: "Multilingual"
     label: "Designed for natural-language event queries across Geneva"
-links:
-  - label: "GitHub Profile"
-    url: "https://github.com/keshavdewan"
+links: []
 ---
 
 ## Project Overview
