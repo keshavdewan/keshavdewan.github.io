@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Waves from '../components/Waves.astro';
+import { SITE } from '../data/profile';
+---
+<BaseLayout title={`Not Found — ${SITE.name}`} note="red">
+  <main id="main" class="field red notfound">
+    <Waves seed={7} count={20} />
+    <div class="wrap pagehead">
+      <h1 class="display">404</h1>
+      <p class="tagline">That page isn't here. Head back home or explore all project case studies.</p>
+      <p class="actions">
+        <a class="btn solid" href="/">Home</a>
+        <a class="btn" href="/work/">All work</a>
+      </p>
+    </div>
+  </main>
+</BaseLayout>
+

@@ -1,0 +1,181 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Waves from '../Waves.astro';
+import { SITE } from '../../data/profile';
+import { UI_COPY, localizedPath, type Lang } from '../../data/i18n';
+import { WORK_TRANSLATIONS } from '../../data/localizedContent';
+import { getCompanyLogo, getTechLogo } from '../../data/logos';
+
+interface Props {
+  entry: CollectionEntry<'work'>;
+  lang: Lang;
+}
+
+const { entry, lang } = Astro.props;
+const { Content } = await entry.render();
+const t = UI_COPY[lang];
+
+const tr = lang === 'en' ? null : WORK_TRANSLATIONS[lang][entry.slug];
+const title = tr?.title ?? entry.data.title;
+const descriptor = tr?.descriptor ?? entry.data.descriptor;
+const tagline = tr?.tagline ?? entry.data.tagline;
+const organization = tr?.organization ?? entry.data.organization;
+const status = tr?.status ?? entry.data.status;
+const categoryLabel = tr?.categoryLabel ?? entry.data.category;
+const stats = tr?.stats ?? entry.data.stats;
+const capabilities = tr?.capabilities ?? entry.data.capabilities;
+
+const allWork = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+const moreWork = allWork.filter((item) => item.slug !== entry.slug).slice(0, 5);
+const noteColor = entry.data.color;
+const orgLogo = getCompanyLogo(entry.data.organization);
+---
+<BaseLayout
+  title={`${title} — ${SITE.name}`}
+  description={tagline}
+  note={noteColor}
+  activeNav="work"
+  lang={lang}
+  currentPath={`/work/${entry.slug}/`}
+>
+  <header class={`field ${noteColor}`}>
+    <Waves seed={entry.data.order + 2} count={22} />
+    <div class="wrap pagehead">
+      <a class="back-link" href={localizedPath('/work/', lang)}>{t.detailPage.backAll}</a>
+      <h1 class="display">{title}</h1>
+      <p class="descriptor">{descriptor}</p>
+      <p class="tagline">{tagline}</p>
+      <p class="facts">
+        <span>{status}</span>
+        <span>{organization}</span>
+        <span>{entry.data.year}</span>
+        <span>{categoryLabel}</span>
+      </p>
+
+      {entry.data.links.length > 0 && (
+        <div class="actions">
+          {entry.data.links.map((link, i) => {
+            const isExternal = link.url.startsWith('http');
+            const href = isExternal ? link.url : localizedPath(link.url, lang);
+            return (
+              <a
+                class={`btn ${i === 0 ? 'solid' : ''}`}
+                href={href}
+                target={isExternal ? '_blank' : undefined}
+                rel={isExternal ? 'noopener noreferrer' : undefined}
+              >
+                {link.label}
+              </a>
+            );
+          })}
+        </div>
+      )}
+
+      {stats && stats.length > 0 && (
+        <dl class="stats">
+          {stats.map((st) => (
+            <div>
+              <dt>{st.value}</dt>
+              <dd>{st.label}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+    </div>
+  </header>
+
+  <main id="main" class="body">
+    <aside aria-label="Project metadata">
+      {orgLogo && (
+        <div class="aside-org">
+          <div class="company-logo">
+            <img src={orgLogo.src} alt={orgLogo.alt} />
+          </div>
+          <strong>{organization}</strong>
+        </div>
+      )}
+
+      <h2>{t.detailPage.builtWith}</h2>
+      <ul>
+        {entry.data.builtWith.map((tech) => {
+          const icon = getTechLogo(tech);
+          return (
+            <li class="aside-tech-item">
+              {icon && <img src={icon} alt="" loading="lazy" />}
+              <span>{tech}</span>
+            </li>
+          );
+        })}
+      </ul>
+
+      <h2>{t.detailPage.capabilities}</h2>
+      <ul>
+        {capabilities.map((cap) => (
+          <li>{cap}</li>
+        ))}
+      </ul>
+
+      {entry.data.links.length > 0 && (
+        <>
+          <h2>{t.detailPage.links}</h2>
+          <ul>
+            {entry.data.links.map((link) => {
+              const isExternal = link.url.startsWith('http');
+              const href = isExternal ? link.url : localizedPath(link.url, lang);
+              return (
+                <li>
+                  <a
+                    href={href}
+                    target={isExternal ? '_blank' : undefined}
+                    rel={isExternal ? 'noopener noreferrer' : undefined}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </>
+      )}
+
+      <h2>{t.detailPage.moreWork}</h2>
+      <ul>
+        {moreWork.map((item) => {
+          const itemTitle = lang === 'en' ? item.data.title : (WORK_TRANSLATIONS[lang][item.slug]?.title ?? item.data.title);
+          return (
+            <li>
+              <a href={localizedPath(`/work/${item.slug}/`, lang)}>{itemTitle}</a>
+            </li>
+          );
+        })}
+      </ul>
+    </aside>
+
+    <article class="article">
+      {entry.data.image && (
+        <figure>
+          <img src={entry.data.image} alt={entry.data.imageCaption || title} />
+          {entry.data.imageCaption && <figcaption>{entry.data.imageCaption}</figcaption>}
+        </figure>
+      )}
+
+      {lang === 'en' ? (
+        <Content />
+      ) : (
+        tr?.sections.map((sec) => (
+          <section>
+            <h2>{sec.heading}</h2>
+            {sec.paragraphs?.map((p) => <p>{p}</p>)}
+            {sec.bullets && (
+              <ul>
+                {sec.bullets.map((b) => <li>{b}</li>)}
+              </ul>
+            )}
+          </section>
+        ))
+      )}
+    </article>
+  </main>
+</BaseLayout>
+

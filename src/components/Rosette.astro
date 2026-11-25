@@ -1,0 +1,27 @@
+---
+// Multi-petal Swiss banknote guilloche rosette behind the hero portrait
+const loops = 22;
+const petals: { d: string; idx: number }[] = [];
+
+for (let k = 0; k < loops; k++) {
+  const phase = (k / loops) * Math.PI * 2;
+  const pts: string[] = [];
+  const steps = 160;
+  for (let s = 0; s <= steps; s++) {
+    const theta = (s / steps) * Math.PI * 2;
+    const r = 165 + 48 * Math.cos(5 * theta + phase) + 18 * Math.sin(3 * theta - phase * 0.5);
+    const x = (260 + r * Math.cos(theta)).toFixed(1);
+    const y = (260 + r * Math.sin(theta)).toFixed(1);
+    pts.push(`${s === 0 ? 'M' : 'L'}${x},${y}`);
+  }
+  petals.push({ d: pts.join('') + 'Z', idx: k });
+}
+---
+<svg aria-hidden="true" class="rosette" viewBox="0 0 520 520">
+  {petals.map((p) => (
+    <path d={p.d} style={`--i: ${p.idx}`} pathLength="1" />
+  ))}
+  <circle class="eye" cx="260" cy="260" r="96" />
+  <circle class="eye" cx="260" cy="260" r="112" stroke-dasharray="3 5" />
+</svg>
+

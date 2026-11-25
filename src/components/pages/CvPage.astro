@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Waves from '../Waves.astro';
+import { SITE } from '../../data/profile';
+import { UI_COPY, localizedPath, type Lang } from '../../data/i18n';
+import { EXPERIENCE_I18N, SKILLS_I18N, EDUCATION_I18N } from '../../data/localizedContent';
+import { getCompanyLogo } from '../../data/logos';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = UI_COPY[lang];
+const experience = EXPERIENCE_I18N[lang];
+const skills = SKILLS_I18N[lang];
+const education = EDUCATION_I18N[lang];
+---
+<BaseLayout
+  title={t.cvPage.title}
+  description={`${t.hero.role}. ${t.hero.focus}.`}
+  note="purple"
+  activeNav="cv"
+  lang={lang}
+  currentPath="/cv/"
+>
+  <header class="field purple">
+    <Waves seed={1} count={24} />
+    <div class="wrap pagehead">
+      <a class="back-link" href={localizedPath('/', lang)}>{t.cvPage.backHome}</a>
+      <h1 class="display">{SITE.name}</h1>
+      <p class="tagline">{t.hero.role}. {t.hero.focus}.</p>
+      <p class="facts">
+        <span>{SITE.location}</span>
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        <a href={SITE.phoneHref}>{SITE.phone}</a>
+        <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href={SITE.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+      <p class="actions">
+        <a class="btn solid" href={SITE.cvPdf} download>{t.cvPage.downloadPdf}</a>
+        <a class="btn" href={localizedPath('/work/', lang)}>{t.cvPage.viewProjects}</a>
+      </p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap cv">
+    <section class="cv-row">
+      <h2 id="profile-h">{t.cvPage.profileH}</h2>
+      <div>
+        <p>{t.cvPage.profileP1}</p>
+        <p>{t.cvPage.profileP2}</p>
+      </div>
+    </section>
+
+    <section class="cv-row">
+      <h2 id="experience">{t.cvPage.experienceH}</h2>
+      <div>
+        {experience.map((role) => {
+          const logo = getCompanyLogo(role.company);
+          return (
+            <article class="cv-job">
+              <div class="role-head">
+                {logo && (
+                  <div class="company-logo">
+                    <img src={logo.src} alt={logo.alt} loading="lazy" />
+                  </div>
+                )}
+                <div>
+                  <h3>{role.title}</h3>
+                  <p class="at">{role.company} · {role.location} · {role.period}</p>
+                </div>
+              </div>
+              <ul>
+                {role.bullets.map((b) => (
+                  <li>{b}</li>
+                ))}
+              </ul>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+
+    <section class="cv-row">
+      <h2 id="skills-h">{t.cvPage.skillsH}</h2>
+      <div class="skill-groups">
+        {skills.map((group) => (
+          <div>
+            <h3>{group.name}</h3>
+            <p>{group.items}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="cv-row">
+      <h2 id="edu-h">{t.cvPage.eduH}</h2>
+      <ul class="cv-list">
+        {education.map((edu) => (
+          <li>
+            <strong>{edu.degree}</strong> — <span>{edu.institution}</span>
+            <br />
+            <span>{edu.detail}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="cv-row">
+      <h2 id="vol-h">{t.cvPage.volH}</h2>
+      <ul class="cv-list">
+        <li>
+          <strong>{t.cvPage.volTitle}</strong> — <span>{t.cvPage.volMeta}</span>
+          <br />
+          <span>{t.cvPage.volDesc}</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="cv-row">
+      <h2 id="lang-h">{t.cvPage.langH}</h2>
+      <p>{t.sections.languagesValue}</p>
+    </section>
+  </main>
+</BaseLayout>
+

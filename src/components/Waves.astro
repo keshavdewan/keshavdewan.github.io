@@ -1,0 +1,26 @@
+---
+interface Props {
+  seed?: number;
+  count?: number;
+}
+const { seed = 1, count = 18 } = Astro.props;
+
+// Generate organic banknote-style guilloche wave paths deterministically per color field
+const paths: string[] = [];
+for (let i = 0; i < count; i++) {
+  const yBase = 4 + i * 7.2;
+  const pts: string[] = [];
+  for (let x = 0; x <= 1200; x += 24) {
+    const t = x / 1200;
+    const wave1 = Math.sin(t * Math.PI * (4 + (seed % 3)) + i * 0.28 + seed) * 6.5;
+    const wave2 = Math.cos(t * Math.PI * (9 + (seed % 2)) - i * 0.19) * 3.2;
+    const y = (yBase + wave1 + wave2).toFixed(1);
+    pts.push(`${x === 0 ? 'M' : 'L'}${x},${y}`);
+  }
+  paths.push(pts.join(''));
+}
+---
+<svg aria-hidden="true" class="waves" preserveAspectRatio="none" viewBox="0 0 1200 150">
+  {paths.map((d) => <path d={d} />)}
+</svg>
+

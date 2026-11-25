@@ -1,0 +1,262 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Waves from '../Waves.astro';
+import Rosette from '../Rosette.astro';
+import MicroStrip from '../MicroStrip.astro';
+import { SITE } from '../../data/profile';
+import { UI_COPY, localizedPath, type Lang } from '../../data/i18n';
+import { EXPERIENCE_I18N, STACK_I18N, ARTICLES_I18N, WORK_TRANSLATIONS } from '../../data/localizedContent';
+import { TECH_STACK_LOGOS, getCompanyLogo, getTechLogo } from '../../data/logos';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = UI_COPY[lang];
+const allWork = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+const selectedWork = allWork.filter((entry) => entry.data.featured);
+const featuredRoles = EXPERIENCE_I18N[lang].slice(0, 4);
+const stackPillars = STACK_I18N[lang];
+const featuredArticles = ARTICLES_I18N[lang].slice(0, 4);
+
+const getProjectDisplay = (entry: (typeof allWork)[number]) => {
+  if (lang === 'en') {
+    return {
+      title: entry.data.title,
+      organization: entry.data.organization,
+      tagline: entry.data.tagline,
+    };
+  }
+  const tr = WORK_TRANSLATIONS[lang][entry.slug];
+  return {
+    title: tr?.title ?? entry.data.title,
+    organization: tr?.organization ?? entry.data.organization,
+    tagline: tr?.tagline ?? entry.data.tagline,
+  };
+};
+---
+<BaseLayout
+  title={`${SITE.name} — ${t.hero.role}`}
+  description={t.hero.lede}
+  note="purple"
+  activeNav="home"
+  lang={lang}
+  currentPath="/"
+>
+  <header class="field purple hero">
+    <Waves seed={1} count={26} />
+    <MicroStrip />
+    <div class="wrap">
+      <div>
+        <h1 class="display">{SITE.name}</h1>
+        <p class="role">{t.hero.role}</p>
+        <p class="focus">{t.hero.focus}</p>
+        <p class="lede">{t.hero.lede}</p>
+        <p class="actions">
+          <a class="btn solid" href={localizedPath('/work/', lang)}>{t.hero.ctaWork(allWork.length)}</a>
+          <a class="btn" href={localizedPath('/cv/', lang)}>{t.hero.ctaCv}</a>
+        </p>
+      </div>
+      <div class="art">
+        <Rosette />
+        <div class="portrait">
+          <img
+            src="/images/keshav-portrait.jpg"
+            alt={t.hero.portraitAlt}
+            width="284"
+            height="284"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="experience" class="field blue section">
+      <Waves seed={2} count={20} />
+      <div class="wrap">
+        <h2 class="display">{t.sections.experience}</h2>
+        <div class="panels">
+          {featuredRoles.map((role) => {
+            const logo = getCompanyLogo(role.company);
+            return (
+              <article class="panel role-card">
+                <div class="role-head">
+                  {logo && (
+                    <div class="company-logo">
+                      <img src={logo.src} alt={logo.alt} loading="lazy" />
+                    </div>
+                  )}
+                  <div>
+                    <h3>{role.title}</h3>
+                    <p class="at">{role.company} · {role.location} · {role.period}</p>
+                  </div>
+                </div>
+                <ul>
+                  {role.bullets.slice(0, 3).map((b) => (
+                    <li>{b}</li>
+                  ))}
+                </ul>
+                {role.stack && <p class="products">{role.stack}</p>}
+              </article>
+            );
+          })}
+        </div>
+        <p class="more">
+          <a href={`${localizedPath('/cv/', lang)}#experience`}>{t.sections.experienceMore}</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="work" class="field green section">
+      <Waves seed={3} count={18} />
+      <div class="wrap">
+        <h2 class="display">{t.sections.selectedWork}</h2>
+        <ul class="rows">
+          {selectedWork.map((entry) => {
+            const disp = getProjectDisplay(entry);
+            return (
+              <li>
+                <a href={localizedPath(`/work/${entry.slug}/`, lang)}>
+                  <h3>{disp.title}</h3>
+                  <span class="who">{disp.organization} · {entry.data.year}</span>
+                </a>
+                <div>
+                  <p>
+                    <span class="desc">{disp.tagline}</span>
+                  </p>
+                  <div class="tech-chips">
+                    {entry.data.builtWith.slice(0, 4).map((tool) => {
+                      const icon = getTechLogo(tool);
+                      return (
+                        <span class="tech-chip">
+                          {icon && <img class="tech-chip-icon" src={icon} alt="" loading="lazy" />}
+                          {tool}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+        <p class="more">
+          <a href={localizedPath('/work/', lang)}>{t.sections.workMore(allWork.length)}</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="stack" class="field brown section">
+      <Waves seed={4} count={16} />
+      <div class="wrap">
+        <h2 class="display">{t.sections.stack}</h2>
+        <p class="lab-intro">{t.sections.stackIntro}</p>
+
+        <p class="tech-strip-label">{t.sections.stackLogosLabel}</p>
+        <ul class="tech-strip">
+          {TECH_STACK_LOGOS.map((item) => (
+            <li class="tech-pill">
+              <img src={item.src} alt={`${item.name} logo`} loading="lazy" />
+              <span>{item.name}</span>
+            </li>
+          ))}
+        </ul>
+
+        <ul class="machines">
+          {stackPillars.map((pillar) => (
+            <li>
+              <strong>{pillar.name}</strong>
+              <span class="hw">{pillar.tools}</span>
+              <p>{pillar.detail}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section id="writing" class="field yellow section">
+      <Waves seed={5} count={16} />
+      <div class="wrap">
+        <h2 class="display">{t.sections.writing}</h2>
+        <ul class="rows">
+          {featuredArticles.map((article) => (
+            <li>
+              <a href={article.url} target="_blank" rel="noopener noreferrer">
+                <h3>{article.title}</h3>
+                <span class="who">{article.venue} · {article.date}</span>
+              </a>
+              <p>
+                <span class="desc">{article.summary}</span>
+              </p>
+            </li>
+          ))}
+        </ul>
+        <p class="more">
+          <a href={localizedPath('/writing/', lang)}>{t.sections.writingMore(ARTICLES_I18N[lang].length)}</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="wrap">
+        <h2 class="display">{t.sections.about}</h2>
+        <div class="about">
+          <div>
+            <p>{t.sections.aboutP1}</p>
+            <p>{t.sections.aboutP2}</p>
+            <p class="languages">
+              <strong>{t.sections.languagesLabel}:</strong> {t.sections.languagesValue}<br />
+              <strong>{t.sections.volunteeringLabel}:</strong> {t.sections.volunteeringValue}
+            </p>
+          </div>
+          <ul class="exchange">
+            {t.sections.stats.map((st) => (
+              <li>
+                <strong>{st.value}</strong>
+                <span>{st.label} <em>{st.sub}</em></span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="field red section">
+      <Waves seed={6} count={15} />
+      <div class="wrap">
+        <h2 class="display">{t.sections.contact}</h2>
+        <p class="contact-lede">{t.sections.contactLede}</p>
+        <div class="contact-grid">
+          <div>
+            <h3>{t.sections.email}</h3>
+            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          </div>
+          <div>
+            <h3>{t.sections.phone}</h3>
+            <a href={SITE.phoneHref}>{SITE.phone}</a>
+          </div>
+          <div>
+            <h3>{t.sections.profiles}</h3>
+            <div class="contact-links">
+              <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href={SITE.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href={SITE.medium} target="_blank" rel="noopener noreferrer">Medium</a>
+              <a href={SITE.tableau} target="_blank" rel="noopener noreferrer">Tableau</a>
+            </div>
+          </div>
+          <div>
+            <h3>{t.sections.cv}</h3>
+            <div class="contact-links">
+              <a href={localizedPath('/cv/', lang)}>{t.sections.readOnline}</a>
+              <a href={SITE.cvPdf} download>{t.sections.downloadPdf}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+

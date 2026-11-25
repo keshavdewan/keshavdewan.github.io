@@ -1,0 +1,155 @@
+---
+import '@fontsource-variable/archivo/wdth.css';
+import '../styles/global.css';
+import { SITE } from '../data/profile';
+import { LANG_OPTIONS, UI_COPY, localizedPath, type Lang } from '../data/i18n';
+
+interface Props {
+  title: string;
+  description?: string;
+  note?: 'purple' | 'blue' | 'green' | 'yellow' | 'red' | 'brown';
+  activeNav?: 'home' | 'work' | 'writing' | 'cv';
+  lang?: Lang;
+  currentPath?: string;
+}
+
+const {
+  title,
+  description = SITE.lede,
+  note = 'purple',
+  activeNav = 'home',
+  lang = 'en',
+  currentPath = '/',
+} = Astro.props;
+
+const t = UI_COPY[lang];
+const homeUrl = localizedPath('/', lang);
+const workUrl = localizedPath('/work/', lang);
+const writingUrl = localizedPath('/writing/', lang);
+const cvUrl = localizedPath('/cv/', lang);
+const contactUrl = `${homeUrl}#contact`;
+
+const langUrls = {
+  en: localizedPath(currentPath, 'en'),
+  fr: localizedPath(currentPath, 'fr'),
+  de: localizedPath(currentPath, 'de'),
+};
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <script is:inline>
+      try {
+        const t = localStorage.getItem('theme');
+        if (t) document.documentElement.dataset.theme = t;
+        else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      } catch {}
+    </script>
+  </head>
+  <body data-note={note}>
+    <a class="skip" href="#main">{t.skip}</a>
+
+    <nav class="topnav" aria-label="Primary navigation">
+      <div class="wrap">
+        <a class="brand" href={homeUrl}>{SITE.name}</a>
+        <ul>
+          <li>
+            <a href={workUrl} aria-current={activeNav === 'work' ? 'page' : undefined}>{t.nav.work}</a>
+          </li>
+          <li>
+            <a href={writingUrl} aria-current={activeNav === 'writing' ? 'page' : undefined}>{t.nav.writing}</a>
+          </li>
+          <li>
+            <a href={cvUrl} aria-current={activeNav === 'cv' ? 'page' : undefined}>{t.nav.cv}</a>
+          </li>
+          <li>
+            <a href={contactUrl}>{t.nav.contact}</a>
+          </li>
+        </ul>
+        <div class="nav-controls">
+          <select
+            class="lang-select"
+            aria-label={t.nav.langLabel}
+            data-lang-select
+            data-en-url={langUrls.en}
+            data-fr-url={langUrls.fr}
+            data-de-url={langUrls.de}
+          >
+            {LANG_OPTIONS.map((opt) => (
+              <option value={opt.code} selected={opt.code === lang}>
+                {opt.short} · {opt.label}
+              </option>
+            ))}
+          </select>
+          <button
+            class="toggle"
+            type="button"
+            data-toggle
+            data-dark-label={t.nav.themeDark}
+            data-light-label={t.nav.themeLight}
+            aria-pressed="false"
+          >
+            {t.nav.themeDark}
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <slot />
+
+    <footer class="sitefoot">
+      <div class="wrap">
+        <p>
+          {t.footer.line1}{' '}
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        </p>
+        <p>{t.footer.line2}</p>
+      </div>
+    </footer>
+
+    <script is:inline>
+      const btn = document.querySelector('[data-toggle]');
+      if (btn) {
+        const darkLabel = btn.getAttribute('data-dark-label') || 'Dark';
+        const lightLabel = btn.getAttribute('data-light-label') || 'Light';
+        const sync = () => {
+          const dark = document.documentElement.dataset.theme === 'dark';
+          btn.textContent = dark ? lightLabel : darkLabel;
+          btn.setAttribute('aria-pressed', String(dark));
+        };
+        sync();
+        btn.addEventListener('click', () => {
+          const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+          document.documentElement.dataset.theme = next;
+          try {
+            localStorage.setItem('theme', next);
+          } catch {}
+          sync();
+        });
+      }
+
+      const langSelect = document.querySelector('[data-lang-select]');
+      if (langSelect) {
+        langSelect.addEventListener('change', (e) => {
+          const code = e.target.value;
+          try {
+            localStorage.setItem('preferred-lang', code);
+          } catch {}
+          const targetUrl = langSelect.getAttribute(`data-${code}-url`);
+          if (targetUrl) {
+            window.location.href = targetUrl + (window.location.hash || '');
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
