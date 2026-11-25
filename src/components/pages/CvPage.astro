@@ -17,8 +17,8 @@ const skills = SKILLS_I18N[lang];
 const education = EDUCATION_I18N[lang];
 ---
 <BaseLayout
-  title={t.cvPage.title}
-  description={`${t.hero.role}. ${t.hero.focus}.`}
+  title={t.seo.cvTitle}
+  description={t.seo.cvDescription}
   note="purple"
   activeNav="cv"
   lang={lang}
@@ -29,7 +29,7 @@ const education = EDUCATION_I18N[lang];
     <div class="wrap pagehead">
       <a class="back-link" href={localizedPath('/', lang)}>{t.cvPage.backHome}</a>
       <h1 class="display">{SITE.name}</h1>
-      <p class="tagline">{t.hero.role}. {t.hero.focus}.</p>
+      <p class="tagline">{t.hero.heading}. {t.hero.specialization}.</p>
       <p class="facts">
         <span>{SITE.location}</span>
         <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
@@ -58,6 +58,7 @@ const education = EDUCATION_I18N[lang];
       <div>
         {experience.map((role) => {
           const logo = getCompanyLogo(role.company);
+          const orgLabel = role.organizationNote ? `${role.company} (${role.organizationNote})` : role.company;
           return (
             <article class="cv-job">
               <div class="role-head">
@@ -68,9 +69,10 @@ const education = EDUCATION_I18N[lang];
                 )}
                 <div>
                   <h3>{role.title}</h3>
-                  <p class="at">{role.company} · {role.location} · {role.period}</p>
+                  <p class="at">{orgLabel} · {role.location} · {role.period}</p>
                 </div>
               </div>
+              <p class="cv-role-summary">{role.summary}</p>
               <ul>
                 {role.bullets.map((b) => (
                   <li>{b}</li>
@@ -126,4 +128,3 @@ const education = EDUCATION_I18N[lang];
     </section>
   </main>
 </BaseLayout>
-

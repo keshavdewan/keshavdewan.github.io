@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Waves from '../Waves.astro';
 import { UI_COPY, localizedPath, type Lang } from '../../data/i18n';
 import { WORK_TRANSLATIONS } from '../../data/localizedContent';
-import { getTechLogo } from '../../data/logos';
+import { getCompanyLogo, getTechLogo } from '../../data/logos';
 
 interface Props {
   lang: Lang;
@@ -13,11 +13,11 @@ interface Props {
 const { lang } = Astro.props;
 const t = UI_COPY[lang];
 const allWork = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
-const categories = ['All', 'AI & Automation', 'BI & Governance', 'Data Engineering', 'SQL & Analytics'];
+const categories = ['All', 'BI & Governance', 'AI & Automation', 'Data Engineering', 'SQL & Analytics'];
 ---
 <BaseLayout
-  title={t.workPage.title}
-  description={t.workPage.tagline}
+  title={t.seo.workTitle}
+  description={t.seo.workDescription}
   note="green"
   activeNav="work"
   lang={lang}
@@ -29,20 +29,6 @@ const categories = ['All', 'AI & Automation', 'BI & Governance', 'Data Engineeri
       <a class="back-link" href={localizedPath('/', lang)}>{t.workPage.backHome}</a>
       <h1 class="display">{t.workPage.heading}</h1>
       <p class="tagline">{t.workPage.tagline}</p>
-      <dl class="stats">
-        <div>
-          <dt>{allWork.length}</dt>
-          <dd>{t.workPage.statsCases}</dd>
-        </div>
-        <div>
-          <dt>PL-300 &amp; DP-600</dt>
-          <dd>{t.workPage.statsCert}</dd>
-        </div>
-        <div>
-          <dt>3</dt>
-          <dd>{t.workPage.statsLive}</dd>
-        </div>
-      </dl>
     </div>
   </header>
 
@@ -68,15 +54,29 @@ const categories = ['All', 'AI & Automation', 'BI & Governance', 'Data Engineeri
           const org = tr?.organization ?? entry.data.organization;
           const tagline = tr?.tagline ?? entry.data.tagline;
           const catLabel = tr?.categoryLabel ?? entry.data.category;
+          const orgLogo = getCompanyLogo(entry.data.organization);
+          const externalLinks = entry.data.links.filter((l) => l.url.startsWith('http'));
 
           return (
             <li data-category={entry.data.category}>
-              <a href={localizedPath(`/work/${entry.slug}/`, lang)}>
-                <h3>{title}</h3>
-                <span class="who">
-                  {catLabel} · {org} · {entry.data.year}
-                </span>
-              </a>
+              <div>
+                <a href={localizedPath(`/work/${entry.slug}/`, lang)}>
+                  <h3>{title}</h3>
+                  <span class="who">
+                    {orgLogo && (
+                      <span class="mini-org-logo inline-logo">
+                        <img src={orgLogo.src} alt={orgLogo.alt} loading="lazy" />
+                      </span>
+                    )}
+                    {catLabel} · {org}
+                  </span>
+                </a>
+                {entry.data.image && (
+                  <a class="list-thumb" href={localizedPath(`/work/${entry.slug}/`, lang)}>
+                    <img src={entry.data.image} alt={entry.data.imageCaption || title} loading="lazy" />
+                  </a>
+                )}
+              </div>
               <div>
                 <p>
                   <span class="desc">{tagline}</span>
@@ -91,6 +91,16 @@ const categories = ['All', 'AI & Automation', 'BI & Governance', 'Data Engineeri
                       </span>
                     );
                   })}
+                </div>
+                <div class="project-links project-links-dark">
+                  <a class="case-link" href={localizedPath(`/work/${entry.slug}/`, lang)}>
+                    {t.workPage.viewCaseStudy}
+                  </a>
+                  {externalLinks.map((lnk) => (
+                    <a href={lnk.url} target="_blank" rel="noopener noreferrer">
+                      {lnk.label}
+                    </a>
+                  ))}
                 </div>
               </div>
             </li>
@@ -115,4 +125,3 @@ const categories = ['All', 'AI & Automation', 'BI & Governance', 'Data Engineeri
     });
   </script>
 </BaseLayout>
-
