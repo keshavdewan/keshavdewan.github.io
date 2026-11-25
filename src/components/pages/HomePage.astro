@@ -63,7 +63,7 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
         <div class="hero-intros">
           <p>{t.hero.intro1}</p>
           <p>{t.hero.intro2}</p>
-          <p>{t.hero.intro3}</p>
+          {t.hero.intro3 && <p>{t.hero.intro3}</p>}
         </div>
         <p class="actions">
           <a class="btn solid" href={localizedPath('/work/', lang)}>{t.hero.ctaProjects}</a>

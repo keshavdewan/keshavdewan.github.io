@@ -41,7 +41,7 @@ export const UI_COPY: Record<Lang, {
     locationBadge: string;
     intro1: string;
     intro2: string;
-    intro3: string;
+    intro3?: string;
     ctaProjects: string;
     ctaCv: string;
     ctaContact: string;
@@ -141,11 +141,9 @@ export const UI_COPY: Record<Lang, {
       specialization: 'Power BI · SQL · Python · Microsoft Fabric · AI & Automation',
       locationBadge: 'Geneva, Switzerland · Swiss work permit available · Microsoft Certified (PL-300 & DP-600)',
       intro1:
-        'I am a Business Intelligence and Data Analyst based in Geneva, Switzerland, with a background in strategy development, research and consulting while working with Fortune 500 companies.',
+        'I am a Geneva-based Business Intelligence and Data Analyst with hands-on experience across UN reporting, Swiss tech, and enterprise ERP analytics, backed by earlier research and consulting work with Fortune 500 commercial clients.',
       intro2:
-        'I specialize in transforming complex datasets into meaningful insights through data modelling, automated ETL pipelines, interactive dashboards and AI-powered solutions.',
-      intro3:
-        'My experience spans international organizations, Swiss technology companies and enterprise BI projects. I enjoy combining analytical thinking, technical expertise and emerging AI technologies to solve practical business problems.',
+        'I focus on getting practical reporting and data work done cleanly — from SQL validation, Python ETL, and Power BI dashboards to using AI coding and retrieval workflows to ship faster, document clearly, and solve real business problems.',
       ctaProjects: 'Explore My Projects',
       ctaCv: 'Download My CV',
       ctaContact: "Let's Connect",
@@ -222,9 +220,9 @@ export const UI_COPY: Record<Lang, {
       viewProjects: 'Explore My Projects',
       profileH: 'Profile',
       profileP1:
-        'Business Intelligence & Data Analyst based in Geneva, Switzerland, with a proven track record across international organizations, Swiss technology companies and commercial real estate. Experienced in relational ERP extraction, semantic modelling, DAX, Python ETL pipelines and institutional KPI reporting.',
+        'Business Intelligence & Data Analyst based in Geneva, Switzerland, with hands-on experience across international organizations, Swiss technology companies and commercial real estate. Skilled in relational ERP extraction, semantic modelling, DAX, Python ETL pipelines and institutional KPI reporting.',
       profileP2:
-        'Combines classical BI and data governance discipline with practical AI integration — including LLMs, Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), REST APIs, webhooks and AI-assisted development workflows.',
+        'Combines classical BI and data governance discipline with practical AI integration — using Claude, Gemini, RAG, Model Context Protocol (MCP), REST APIs and webhooks to accelerate development, automate workflows and keep documentation clear.',
       experienceH: 'Career Timeline',
       skillsH: 'Tech Stack',
       eduH: 'Education & Certifications',
@@ -277,11 +275,9 @@ export const UI_COPY: Record<Lang, {
       specialization: 'Power BI · SQL · Python · Microsoft Fabric · IA & Automatisation',
       locationBadge: 'Genève, Suisse · Permis de travail suisse · Certifié Microsoft (PL-300 & DP-600)',
       intro1:
-        'Je suis Analyste Business Intelligence et Data basé à Genève, en Suisse, avec un parcours en développement stratégique, recherche et conseil auprès d’entreprises Fortune 500.',
+        "Je suis Analyste Business Intelligence et Data basé à Genève, avec une expérience concrète dans le reporting ONU, la tech suisse et l'analytique ERP d'entreprise, complétée par un parcours antérieur en recherche et conseil auprès de clients commerciaux Fortune 500.",
       intro2:
-        "Je transforme des ensembles de données complexes en indicateurs fiables grâce à la modélisation de données, aux pipelines ETL automatisés, aux tableaux de bord interactifs et aux solutions d'IA appliquée.",
-      intro3:
-        "Mon expérience couvre les organisations internationales, les entreprises technologiques suisses et des projets BI d'entreprise. J'associe rigueur analytique, maîtrise technique et technologies d'IA émergentes pour résoudre des problématiques métier concrètes.",
+        'Je vais à l’essentiel pour livrer des analyses et rapports fiables : validation SQL, ETL Python, tableaux de bord Power BI, ainsi que workflows de codage et de recherche assistés par IA pour produire plus vite, documenter clairement et résoudre des problèmes métier concrets.',
       ctaProjects: 'Explorer mes projets',
       ctaCv: 'Télécharger mon CV',
       ctaContact: 'Me contacter',
@@ -358,9 +354,9 @@ export const UI_COPY: Record<Lang, {
       viewProjects: 'Explorer mes projets',
       profileH: 'Profil',
       profileP1:
-        "Analyste Business Intelligence & Data basé à Genève, Suisse, fort d'une expérience au sein d'organisations internationales, d'entreprises technologiques suisses et de l'immobilier commercial. Expérimenté en extraction ERP relationnelle, modélisation sémantique, DAX, pipelines ETL Python et reporting KPI institutionnel.",
+        "Analyste Business Intelligence & Data basé à Genève, Suisse, avec une expérience concrète au sein d'organisations internationales, d'entreprises technologiques suisses et de l'immobilier commercial. Compétent en extraction ERP relationnelle, modélisation sémantique, DAX, pipelines ETL Python et reporting KPI institutionnel.",
       profileP2:
-        "Allie rigueur BI et gouvernance des données à une pratique concrète de l'intégration IA : LLM, Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), API REST, webhooks et workflows de développement assistés par IA.",
+        "Allie rigueur BI et gouvernance des données à une pratique concrète de l'intégration IA — utilisant Claude, Gemini, RAG, Model Context Protocol (MCP), API REST et webhooks pour accélérer le développement, automatiser les workflows et maintenir une documentation claire.",
       experienceH: 'Parcours professionnel',
       skillsH: 'Tech Stack',
       eduH: 'Formation & certifications',
@@ -413,11 +409,9 @@ export const UI_COPY: Record<Lang, {
       specialization: 'Power BI · SQL · Python · Microsoft Fabric · KI & Automatisierung',
       locationBadge: 'Genf, Schweiz · Schweizer Arbeitsbewilligung · Microsoft-zertifiziert (PL-300 & DP-600)',
       intro1:
-        'Ich bin Business Intelligence und Data Analyst mit Sitz in Genf, Schweiz, mit einem Hintergrund in Strategieentwicklung, Forschung und Beratung in Zusammenarbeit mit Fortune-500-Unternehmen.',
+        'Ich bin Business Intelligence und Data Analyst mit Sitz in Genf und bringe Praxiserfahrung aus UN-Reporting, Schweizer Tech-Unternehmen und Enterprise-ERP-Analytik mit — ergänzt durch frühere Forschungs- und Beratungstätigkeit für kommerzielle Fortune-500-Kunden.',
       intro2:
-        'Mein Schwerpunkt liegt darauf, komplexe Datensätze durch Datenmodellierung, automatisierte ETL-Pipelines, interaktive Dashboards und KI-gestützte Lösungen in belastbare Erkenntnisse zu verwandeln.',
-      intro3:
-        'Meine Erfahrung umfasst internationale Organisationen, Schweizer Technologieunternehmen und Enterprise-BI-Projekte. Ich verbinde analytisches Denken, technische Umsetzung und moderne KI-Technologien zur Lösung praxisnaher Geschäftsaufgaben.',
+        'Mein Fokus liegt auf sauberer, praxisnaher Umsetzung: von SQL-Validierung, Python-ETL und Power-BI-Dashboards bis hin zum Einsatz von KI-Coding- und Retrieval-Workflows, um schneller zu liefern, klar zu dokumentieren und reale Geschäftsprobleme zu lösen.',
       ctaProjects: 'Projekte entdecken',
       ctaCv: 'Lebenslauf herunterladen',
       ctaContact: 'Kontakt',
@@ -494,9 +488,9 @@ export const UI_COPY: Record<Lang, {
       viewProjects: 'Projekte entdecken',
       profileH: 'Profil',
       profileP1:
-        'Business Intelligence & Data Analyst mit Sitz in Genf, Schweiz, mit nachweislicher Erfahrung in internationalen Organisationen, Schweizer Technologieunternehmen und der Gewerbeimmobilienbranche. Erfahren in relationaler ERP-Extraktion, Semantikmodellierung, DAX, Python-ETL-Pipelines und institutionellem KPI-Reporting.',
+        'Business Intelligence & Data Analyst mit Sitz in Genf, Schweiz, mit praktischer Erfahrung in internationalen Organisationen, Schweizer Technologieunternehmen und der Gewerbeimmobilienbranche. Versiert in relationaler ERP-Extraktion, Semantikmodellierung, DAX, Python-ETL-Pipelines und institutionellem KPI-Reporting.',
       profileP2:
-        'Verbindet klassische BI- und Data-Governance-Disziplin mit praxisnaher KI-Integration — darunter LLMs, Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), REST-APIs, Webhooks und KI-gestützte Entwicklungsworkflows.',
+        'Verbindet klassische BI- und Data-Governance-Disziplin mit praxisnaher KI-Integration — durch den Einsatz von Claude, Gemini, RAG, Model Context Protocol (MCP), REST-APIs und Webhooks zur schnelleren Entwicklung, Workflow-Automatisierung und klaren Dokumentation.',
       experienceH: 'Karriereverlauf',
       skillsH: 'Tech Stack',
       eduH: 'Ausbildung & Zertifizierungen',
