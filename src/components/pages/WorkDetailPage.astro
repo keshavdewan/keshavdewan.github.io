@@ -49,6 +49,7 @@ const orgLogo = getCompanyLogo(entry.data.organization);
       <p class="facts">
         <span>{status}</span>
         <span>{organization}</span>
+        <span>{entry.data.year}</span>
         <span>{categoryLabel}</span>
       </p>
 
@@ -92,6 +93,18 @@ const orgLogo = getCompanyLogo(entry.data.organization);
             <img src={orgLogo.src} alt={orgLogo.alt} />
           </div>
           <strong>{organization}</strong>
+        </div>
+      )}
+
+      {entry.slug === 'hey-geneva-chatbot' && (
+        <div class="aside-app-badge">
+          <img
+            src="/images/companies/hey-geneva.jpg"
+            alt="Hey! Geneva — Jet d'Eau app icon"
+            width="112"
+            height="112"
+            loading="lazy"
+          />
         </div>
       )}
 

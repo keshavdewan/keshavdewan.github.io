@@ -1231,6 +1231,20 @@ body[data-note="yellow"] .topnav:not(.is-scrolled) {
   margin-bottom: 1.5rem;
 }
 
+.aside-app-badge {
+  margin: -0.5rem 0 1.5rem;
+}
+
+.aside-app-badge img {
+  display: block;
+  width: 6.5rem;
+  height: 6.5rem;
+  border-radius: 18px;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+  box-shadow: 0 6px 16px rgb(0 0 0 / 0.12);
+}
+
 .article {
   max-width: 64ch;
   font-size: 1.1rem;

@@ -151,7 +151,7 @@ const getProjectDisplay = (entry: (typeof allWork)[number]) => {
                         <img src={orgLogo.src} alt={orgLogo.alt} loading="lazy" />
                       </span>
                     )}
-                    <span>{disp.organization}</span>
+                    <span>{disp.organization} · {entry.data.year}</span>
                   </div>
                   <h3>
                     <a href={localizedPath(`/work/${entry.slug}/`, lang)}>{disp.title}</a>

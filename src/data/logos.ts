@@ -60,6 +60,9 @@ export function getTechLogo(label: string): string | null {
 export function getCompanyLogo(companyOrOrg: string): LogoMeta | null {
   const s = companyOrOrg.toLowerCase();
   if (s.includes('mediasoft')) return { src: '/images/companies/mediasoft.png', alt: 'Mediasoft Group logo' };
+  if (s.includes('independent') || s.includes('indépendant') || s.includes('eigenständig')) {
+    return { src: '/images/companies/geneva.png', alt: 'Geneva coat of arms — Hey! Geneva' };
+  }
   if (s.includes('kitro')) return { src: '/images/companies/kitro.png', alt: 'KITRO SA logo' };
   if (s.includes('itu') || s.includes('telecommunication') || s.includes('united nations')) {
     return { src: '/images/companies/itu.svg', alt: 'International Telecommunication Union (ITU) logo' };
